@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
+		F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */; };
+		F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */; };
+		F5D7FE7723B275CF0079AE60 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7623B275CF0079AE60 /* CardCell.swift */; };
+		F5D7FE7923B275DA0079AE60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7823B275DA0079AE60 /* Card.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
@@ -19,6 +23,10 @@
 		A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuseMe_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F9873A1BAB4E4210551423 /* Pods-CuseMe_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.release.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.release.xcconfig"; sourceTree = "<group>"; };
+		F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperVC.swift; sourceTree = "<group>"; };
+		F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
+		F5D7FE7623B275CF0079AE60 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		F5D7FE7823B275DA0079AE60 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* CuseMe_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuseMe_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +63,16 @@
 				CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5D7FE7123B262710079AE60 /* HomeHelper */ = {
+			isa = PBXGroup;
+			children = (
+				F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */,
+				F5D7FE7623B275CF0079AE60 /* CardCell.swift */,
+				F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */,
+			);
+			path = HomeHelper;
 			sourceTree = "<group>";
 		};
 		F5DEF26323B21DB100C8E3D0 = {
@@ -97,6 +115,7 @@
 		F5DEF28423B220C900C8E3D0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F5D7FE7123B262710079AE60 /* HomeHelper */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -113,6 +132,7 @@
 		F5DEF28623B220D500C8E3D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F5D7FE7823B275DA0079AE60 /* Card.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
+				F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */,
+				F5D7FE7923B275DA0079AE60 /* Card.swift in Sources */,
+				F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */,
+				F5D7FE7723B275CF0079AE60 /* CardCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,19 +12,9 @@ class HomeHelperTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        guard let tabItems = tabBarController?.tabBar.items else { return }
+        tabItems[0].titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 0)
+        tabItems[1].titlePositionAdjustment = UIOffset(horizontal: 15, vertical: 0)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

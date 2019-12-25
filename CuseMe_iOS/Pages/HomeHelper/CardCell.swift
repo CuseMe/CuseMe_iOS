@@ -10,4 +10,6 @@ import UIKit
 
 class CardCell: UICollectionViewCell {
     
+    @IBOutlet weak var thumbnailImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
 }

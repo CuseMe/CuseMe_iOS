@@ -20,24 +20,14 @@ class HomeHelperVC: UIViewController {
         Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
         Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
     ]
-    
-    @IBOutlet weak var middleButton: UIButton!
+
     @IBOutlet weak var cardCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBarController?.tabBar.layer.zPosition = -1
-        middleButton.layer.zPosition = 1
-        
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-    }
-    
-    func updateUI() {
-        guard let tabItems = tabBarController?.tabBar.items else { return }
-        tabItems[0].titlePositionAdjustment = UIOffset(horizontal: -15, vertical: 0)
-        tabItems[1].titlePositionAdjustment = UIOffset(horizontal: 15, vertical: 0)
     }
 }
 

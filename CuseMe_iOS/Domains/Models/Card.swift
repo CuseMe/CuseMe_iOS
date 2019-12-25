@@ -6,4 +6,11 @@
 //  Copyright © 2019 cuseme. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+struct Card {
+    let thumbnail: UIImage
+    let title: String
+}
+
+
