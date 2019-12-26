@@ -184,6 +184,7 @@
 				F5DEF28A23B222D300C8E3D0 /* HomeDisabled.storyboard */,
 				F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */,
 				F5FB849E23B4836D00900461 /* HomeModify.storyboard */,
+				0E9CC61823B44A3B00313490 /* HomeUnlock.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
