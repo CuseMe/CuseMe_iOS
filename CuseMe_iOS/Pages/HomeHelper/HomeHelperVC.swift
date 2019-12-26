@@ -7,27 +7,51 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeHelperVC: UIViewController {
     
     let cellId = "CardCell"
     
     let cards: [Card] = [
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
-        Card(thumbnail: UIImage(named: "btTest01")!, title: "안녕하세요."),
+        Card(imageURL: "test", title: "test", contents: "test", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "test", title: "test", contents: "test", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "test", title: "test", contents: "test", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "test", title: "test", contents: "test", record: "test", visible: true, useCount: 0, serialNum: "1234"),
     ]
 
     @IBOutlet weak var cardCollectionView: UICollectionView!
+    @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet weak var finishButton: UIButton!
+    @IBOutlet weak var editButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let nibName = UINib(nibName: cellId, bundle: nil)
+        cardCollectionView.register(nibName, forCellWithReuseIdentifier: cellId)
+        
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
+    }
+    
+    @IBAction func finishButtonDidTap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func editButtonDidTap(_ sender: Any) {
+    }
+}
+
+extension HomeHelperVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardCell
+        let card = cards[indexPath.row]
+        
+        cell.view.setBorder(borderColor: UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0), borderWidth: 1)
+        contentsTextView.text = card.contents
     }
 }
 
@@ -69,7 +93,9 @@ extension HomeHelperVC: UICollectionViewDataSource {
         
         let card = cards[indexPath.row]
         
-        cell.thumbnailImageView.image = card.thumbnail
+        let imageURL = URL(string: card.imageURL)
+        cell.view.backgroundColor = UIColor.black
+        cell.cardImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = card.title
         
         return cell
