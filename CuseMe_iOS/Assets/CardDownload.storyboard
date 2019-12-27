@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5DZ-H2-I5a">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Card DownloadVC-->
+        <scene sceneID="Jqf-MW-3zb">
+            <objects>
+                <viewController id="5DZ-H2-I5a" customClass="CardDownloadVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yXE-gM-jrX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카드 다운받기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-mS-Xfm">
+                                <rect key="frame" x="64" y="207.66666666666666" width="247" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="247" id="Sds-SH-GHi"/>
+                                    <constraint firstAttribute="height" constant="24" id="wWE-OL-QZo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-cD-2H3">
+                                <rect key="frame" x="16" y="275.66666666666669" width="343" height="107"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szV-aA-7NT">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카드 일련번호를 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7W-8t-dvJ">
+                                                <rect key="frame" x="15" y="14" width="313" height="19"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="L7W-8t-dvJ" firstAttribute="leading" secondItem="szV-aA-7NT" secondAttribute="leading" constant="15" id="CSK-ji-Exb"/>
+                                            <constraint firstAttribute="trailing" secondItem="L7W-8t-dvJ" secondAttribute="trailing" constant="15" id="d7l-Wi-SvV"/>
+                                            <constraint firstItem="L7W-8t-dvJ" firstAttribute="top" secondItem="szV-aA-7NT" secondAttribute="top" constant="14" id="igU-72-cJt"/>
+                                            <constraint firstAttribute="bottom" secondItem="L7W-8t-dvJ" secondAttribute="bottom" constant="11" id="rYG-8X-yls"/>
+                                            <constraint firstAttribute="height" constant="44" id="uwI-PK-Bf0"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-DX-kwg">
+                                        <rect key="frame" x="0.0" y="63" width="343" height="44"/>
+                                        <color key="backgroundColor" red="0.94117647058823528" green="0.94117647058823528" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="QLu-4R-iZT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <state key="normal" title="다운로드">
+                                            <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcG-Xm-v2k">
+                                <rect key="frame" x="15" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Hee-b6-MNb"/>
+                                    <constraint firstAttribute="height" constant="30" id="Iaq-z0-p2G"/>
+                                </constraints>
+                                <state key="normal" title="exit"/>
+                                <connections>
+                                    <action selector="exitButtonDidTap:" destination="5DZ-H2-I5a" eventType="touchUpInside" id="2sI-4M-TTU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWR-M5-HIW">
+                                <rect key="frame" x="148" y="407.66666666666669" width="79" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="899-jX-hpf"/>
+                                    <constraint firstAttribute="width" constant="79" id="dqc-UQ-4I1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <state key="normal" title="직접 만들기">
+                                    <color key="titleColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="selfButtonDidTap:" destination="5DZ-H2-I5a" eventType="touchUpInside" id="Ozg-Qo-8PJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="CTl-mS-Xfm" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="02g-2f-MNX"/>
+                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="15" id="37F-Vy-VNE"/>
+                            <constraint firstItem="IWR-M5-HIW" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="Axt-4C-pPf"/>
+                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="top" secondItem="s3N-oD-WBP" secondAttribute="top" constant="15" id="Djg-Ss-83V"/>
+                            <constraint firstItem="s3N-oD-WBP" firstAttribute="trailing" secondItem="eeC-cD-2H3" secondAttribute="trailing" constant="16" id="Hvh-38-azn"/>
+                            <constraint firstItem="eeC-cD-2H3" firstAttribute="top" secondItem="CTl-mS-Xfm" secondAttribute="bottom" constant="44" id="uzk-5F-bnE"/>
+                            <constraint firstItem="IWR-M5-HIW" firstAttribute="top" secondItem="eeC-cD-2H3" secondAttribute="bottom" constant="25" id="w4g-yI-aiT"/>
+                            <constraint firstItem="eeC-cD-2H3" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="16" id="xdZ-D2-fy8"/>
+                            <constraint firstItem="eeC-cD-2H3" firstAttribute="centerY" secondItem="s3N-oD-WBP" secondAttribute="centerY" constant="-82" id="yBT-sS-aBh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="s3N-oD-WBP"/>
+                    </view>
+                    <connections>
+                        <outlet property="centerYConstraint" destination="yBT-sS-aBh" id="0WU-lM-wWP"/>
+                        <outlet property="downloadButton" destination="4pv-DX-kwg" id="K2b-Vy-Zpd"/>
+                        <outlet property="inputTextField" destination="L7W-8t-dvJ" id="AxW-gz-9fO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FnC-VE-XPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562" y="-457"/>
+        </scene>
+    </scenes>
+</document>
