@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E305F1E23B5C03E00D289DF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F1D23B5C03E00D289DF /* Settings.storyboard */; };
+		0E305F2623B5C3CB00D289DF /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E305F2523B5C3CB00D289DF /* SettingsVC.swift */; };
+		0E305F2823B5C84900D289DF /* menusTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E305F2723B5C84900D289DF /* menusTVC.swift */; };
+		0E305F2A23B5D14F00D289DF /* changePhoneVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E305F2923B5D14F00D289DF /* changePhoneVC.swift */; };
+		0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */; };
+		0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */; };
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
 		F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */; };
 		F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */; };
@@ -14,7 +20,6 @@
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
-		F5DEF28B23B222D300C8E3D0 /* HomeDisabled.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF28A23B222D300C8E3D0 /* HomeDisabled.storyboard */; };
 		F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */; };
 		F5FB849923B4307A00900461 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB849823B4307A00900461 /* Card.swift */; };
 		F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */; };
@@ -26,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E305F1D23B5C03E00D289DF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		0E305F2523B5C3CB00D289DF /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		0E305F2723B5C84900D289DF /* menusTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menusTVC.swift; sourceTree = "<group>"; };
+		0E305F2923B5D14F00D289DF /* changePhoneVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePhoneVC.swift; sourceTree = "<group>"; };
+		0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDisabled.storyboard; sourceTree = "<group>"; };
+		0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisabledVC.swift; sourceTree = "<group>"; };
 		A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuseMe_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F9873A1BAB4E4210551423 /* Pods-CuseMe_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.release.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,7 +48,6 @@
 		F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5DEF27B23B21DB200C8E3D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5DEF27D23B21DB200C8E3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F5DEF28A23B222D300C8E3D0 /* HomeDisabled.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDisabled.storyboard; sourceTree = "<group>"; };
 		F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeHelper.storyboard; sourceTree = "<group>"; };
 		F5FB849823B4307A00900461 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
@@ -60,6 +70,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E305F1C23B5C02B00D289DF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				0E305F2523B5C3CB00D289DF /* SettingsVC.swift */,
+				0E305F2723B5C84900D289DF /* menusTVC.swift */,
+				0E305F2923B5D14F00D289DF /* changePhoneVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		0E584E0D23B4A02300DEF5C3 /* HomeDisabled */ = {
+			isa = PBXGroup;
+			children = (
+				0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */,
+			);
+			path = HomeDisabled;
+			sourceTree = "<group>";
+		};
 		7B6EF97347EEFEDB8A2A44E6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +156,8 @@
 		F5DEF28423B220C900C8E3D0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0E305F1C23B5C02B00D289DF /* Settings */,
+				0E584E0D23B4A02300DEF5C3 /* HomeDisabled */,
 				F5FB84A423B4870B00900461 /* Common */,
 				F5FB84A023B483AD00900461 /* HomeModify */,
 				F5D7FE7123B262710079AE60 /* HomeHelper */,
@@ -165,9 +195,10 @@
 			children = (
 				F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */,
 				F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */,
-				F5DEF28A23B222D300C8E3D0 /* HomeDisabled.storyboard */,
 				F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */,
 				F5FB849E23B4836D00900461 /* HomeModify.storyboard */,
+				0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */,
+				0E305F1D23B5C03E00D289DF /* Settings.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -260,10 +291,11 @@
 			files = (
 				F5FB849F23B4836D00900461 /* HomeModify.storyboard in Resources */,
 				F5FB84AA23B487F400900461 /* CardCell.xib in Resources */,
-				F5DEF28B23B222D300C8E3D0 /* HomeDisabled.storyboard in Resources */,
 				F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */,
+				0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */,
 				F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */,
 				F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */,
+				0E305F1E23B5C03E00D289DF /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,9 +348,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E305F2623B5C3CB00D289DF /* SettingsVC.swift in Sources */,
+				0E305F2A23B5D14F00D289DF /* changePhoneVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
+				0E305F2823B5C84900D289DF /* menusTVC.swift in Sources */,
 				F5FB849923B4307A00900461 /* Card.swift in Sources */,
 				F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */,
+				0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */,
 				F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */,
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,
 				F5FB84A923B487F400900461 /* CardCell.swift in Sources */,
