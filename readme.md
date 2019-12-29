@@ -1,16 +1,29 @@
-# 🗣 Cuseme_iOS  💻
+# 🗣 CUSE ME_iOS  💻
 
-> 예슬이가 적어줄 blah blah....
+### 발달장애인을 위한 카드형 의사소통도구, 큐즈미
 
+------
 
+발달장애인들에게 세상은 넓고 깊은 바다와 같습니다. 말이 통하지 않는 사람들로 가득한 세상은 그들에겐 함부로 나아가기 어렵고, 무서운 곳이니까요. **우리는 발달장애인들도 넓은 세상을 자유롭게 헤엄칠 수 있기를 바랍니다.** 우리와 최소한의 의사소통이 가능하다면, 발달장애인의 세상도 조금은 넓어지지 않을까요?
 
-예슬이가 적어줄 blah,,, blah...
+```
+💕	**약자가 배제되지 않는 세상을 꿈꿉니다.**
+		일상에서 말이 통하지 않는다는 이유로 세상을 포기하지 않았으면 좋겠습니다.
+```
+```
+💕	**이 앱을 마주할 모든 사용자를 생각했습니다.**
+		발달장애인 뿐만 아니라 보호자, 이 앱을 마주할 비장애인들을 모두 고려한 UX
+```
+```
+💕	**기존 앱보다 사용성을 높였습니다.**
+		TTS(Text To Speach), 음성 녹음, 카드 공유 기능
+```
 
 ------
 
 ### SOPT 25th APPJAM
 
-- 개발 기간 : 2019년 12월 21일 ~ 2020년 1월 4일
+- 개발 기간 : 2019년 12월 24일 ~ 2020년 1월 4일
 
 
 
@@ -42,8 +55,8 @@
 
 * Alamofire (4.9.0) : Swift 로 작성된 HTTP 네트워킹 라이브러리
 
-  ```
-  func userName(completion: @escaping (ResposeObject<User>?, Error?) -> Void) {
+	```
+	func userName(completion: @escaping (ResposeObject<User>?, Error?) -> Void) {
         
         let id = "example"
         let url = URL(string: "https://example.com/user/id")
@@ -69,8 +82,8 @@
                     completion(nil, e)
                 }
         }
-    }
-  ```
+	  }
+	```
 
 
 
