@@ -20,8 +20,11 @@
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
 		F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */; };
 		F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */; };
+		F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */; };
+		F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */; };
+		F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */; };
+		F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */; };
 		F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */; };
-		F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */; };
 		F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7823B275DA0079AE60 /* CardDummy.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
@@ -52,8 +55,11 @@
 		E9F9873A1BAB4E4210551423 /* Pods-CuseMe_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.release.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDownload.storyboard; sourceTree = "<group>"; };
 		F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDownloadVC.swift; sourceTree = "<group>"; };
+		F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManageVC.swift; sourceTree = "<group>"; };
+		F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreviewVC.swift; sourceTree = "<group>"; };
+		F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
+		F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperVC.swift; sourceTree = "<group>"; };
-		F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
 		F5D7FE7823B275DA0079AE60 /* CardDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDummy.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* CuseMe_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuseMe_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,7 +151,9 @@
 			isa = PBXGroup;
 			children = (
 				F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */,
-				F5D7FE7423B266D70079AE60 /* HomeHelperTabBarController.swift */,
+				F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */,
+				F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */,
+				F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */,
 			);
 			path = HomeHelper;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */,
+				F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */,
 				F5FB849C23B47CD200900461 /* UIView+Extensions.swift */,
 			);
 			path = Utils;
@@ -397,17 +406,20 @@
 				0E305F2623B5C3CB00D289DF /* SettingsVC.swift in Sources */,
 				0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */,
 				0E305F2A23B5D14F00D289DF /* changePhoneVC.swift in Sources */,
+				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
+				F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */,
 				0E305F2823B5C84900D289DF /* menusTVC.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
+				F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */,
 				F5FB849923B4307A00900461 /* Card.swift in Sources */,
-				F5D7FE7523B266D70079AE60 /* HomeHelperTabBarController.swift in Sources */,
 				0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */,
 				F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */,
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,
 				F5FB84A923B487F400900461 /* CardCell.swift in Sources */,
 				F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */,
 				F5FB849D23B47CD200900461 /* UIView+Extensions.swift in Sources */,
+				F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */,
 				F5FB84A223B483ED00900461 /* HomeModifyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
