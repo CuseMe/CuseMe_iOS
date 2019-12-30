@@ -26,6 +26,7 @@ class HomeHelperTabBarController: UITabBarController {
         button.setImage(UIImage(named: "btnMakecardNewcard"), for: .normal)
         button.adjustsImageWhenHighlighted = false
         button.tag = 0
+        button.alpha = 0
         
         button.addTarget(self, action: #selector(subMenuButtonDidTap), for: .touchUpInside)
         
@@ -37,6 +38,7 @@ class HomeHelperTabBarController: UITabBarController {
         button.setImage(UIImage(named: "btnMakecardDownload"), for: .normal)
         button.adjustsImageWhenHighlighted = false
         button.tag = 1
+        button.alpha = 0
         
         button.addTarget(self, action: #selector(subMenuButtonDidTap), for: .touchUpInside)
         
@@ -49,6 +51,7 @@ class HomeHelperTabBarController: UITabBarController {
         label.textAlignment = .left
         label.text = "새로 만들기"
         label.textColor = UIColor.mainpink
+        label.alpha = 0
         
         return label
     }()
@@ -59,63 +62,68 @@ class HomeHelperTabBarController: UITabBarController {
         label.textAlignment = .left
         label.text = "불러오기"
         label.textColor = UIColor.mainpink
+        label.alpha = 0
         
         return label
     }()
     
-    let blackView: UIView = {
+    let blurView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
         
         return view
     }()
-    
-    let blurEffectView = UIVisualEffectView(effect: UIBlurEffect(style: UIBlurEffect.Style.regular))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setBlurEffect()
-        setBlackview()
-        setButtonPosition()
-        addButtons()
+        setItemsPosition()
+        addItems()
     }
     
-    func setBlackview() {
-        blackView.frame.origin.x = 0
-        blackView.frame.origin.y = 0
-        blackView.frame.size.width = self.view.bounds.width
-        blackView.frame.size.height = self.view.bounds.height - 49
-        blackView.alpha = 0
+    func setItemsPosition() {
+        // blurView
+        blurView.frame.origin.x = 0
+        blurView.frame.origin.y = 0
+        blurView.frame.size.width = self.view.bounds.width
+        if UIScreen.main.bounds.height > 736 {
+            blurView.frame.size.height = self.view.bounds.height - 83
+        } else {
+            blurView.frame.size.height = self.view.bounds.height - 49
+        }
+        blurView.alpha = 0
         
-        self.view.addSubview(blackView)
-    }
-    
-    func setButtonPosition() {
         // menuButton
         menuButton.frame.origin.x = self.view.bounds.width/2 - menuButton.frame.size.width/2
-        menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.size.height - 12
+        if UIScreen.main.bounds.height > 736 {
+            menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.size.height - 44
+        } else {
+            menuButton.frame.origin.y = self.view.bounds.height - menuButton.frame.size.height - 12
+        }
         
+        // makeButton
         makeButton.frame.origin.x = menuButton.frame.origin.x
-        makeButton.frame.origin.y = menuButton.frame.origin.y
+        makeButton.frame.origin.y = menuButton.frame.origin.y - menuButton.frame.size.height
         
+        // makeLabel
+        makeLabel.frame.origin.x = makeButton.frame.origin.x + makeButton.frame.size.width + 10
+        makeLabel.frame.origin.y = makeButton.frame.origin.y + makeButton.frame.size.height/2 - 7.5
+        
+        // loadButton
         loadButton.frame.origin.x = menuButton.frame.origin.x
-        loadButton.frame.origin.y = menuButton.frame.origin.y
-    }
-    
-    func setBlurEffect() {
-        blurEffectView.frame.origin.x = 0
-        blurEffectView.frame.origin.y = 0
-        blurEffectView.frame.size.width = self.view.bounds.width
-        blurEffectView.frame.size.height = self.view.bounds.height - 49
-        blurEffectView.alpha = 0
+        loadButton.frame.origin.y = makeButton.frame.origin.y - menuButton.frame.size.height - 6
         
-        self.view.addSubview(blurEffectView)
+        // loadLabel
+        loadLabel.frame.origin.x = loadButton.frame.origin.x + loadButton.frame.size.width + 10
+        loadLabel.frame.origin.y = loadButton.frame.origin.y + loadButton.frame.size.height/2 - 7.5
     }
     
-    func addButtons() {
+    func addItems() {
+        self.view.addSubview(blurView)
         self.view.addSubview(loadButton)
+        self.view.addSubview(loadLabel)
         self.view.addSubview(makeButton)
+        self.view.addSubview(makeLabel)
         self.view.addSubview(menuButton)
     }
   
@@ -123,41 +131,42 @@ class HomeHelperTabBarController: UITabBarController {
         sender.isSelected = !sender.isSelected
         
         if sender.isSelected {
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseIn], animations: {
                 sender.transform = CGAffineTransform(rotationAngle: .pi/4)
-                self.blackView.alpha = 0.8
-                self.blurEffectView.alpha = 1
+                self.blurView.alpha = 0.8
                 
-                let moveMakeButton = CGAffineTransform(translationX: 0, y: -64)
-                let moveLoadButton = CGAffineTransform(translationX: 0, y: -128)
+                self.makeButton.alpha = 1
+                self.makeLabel.alpha = 1
                 
-                let scaleMakeButton = CGAffineTransform(scaleX: 1, y: 1)
-                let scaleLoadButton = CGAffineTransform(scaleX: 1, y: 1)
-                
-                let combineMakeButton = moveMakeButton.concatenating(scaleMakeButton)
-                let combineLoadButton = moveLoadButton.concatenating(scaleLoadButton)
-                
-                self.makeButton.transform = combineMakeButton
-                self.loadButton.transform = combineLoadButton
-
+                self.makeButton.transform = CGAffineTransform(translationX: 0, y: -6)
+                self.makeLabel.transform = CGAffineTransform(translationX: 0, y: -6)
             }, completion: nil)
+            
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseIn], animations: {
+                self.loadButton.alpha = 1
+                self.loadLabel.alpha = 1
+
+                self.loadButton.transform = CGAffineTransform(translationX: 0, y: -6)
+                self.loadLabel.transform = CGAffineTransform(translationX: 0, y: -6)
+            }, completion: nil)
+            
         } else {
-            UIView.animate(withDuration: 0.25, delay: 0, options: [.curveEaseInOut], animations: {
+            UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseOut], animations: {
                 sender.transform = CGAffineTransform.identity
-                self.blackView.alpha = 0
-                self.blurEffectView.alpha = 0
+                self.blurView.alpha = 0
+                self.loadButton.alpha = 0
+                self.loadLabel.alpha = 0
                 
-                let moveMakeButton = CGAffineTransform(translationX: 0, y: 0)
-                let moveLoadButton = CGAffineTransform(translationX: 0, y: 0)
+                self.loadButton.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.loadLabel.transform = CGAffineTransform(translationX: 0, y: 0)
+            }, completion: nil)
+            
+            UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseOut], animations: {
+                self.makeButton.alpha = 0
+                self.makeLabel.alpha = 0
                 
-                let scaleMakeButton = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                let scaleLoadButton = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                
-                let combineMakeButton = moveMakeButton.concatenating(scaleMakeButton)
-                let combineLoadButton = moveLoadButton.concatenating(scaleLoadButton)
-                
-                self.makeButton.transform = combineMakeButton
-                self.loadButton.transform = combineLoadButton
+                self.makeButton.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.makeLabel.transform = CGAffineTransform(translationX: 0, y: 0)
             }, completion: nil)
         }
     }
@@ -177,17 +186,5 @@ class HomeHelperTabBarController: UITabBarController {
             
             present(alert, animated: true)
         }
-    }
-} 
-
-extension HomeHelperTabBarController {
-    func callBlurView() {
-        blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.addSubview(blurEffectView)
-    }
-    
-    func removeBlurView() {
-        blurEffectView.removeFromSuperview()
     }
 }
