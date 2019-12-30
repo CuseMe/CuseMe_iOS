@@ -24,15 +24,17 @@ class HomeHelperVC: UIViewController {
     @IBOutlet weak var contentsTextView: UITextView!
     @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var editButton: UIButton!
+    //@IBOutlet weak var createButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let nibName = UINib(nibName: cellId, bundle: nil)
         cardCollectionView.register(nibName, forCellWithReuseIdentifier: cellId)
-        
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
+        
+        tabBarController?.tabBar.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.1, radius: 6)
     }
     
     @IBAction func finishButtonDidTap(_ sender: Any) {
@@ -41,6 +43,14 @@ class HomeHelperVC: UIViewController {
     
     
     @IBAction func editButtonDidTap(_ sender: Any) {
+    }
+    
+    @IBAction func createButtonDidTap(_ sender: Any) {
+        let alert = UIAlertController(title: "teset", message: "test", preferredStyle: .alert)
+        let action = UIAlertAction(title: "test", style: .default, handler: nil)
+        alert.addAction(action)
+        
+        present(alert, animated: true)
     }
 }
 
@@ -93,9 +103,9 @@ extension HomeHelperVC: UICollectionViewDataSource {
         
         let card = cards[indexPath.row]
         
-        let imageURL = URL(string: card.imageURL)
+        //let imageURL = URL(string: card.imageURL)
         cell.view.backgroundColor = UIColor.black
-        cell.cardImageView.kf.setImage(with: imageURL)
+        //cell.cardImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = card.title
         
         return cell
