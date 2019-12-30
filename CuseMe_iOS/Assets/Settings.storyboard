@@ -57,9 +57,6 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="JtW-iH-yUT"/>
                     </view>
-                    <connections>
-                        <outlet property="settingsTV" destination="4hm-1W-YjC" id="i3P-K3-d9S"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEG-po-dqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

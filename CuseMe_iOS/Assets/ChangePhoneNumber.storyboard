@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2ko-E9-EW8">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Change Phone NumberVC-->
+        <scene sceneID="YD1-le-ob0">
+            <objects>
+                <viewController id="2ko-E9-EW8" customClass="ChangePhoneNumberVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aAl-IP-uAr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보호자 연락처 변경" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wuh-Hg-elR">
+                                <rect key="frame" x="64" y="207.66666666666666" width="247" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7We-gS-q7W"/>
+                                    <constraint firstAttribute="width" constant="247" id="m2W-6h-nwp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="cDB-1n-ifA">
+                                <rect key="frame" x="16" y="275.66666666666669" width="343" height="107"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-37-RJq">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="보호자 연락처" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BTz-ug-Ns0">
+                                                <rect key="frame" x="15" y="14" width="313" height="19"/>
+                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="BTz-ug-Ns0" secondAttribute="bottom" constant="11" id="0EH-0t-jqh"/>
+                                            <constraint firstAttribute="height" constant="44" id="6gd-7P-VDa"/>
+                                            <constraint firstItem="BTz-ug-Ns0" firstAttribute="leading" secondItem="GcP-37-RJq" secondAttribute="leading" constant="15" id="Wq8-21-8ky"/>
+                                            <constraint firstAttribute="trailing" secondItem="BTz-ug-Ns0" secondAttribute="trailing" constant="15" id="hif-EA-SqX"/>
+                                            <constraint firstItem="BTz-ug-Ns0" firstAttribute="top" secondItem="GcP-37-RJq" secondAttribute="top" constant="14" id="rlf-AQ-yZJ"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vkf-Md-5kR">
+                                        <rect key="frame" x="0.0" y="63" width="343" height="44"/>
+                                        <color key="backgroundColor" red="0.98431372549019602" green="0.42745098039215684" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="NmW-Gi-7o9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="변경하기">
+                                            <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5s-gz-ESz">
+                                <rect key="frame" x="15" y="59" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="9tu-MP-G32"/>
+                                    <constraint firstAttribute="height" constant="30" id="faw-Wf-QDv"/>
+                                </constraints>
+                                <state key="normal" title="exit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="w5s-gz-ESz" firstAttribute="leading" secondItem="cT1-Fk-pvA" secondAttribute="leading" constant="15" id="9ll-DJ-5t0"/>
+                            <constraint firstItem="cT1-Fk-pvA" firstAttribute="trailing" secondItem="cDB-1n-ifA" secondAttribute="trailing" constant="16" id="IPA-gT-Srp"/>
+                            <constraint firstItem="cDB-1n-ifA" firstAttribute="centerY" secondItem="cT1-Fk-pvA" secondAttribute="centerY" constant="-82" id="Ofl-tf-l8K"/>
+                            <constraint firstItem="Wuh-Hg-elR" firstAttribute="centerX" secondItem="cT1-Fk-pvA" secondAttribute="centerX" id="QNM-w9-rLT"/>
+                            <constraint firstItem="cDB-1n-ifA" firstAttribute="leading" secondItem="cT1-Fk-pvA" secondAttribute="leading" constant="16" id="TPL-KM-pCO"/>
+                            <constraint firstItem="w5s-gz-ESz" firstAttribute="top" secondItem="cT1-Fk-pvA" secondAttribute="top" constant="15" id="gWQ-4i-kOH"/>
+                            <constraint firstItem="cDB-1n-ifA" firstAttribute="top" secondItem="Wuh-Hg-elR" secondAttribute="bottom" constant="44" id="zWv-PU-2hg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cT1-Fk-pvA"/>
+                    </view>
+                    <connections>
+                        <outlet property="ChangeButton" destination="Vkf-Md-5kR" id="nJh-aE-Bl5"/>
+                        <outlet property="PhoneNumberTextField" destination="BTz-ug-Ns0" id="tAu-VF-70j"/>
+                        <outlet property="centerYConstraint" destination="Ofl-tf-l8K" id="IUK-RW-mbT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KvA-OC-ZoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-562.39999999999998" y="-457.38916256157637"/>
+        </scene>
+    </scenes>
+</document>

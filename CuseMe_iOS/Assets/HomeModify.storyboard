@@ -67,9 +67,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MqT-hd-ACy"/>
                     </view>
-                    <connections>
-                        <outlet property="collectionView" destination="IAp-hA-V5E" id="3aF-kc-6AS"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N1k-h1-O4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
