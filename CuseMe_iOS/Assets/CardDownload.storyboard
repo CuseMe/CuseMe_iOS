@@ -102,7 +102,7 @@
                         <viewLayoutGuide key="safeArea" id="s3N-oD-WBP"/>
                     </view>
                     <connections>
-                        <outlet property="centerYConstraint" destination="yBT-sS-aBh" id="0WU-lM-wWP"/>
+                        <outlet property="centerYConstraint" destination="yXE-gM-jrX" id="OKa-sD-hka"/>
                         <outlet property="downloadButton" destination="4pv-DX-kwg" id="K2b-Vy-Zpd"/>
                         <outlet property="inputTextField" destination="L7W-8t-dvJ" id="AxW-gz-9fO"/>
                     </connections>
