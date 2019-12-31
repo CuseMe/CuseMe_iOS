@@ -11,7 +11,7 @@
         <!--홈 미리보기-->
         <scene sceneID="lMO-Rg-b3r">
             <objects>
-                <viewController id="O4j-Zg-WUF" customClass="HomeHelperVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O4j-Zg-WUF" customClass="HomePreviewVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EcB-0u-HnO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,65 +19,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MF6-S8-AYA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1gJ-Fw-iQu">
-                                        <rect key="frame" x="16" y="94" width="343" height="131"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="T26-jl-EbW">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="131"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="T26-jl-EbW" secondAttribute="trailing" id="0gT-YV-j9B"/>
-                                            <constraint firstItem="T26-jl-EbW" firstAttribute="leading" secondItem="1gJ-Fw-iQu" secondAttribute="leading" id="H0a-tI-ufG"/>
-                                            <constraint firstAttribute="bottom" secondItem="T26-jl-EbW" secondAttribute="bottom" id="lEY-WS-bG0"/>
-                                            <constraint firstItem="T26-jl-EbW" firstAttribute="top" secondItem="1gJ-Fw-iQu" secondAttribute="top" id="un1-cC-07Z"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-UR-rpx">
-                                        <rect key="frame" x="23" y="52" width="71" height="33"/>
-                                        <color key="backgroundColor" red="0.82745098039215681" green="0.82745098039215681" blue="0.82745098039215681" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="16" y="52" width="64" height="32"/>
+                                        <color key="backgroundColor" red="0.98431372549999996" green="0.42745098040000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="71" id="gbh-tt-AQ3"/>
-                                            <constraint firstAttribute="height" constant="33" id="llI-cl-UF6"/>
+                                            <constraint firstAttribute="width" constant="64" id="gbh-tt-AQ3"/>
+                                            <constraint firstAttribute="height" constant="32" id="llI-cl-UF6"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <state key="normal" title="완료">
-                                            <color key="titleColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="finishButtonDidTap:" destination="O4j-Zg-WUF" eventType="touchUpInside" id="IJf-wP-Div"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4c-EV-ThL">
-                                        <rect key="frame" x="281" y="52" width="71" height="33"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="71" id="aT6-p3-YMs"/>
-                                            <constraint firstAttribute="height" constant="33" id="yId-Fb-Kpo"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="편집">
-                                            <color key="titleColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="editButtonDidTap:" destination="O4j-Zg-WUF" eventType="touchUpInside" id="C3s-9D-zVp"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1gJ-Fw-iQu" secondAttribute="trailing" constant="16" id="3WU-Y0-arF"/>
-                                    <constraint firstAttribute="bottom" secondItem="1gJ-Fw-iQu" secondAttribute="bottom" constant="14" id="6KE-gl-y1p"/>
                                     <constraint firstAttribute="height" constant="239" id="Hwl-uf-zkg"/>
-                                    <constraint firstItem="1gJ-Fw-iQu" firstAttribute="leading" secondItem="MF6-S8-AYA" secondAttribute="leading" constant="16" id="dCY-qh-0k2"/>
-                                    <constraint firstAttribute="trailing" secondItem="d4c-EV-ThL" secondAttribute="trailing" constant="23" id="h53-TQ-zPy"/>
-                                    <constraint firstItem="VYz-UR-rpx" firstAttribute="leading" secondItem="MF6-S8-AYA" secondAttribute="leading" constant="23" id="izw-K5-iOl"/>
-                                    <constraint firstItem="1gJ-Fw-iQu" firstAttribute="top" secondItem="d4c-EV-ThL" secondAttribute="bottom" constant="9" id="kvn-va-Mcr"/>
-                                    <constraint firstItem="1gJ-Fw-iQu" firstAttribute="top" secondItem="VYz-UR-rpx" secondAttribute="bottom" constant="9" id="uNI-16-0bw"/>
+                                    <constraint firstItem="VYz-UR-rpx" firstAttribute="leading" secondItem="MF6-S8-AYA" secondAttribute="leading" constant="16" id="izw-K5-iOl"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="42n-vX-t2g">
@@ -97,7 +58,6 @@
                             <constraint firstItem="42n-vX-t2g" firstAttribute="leading" secondItem="mWW-ph-w2U" secondAttribute="leading" id="7BL-rV-ifb"/>
                             <constraint firstItem="mWW-ph-w2U" firstAttribute="trailing" secondItem="MF6-S8-AYA" secondAttribute="trailing" id="DMA-mO-bal"/>
                             <constraint firstItem="VYz-UR-rpx" firstAttribute="top" secondItem="mWW-ph-w2U" secondAttribute="top" constant="8" id="N1l-cq-jYd"/>
-                            <constraint firstItem="d4c-EV-ThL" firstAttribute="top" secondItem="mWW-ph-w2U" secondAttribute="top" constant="8" id="N8R-vb-xuq"/>
                             <constraint firstItem="MF6-S8-AYA" firstAttribute="leading" secondItem="mWW-ph-w2U" secondAttribute="leading" id="V7j-UA-ee1"/>
                             <constraint firstItem="mWW-ph-w2U" firstAttribute="top" secondItem="MF6-S8-AYA" secondAttribute="top" constant="44" id="dEW-ty-C5q"/>
                             <constraint firstItem="mWW-ph-w2U" firstAttribute="trailing" secondItem="42n-vX-t2g" secondAttribute="trailing" id="edc-br-hmb"/>
@@ -109,8 +69,6 @@
                     <tabBarItem key="tabBarItem" title="홈 미리보기" image="btnTabbarUnselectedHome" selectedImage="btnTabbarSelectedHome" id="cA9-bH-e9F"/>
                     <connections>
                         <outlet property="cardCollectionView" destination="42n-vX-t2g" id="JbN-zg-UEu"/>
-                        <outlet property="contentsTextView" destination="T26-jl-EbW" id="yD7-Fa-B3r"/>
-                        <outlet property="editButton" destination="d4c-EV-ThL" id="YjL-Wu-HSp"/>
                         <outlet property="finishButton" destination="VYz-UR-rpx" id="Zk2-8s-yEY"/>
                     </connections>
                 </viewController>
