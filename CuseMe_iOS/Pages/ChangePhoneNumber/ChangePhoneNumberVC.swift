@@ -10,26 +10,36 @@ import UIKit
 
 class ChangePhoneNumberVC: UIViewController {
 
-    @IBOutlet weak var PhoneNumberTextField: UITextField!
-    @IBOutlet weak var ChangeButton: UIButton!
+    @IBOutlet weak var phoneNumberTextField: UITextField!
+    @IBOutlet weak var changeButton: UIButton!
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var underLine: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        initGestureRecognizer()
+        
+        phoneNumberTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
+        changeButton.setCornerRadius(cornerRadius: nil)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func test() {
+        if(phoneNumberTextField.text?.count != 0) {
+            underLine.backgroundColor = UIColor(red: 251/255, green: 109/255, blue: 106/255, alpha: 1)
+        } else {
+            underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
+        }
     }
-    */
+    
+    override func viewWillAppear(_ animated: Bool) {
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
+    }
 
 }
 
@@ -42,11 +52,11 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
     }
     
     @objc func handleTapTextField(_ sender: UITapGestureRecognizer) {
-        self.PhoneNumberTextField.resignFirstResponder()
+        self.phoneNumberTextField.resignFirstResponder()
     }
     
     func gestureRecognizer(_ gestrueRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard let _ = touch.view?.isDescendant(of: PhoneNumberTextField) else { return false }
+        guard let _ = touch.view?.isDescendant(of: phoneNumberTextField) else { return false }
         
         return true
     }
@@ -58,7 +68,7 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -120
+                //self.centerYConstraint.constant = -120
             }
         })
         
@@ -71,7 +81,7 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -82
+                self.centerYConstraint.constant = -74.5  //다시 돌아오기
             }
         })
         
@@ -88,3 +98,4 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
+
