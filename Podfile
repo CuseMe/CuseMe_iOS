@@ -10,4 +10,5 @@ target 'CuseMe_iOS' do
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'Alamofire'
+  pod 'lottie-ios'
 end
