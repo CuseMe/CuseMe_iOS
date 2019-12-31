@@ -10,21 +10,18 @@ import UIKit
 
 class HomePreviewVC: UIViewController {
 
+    @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cardCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        updateUI()
+        setWaveAnimation()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func updateUI() {
+        doneButton.setCornerRadius(cornerRadius: nil)
+        cardCollectionView.setCornerRadius(cornerRadius: 20)
     }
-    */
-
 }

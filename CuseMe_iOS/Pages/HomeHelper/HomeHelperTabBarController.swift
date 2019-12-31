@@ -47,7 +47,8 @@ class HomeHelperTabBarController: UITabBarController {
     
     let makeLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 15))
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        //label.font = UIFont(name: ".AppleSDGothicNeoI-Medium", size: 12)
+        //label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textAlignment = .left
         label.text = "새로 만들기"
         label.textColor = UIColor.mainpink
@@ -58,7 +59,7 @@ class HomeHelperTabBarController: UITabBarController {
     
     let loadLabel: UILabel = {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 15))
-        label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
+        //label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textAlignment = .left
         label.text = "불러오기"
         label.textColor = UIColor.mainpink

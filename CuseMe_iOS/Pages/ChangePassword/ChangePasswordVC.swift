@@ -34,7 +34,7 @@ class ChangePasswordVC: UIViewController {
          thirdTextField.addTarget(self, action: #selector(test3), for: UIControl.Event.editingChanged)
         
         changeButton.setCornerRadius(cornerRadius: nil)
-        changeButton.setShadow(color: <#T##UIColor#>, offSet: <#T##CGSize#>, opacity: <#T##Float#>, radius: <#T##CGFloat#>)
+        changeButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
         
     }
     

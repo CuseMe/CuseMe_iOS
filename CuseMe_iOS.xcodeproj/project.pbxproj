@@ -21,7 +21,6 @@
 		F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */; };
 		F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */; };
 		F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */; };
-		F5AEB4FF23BA5A7D002B65F0 /* Lottie in Resources */ = {isa = PBXBuildFile; fileRef = F5AEB4FE23BA5A7C002B65F0 /* Lottie */; };
 		F5D7FE7323B265340079AE60 /* HomeHelperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */; };
 		F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7823B275DA0079AE60 /* CardDummy.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
@@ -54,7 +53,6 @@
 		F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreviewVC.swift; sourceTree = "<group>"; };
 		F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
 		F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		F5AEB4FE23BA5A7C002B65F0 /* Lottie */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Lottie; sourceTree = "<group>"; };
 		F5D7FE7223B265340079AE60 /* HomeHelperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperVC.swift; sourceTree = "<group>"; };
 		F5D7FE7823B275DA0079AE60 /* CardDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDummy.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* CuseMe_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuseMe_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,7 +232,6 @@
 		F5DEF28823B2213200C8E3D0 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				F5AEB4FE23BA5A7C002B65F0 /* Lottie */,
 				F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */,
 				F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */,
 				F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */,
@@ -340,7 +337,6 @@
 				0E305F2E23B5FAD700D289DF /* ChangePassword.storyboard in Resources */,
 				F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */,
 				F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */,
-				F5AEB4FF23BA5A7D002B65F0 /* Lottie in Resources */,
 				0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */,
 				F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */,
 				F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */,
