@@ -22,7 +22,7 @@ class ChangePhoneNumberVC: UIViewController {
         
         phoneNumberTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
         changeButton.setCornerRadius(cornerRadius: nil)
-        
+        changeButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
     }
     
     @objc func test() {
