@@ -399,11 +399,9 @@
 			files = (
 				F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */,
 				0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */,
-				0E305F2A23B5D14F00D289DF /* changePhoneVC.swift in Sources */,
 				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
 				F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */,
-				0E305F2823B5C84900D289DF /* menusTVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
 				F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */,
