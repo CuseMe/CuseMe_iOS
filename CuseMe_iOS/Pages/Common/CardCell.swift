@@ -19,8 +19,10 @@ class CardCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        view.setCornerRadius(cornerRadius: 10)
-        // 그림자는 미정
+        self.setCornerRadius(cornerRadius: 10)
+        self.view.setCornerRadius(cornerRadius: 10)
+        cardImageView.setSpatialCornerRadius(rect: UIRectCorner([.topLeft, .topRight]), radius: 10)
+        self.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.15, radius: 3)
         selectImageView.isHidden = true
         visibleButton.isHidden = true
     }

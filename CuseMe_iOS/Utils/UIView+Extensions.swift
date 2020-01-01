@@ -10,14 +10,23 @@ import UIKit
 
 extension UIView {
 
-    func setCornerRadius(cornerRadius : CGFloat?){
+    func setCornerRadius(cornerRadius : CGFloat?) {
         
         // UIView 의 모서리가 둥근 정도를 설정
-        if let cornerRadius_ = cornerRadius {
-            self.layer.cornerRadius = cornerRadius_
+        if let cornerRadius = cornerRadius {
+            self.layer.cornerRadius = cornerRadius
         }  else {
             // cornerRadius 가 nil 일 경우의 default
             self.layer.cornerRadius = self.layer.frame.height / 2
+        }
+    }
+    
+    func setSpatialCornerRadius(rect: UIRectCorner, radius : CGFloat?) {
+        if let radius = radius {
+            let path = UIBezierPath(roundedRect: bounds, byRoundingCorners: rect, cornerRadii: CGSize(width: radius, height: radius))
+            let mask = CAShapeLayer()            
+            mask.path = path.cgPath
+            layer.mask = mask
         }
     }
 

@@ -60,7 +60,7 @@ class HomeHelperTabBarController: UITabBarController {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 65, height: 15))
         label.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         label.textAlignment = .left
-        label.text = "불러오기"
+        label.text = "내려받기"
         label.textColor = UIColor.mainpink
         label.alpha = 0
         
@@ -77,6 +77,7 @@ class HomeHelperTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tabBar.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.1, radius: 6)
         setItemsPosition()
         addItems()
     }
