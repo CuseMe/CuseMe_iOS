@@ -32,7 +32,9 @@ class ChangePasswordVC: UIViewController {
          firstTextField.addTarget(self, action: #selector(test1), for: UIControl.Event.editingChanged)
          secondTextField.addTarget(self, action: #selector(test2), for: UIControl.Event.editingChanged)
          thirdTextField.addTarget(self, action: #selector(test3), for: UIControl.Event.editingChanged)
-        
+        underLine1.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
+         underLine2.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
+         underLine3.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
         changeButton.setCornerRadius(cornerRadius: nil)
         changeButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
         
@@ -101,7 +103,10 @@ extension ChangePasswordVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -120 // Up
+               // self.centerYConstraint.constant = -120 // Up
+            }
+            else if UIScreen.main.bounds.height>667{
+                self.centerYConstraint.constant = -130
             }
         })
         
@@ -115,6 +120,9 @@ extension ChangePasswordVC: UIGestureRecognizerDelegate {
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
                 self.centerYConstraint.constant = -50 // Down
+            }
+            else if UIScreen.main.bounds.height>667{
+            self.centerYConstraint.constant = -89
             }
         })
         

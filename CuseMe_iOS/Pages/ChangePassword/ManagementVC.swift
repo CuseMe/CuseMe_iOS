@@ -1,58 +1,65 @@
 //
-//  ChangePhoneNumberVC.swift
+//  ManagementVCViewController.swift
 //  CuseMe_iOS
 //
-//  Created by Yujin Shin on 2019/12/28.
+//  Created by Yujin Shin on 2019/12/31.
 //  Copyright © 2019 cuseme. All rights reserved.
 //
 
 import UIKit
 
-class ChangePhoneNumberVC: UIViewController {
-
-    @IBOutlet weak var phoneNumberTextField: UITextField!
-    @IBOutlet weak var changeButton: UIButton!
-    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+class ManagementVC: UIViewController {
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var alertLabel: UILabel!
+    @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var underLine: UIView!
-    
-    @IBOutlet weak var yyy: NSLayoutConstraint!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initGestureRecognizer()
-        
-        phoneNumberTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
         underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
+        unlockButton.setCornerRadius(cornerRadius: nil)
+        unlockButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
+        passwordTextField.addTarget(self, action: "edited", for: UIControl.Event.editingChanged)
+   
         
-        changeButton.setCornerRadius(cornerRadius: nil)
-        changeButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
-        
-        
+        alertLabel.isHidden = true
         
     }
-    
-   
-    
     @objc func test() {
-        if(phoneNumberTextField.text?.count != 0) {
+        if(passwordTextField.text?.count != 0) {
             underLine.backgroundColor = UIColor(red: 251/255, green: 109/255, blue: 106/255, alpha: 1)
         } else {
             underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
         }
     }
+    /**/
+    let pass = "1234"
+    
+    @objc func edited() {
+      // print("Edited \(passwordTextField.text)")
+    }
+    
+    @IBAction func unlockButtonTouchDown(_ sender: Any) {
+        if(passwordTextField.text != pass) {
+            alertLabel.isHidden = false
+        }
+        else{
+            alertLabel.isHidden = true}
+    
+    }
+
     
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
+        
     }
-    
     override func viewWillDisappear(_ animated: Bool) {
         unregisterForKeyboardNotifications()
     }
-
 }
-
-extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
+extension ManagementVC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
         let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
@@ -61,11 +68,11 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
     }
     
     @objc func handleTapTextField(_ sender: UITapGestureRecognizer) {
-        self.phoneNumberTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
     }
     
     func gestureRecognizer(_ gestrueRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard let _ = touch.view?.isDescendant(of: phoneNumberTextField) else { return false }
+        guard let _ = touch.view?.isDescendant(of: passwordTextField) else { return false }
         
         return true
     }
@@ -73,12 +80,13 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
     @objc func keyboardWillShow(_ notification: NSNotification) {
         
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        // keyboard up duration
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+        //speed
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            if UIScreen.main.bounds.height < 667 {//원상복귀
-                self.centerYConstraint.constant = -70
-                self.yyy.constant = 40
+            if UIScreen.main.bounds.height < 667 {
+                // self.centerYConstraint.constant = -120 // Up
             }
         })
         
@@ -91,8 +99,7 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -27  //다시 돌아오기
-                self.yyy.constant = 70
+                //   self.centerYConstraint.constant = -50 // Down
             }
         })
         
@@ -109,3 +116,6 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 }
+
+
+
