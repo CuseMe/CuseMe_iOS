@@ -7,16 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E305F1E23B5C03E00D289DF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F1D23B5C03E00D289DF /* Settings.storyboard */; };
-		0E305F2C23B5FA2900D289DF /* ChangePhoneNumber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F2B23B5FA2900D289DF /* ChangePhoneNumber.storyboard */; };
-		0E305F2E23B5FAD700D289DF /* ChangePassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F2D23B5FAD700D289DF /* ChangePassword.storyboard */; };
+		0E305F2E23B5FAD700D289DF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F2D23B5FAD700D289DF /* Settings.storyboard */; };
 		0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */; };
 		0E50475323BB2B7200E8F92C /* CardDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E50475223BB2B7200E8F92C /* CardDetail.storyboard */; };
 		0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E50475523BB306200E8F92C /* CardDetailVC.swift */; };
 		0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */; };
 		0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */; };
 		0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */; };
-		0E76FD4F23BB051000C34114 /* ManagementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76FD4E23BB051000C34114 /* ManagementVC.swift */; };
+		0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76FD4E23BB051000C34114 /* UnlockVC.swift */; };
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
 		F56CEA4223BB43A8005D9B4E /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA4123BB43A8005D9B4E /* wave.json */; };
 		F56CEA4423BB612A005D9B4E /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4323BB612A005D9B4E /* TTSService.swift */; };
@@ -27,7 +25,6 @@
 		F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */; };
 		F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */; };
 		F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */; };
-		F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D7FE7823B275DA0079AE60 /* CardDummy.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
@@ -42,16 +39,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0E305F1D23B5C03E00D289DF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		0E305F2B23B5FA2900D289DF /* ChangePhoneNumber.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePhoneNumber.storyboard; sourceTree = "<group>"; };
-		0E305F2D23B5FAD700D289DF /* ChangePassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChangePassword.storyboard; sourceTree = "<group>"; };
+		0E305F2D23B5FAD700D289DF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		0E50475223BB2B7200E8F92C /* CardDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDetail.storyboard; sourceTree = "<group>"; };
 		0E50475523BB306200E8F92C /* CardDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailVC.swift; sourceTree = "<group>"; };
 		0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDisabled.storyboard; sourceTree = "<group>"; };
 		0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisabledVC.swift; sourceTree = "<group>"; };
 		0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberVC.swift; sourceTree = "<group>"; };
-		0E76FD4E23BB051000C34114 /* ManagementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementVC.swift; sourceTree = "<group>"; };
+		0E76FD4E23BB051000C34114 /* UnlockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockVC.swift; sourceTree = "<group>"; };
 		A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuseMe_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F9873A1BAB4E4210551423 /* Pods-CuseMe_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.release.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.release.xcconfig"; sourceTree = "<group>"; };
@@ -64,7 +59,6 @@
 		F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreviewVC.swift; sourceTree = "<group>"; };
 		F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
 		F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		F5D7FE7823B275DA0079AE60 /* CardDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDummy.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* CuseMe_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuseMe_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -92,15 +86,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E305F2F23B60AA200D289DF /* ChangePassword */ = {
-			isa = PBXGroup;
-			children = (
-				0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */,
-				0E76FD4E23BB051000C34114 /* ManagementVC.swift */,
-			);
-			path = ChangePassword;
-			sourceTree = "<group>";
-		};
 		0E50475423BB305200E8F92C /* CardDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,12 +102,14 @@
 			path = HomeDisabled;
 			sourceTree = "<group>";
 		};
-		0E6D5C5423B6F9B1001C16F1 /* ChangePhoneNumber */ = {
+		0E6D5C5423B6F9B1001C16F1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
 				0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */,
+				0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */,
+				0E76FD4E23BB051000C34114 /* UnlockVC.swift */,
 			);
-			path = ChangePhoneNumber;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		7B6EF97347EEFEDB8A2A44E6 /* Pods */ = {
@@ -206,8 +193,7 @@
 		F5DEF28423B220C900C8E3D0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				0E6D5C5423B6F9B1001C16F1 /* ChangePhoneNumber */,
-				0E305F2F23B60AA200D289DF /* ChangePassword */,
+				0E6D5C5423B6F9B1001C16F1 /* Settings */,
 				0E584E0D23B4A02300DEF5C3 /* HomeDisabled */,
 				F5FB84A423B4870B00900461 /* Common */,
 				F5AEB4C023B5E89F002B65F0 /* CardDownload */,
@@ -230,7 +216,6 @@
 		F5DEF28623B220D500C8E3D0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F5D7FE7823B275DA0079AE60 /* CardDummy.swift */,
 				F5FB849823B4307A00900461 /* Card.swift */,
 			);
 			path = Models;
@@ -249,12 +234,10 @@
 				F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */,
 				F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */,
 				F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */,
-				0E305F2D23B5FAD700D289DF /* ChangePassword.storyboard */,
-				0E305F2B23B5FA2900D289DF /* ChangePhoneNumber.storyboard */,
+				0E305F2D23B5FAD700D289DF /* Settings.storyboard */,
 				F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */,
 				F5FB849E23B4836D00900461 /* HomeModify.storyboard */,
 				0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */,
-				0E305F1D23B5C03E00D289DF /* Settings.storyboard */,
 				0E50475223BB2B7200E8F92C /* CardDetail.storyboard */,
 			);
 			path = Assets;
@@ -348,8 +331,7 @@
 			files = (
 				F5FB849F23B4836D00900461 /* HomeModify.storyboard in Resources */,
 				F5FB84AA23B487F400900461 /* CardCell.xib in Resources */,
-				0E305F2C23B5FA2900D289DF /* ChangePhoneNumber.storyboard in Resources */,
-				0E305F2E23B5FAD700D289DF /* ChangePassword.storyboard in Resources */,
+				0E305F2E23B5FAD700D289DF /* Settings.storyboard in Resources */,
 				F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */,
 				0E50475323BB2B7200E8F92C /* CardDetail.storyboard in Resources */,
 				F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */,
@@ -357,7 +339,6 @@
 				F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */,
 				F56CEA4223BB43A8005D9B4E /* wave.json in Resources */,
 				F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */,
-				0E305F1E23B5C03E00D289DF /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,12 +398,11 @@
 				F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
 				F56CEA4423BB612A005D9B4E /* TTSService.swift in Sources */,
-				0E76FD4F23BB051000C34114 /* ManagementVC.swift in Sources */,
+				0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
 				F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */,
 				F5FB849923B4307A00900461 /* Card.swift in Sources */,
 				0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */,
-				F5D7FE7923B275DA0079AE60 /* CardDummy.swift in Sources */,
 				F56CEA4623BC5154005D9B4E /* ContainerVC.swift in Sources */,
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,
 				F5FB84A923B487F400900461 /* CardCell.swift in Sources */,

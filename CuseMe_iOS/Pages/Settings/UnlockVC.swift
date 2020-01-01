@@ -1,5 +1,5 @@
 //
-//  ManagementVCViewController.swift
+//  UnlockVC.swift
 //  CuseMe_iOS
 //
 //  Created by Yujin Shin on 2019/12/31.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ManagementVC: UIViewController {
+class UnlockVC: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var alertLabel: UILabel!
@@ -34,7 +34,7 @@ class ManagementVC: UIViewController {
             underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
         }
     }
-    /**/
+    
     let pass = "1234"
     
     @objc func edited() {
@@ -59,7 +59,7 @@ class ManagementVC: UIViewController {
         unregisterForKeyboardNotifications()
     }
 }
-extension ManagementVC: UIGestureRecognizerDelegate {
+extension UnlockVC: UIGestureRecognizerDelegate {
     
     func initGestureRecognizer() {
         let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
