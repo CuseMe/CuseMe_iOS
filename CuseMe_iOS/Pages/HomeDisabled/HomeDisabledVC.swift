@@ -39,23 +39,24 @@ class HomeDisabledVC: UIViewController {
         cardCollectionView.delegate = self
         // Do any additional setup after loading the view.
         
-        /* pinch zoom
+        //pinch zoom
         let pinch = UIPinchGestureRecognizer(target: self, action: #selector(HomeDisabledVC.doPinch(_:)))
         self.view.addGestureRecognizer(pinch)
-        */
+        
        //let str = "HI"
         //contentLabel.text = str
         
         
     }
-    /* pinch
+    //pinch
     @objc func doPinch(_ pinch: UIPinchGestureRecognizer){
+        
         cardCollectionView.transform = cardCollectionView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
-        pinch.scale = 1 */
+        pinch.scale = 1 
     }
     
     
-
+}
 
     extension HomeDisabledVC: UICollectionViewDelegate {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -123,3 +124,4 @@ class HomeDisabledVC: UIViewController {
     
 
 }
+
