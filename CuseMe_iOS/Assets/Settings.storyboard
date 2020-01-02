@@ -11,7 +11,7 @@
         <!--Change PasswordVC-->
         <scene sceneID="Vhi-08-xeO">
             <objects>
-                <viewController id="Uyn-rv-YKQ" customClass="ChangePasswordVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Uyn-rv-YKQ" customClass="ChangePasswordVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pi3-5W-WTx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -293,7 +293,7 @@
         <!--Change Phone NumberVC-->
         <scene sceneID="XcA-qr-oHN">
             <objects>
-                <viewController id="c0n-5O-ksq" customClass="ChangePhoneNumberVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="c0n-5O-ksq" customClass="ChangePhoneNumberVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UbH-vB-eF0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -390,7 +390,7 @@
         <!--UnlockVC-->
         <scene sceneID="eyJ-dK-5ca">
             <objects>
-                <viewController id="tqV-0a-cBy" customClass="UnlockVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UnlockVC" id="tqV-0a-cBy" customClass="UnlockVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CRL-iK-R24">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,11 +418,11 @@
                                                     <constraint firstAttribute="height" constant="1.6666666666666643" id="FA9-PS-2ZN"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="보호자 연락처" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3D-JO-PqL">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="비밀번호를 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w3D-JO-PqL">
                                                 <rect key="frame" x="0.0" y="14" width="264" height="19"/>
                                                 <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES" textContentType="password"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 비밀번호가 틀렸습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbV-kf-Iem">
                                                 <rect key="frame" x="0.0" y="53" width="116.33333333333333" height="14.333333333333329"/>
@@ -465,13 +465,16 @@
                                     <constraint firstItem="mbV-kf-Iem" firstAttribute="leading" secondItem="EP7-Ml-eax" secondAttribute="leading" id="ifs-Xv-UPc"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-ex-4yf">
-                                <rect key="frame" x="18" y="54" width="13" height="22"/>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2L-ex-4yf">
+                                <rect key="frame" x="18" y="54" width="28" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="0vM-v6-61L"/>
-                                    <constraint firstAttribute="width" constant="13" id="nsp-KL-m6O"/>
+                                    <constraint firstAttribute="height" constant="28" id="0vM-v6-61L"/>
+                                    <constraint firstAttribute="width" constant="28" id="nsp-KL-m6O"/>
                                 </constraints>
-                                <state key="normal" title="exit" image="btnBack"/>
+                                <state key="normal" image="btnEditClose"/>
+                                <connections>
+                                    <action selector="exitButtonDidTap:" destination="tqV-0a-cBy" eventType="touchUpInside" id="kbT-Id-s0d"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -497,12 +500,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqe-eg-0qc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2082" y="531"/>
+            <point key="canvasLocation" x="2124" y="531"/>
         </scene>
         <!--Card DownloadVC-->
         <scene sceneID="rQZ-4e-STT">
             <objects>
-                <viewController id="aoQ-jy-mgk" customClass="CardDownloadVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aoQ-jy-mgk" customClass="CardDownloadVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Acx-Tz-c9V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -26,6 +26,10 @@
 		F56CEA5023BE001B005D9B4E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4F23BE001B005D9B4E /* UIViewController+Extensions.swift */; };
 		F56CEA7523BE0DCD005D9B4E /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA7423BE0DCD005D9B4E /* Splash.storyboard */; };
 		F56CEA7823BE0DEC005D9B4E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7723BE0DEC005D9B4E /* SplashVC.swift */; };
+		F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7A23BE17B4005D9B4E /* APIManager.swift */; };
+		F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7C23BE189A005D9B4E /* Requestable.swift */; };
+		F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7E23BE18C1005D9B4E /* AuthService.swift */; };
+		F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */; };
 		F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */; };
 		F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */; };
 		F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */; };
@@ -36,6 +40,7 @@
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
 		F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */; };
+		F5E7556D23BE2E08009E32C6 /* homelock.json in Resources */ = {isa = PBXBuildFile; fileRef = F5E7556C23BE2E08009E32C6 /* homelock.json */; };
 		F5FB849923B4307A00900461 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB849823B4307A00900461 /* Card.swift */; };
 		F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */; };
 		F5FB849D23B47CD200900461 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5FB849C23B47CD200900461 /* UIView+Extensions.swift */; };
@@ -68,6 +73,10 @@
 		F56CEA7323BE0C7E005D9B4E /* CuseMe_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CuseMe_iOS.entitlements; sourceTree = "<group>"; };
 		F56CEA7423BE0DCD005D9B4E /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F56CEA7723BE0DEC005D9B4E /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		F56CEA7A23BE17B4005D9B4E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		F56CEA7C23BE189A005D9B4E /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		F56CEA7E23BE18C1005D9B4E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
 		F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDownload.storyboard; sourceTree = "<group>"; };
 		F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDownloadVC.swift; sourceTree = "<group>"; };
 		F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManageVC.swift; sourceTree = "<group>"; };
@@ -80,6 +89,7 @@
 		F5DEF27B23B21DB200C8E3D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5DEF27D23B21DB200C8E3D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F5DEF28C23B222E300C8E3D0 /* HomeHelper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeHelper.storyboard; sourceTree = "<group>"; };
+		F5E7556C23BE2E08009E32C6 /* homelock.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = homelock.json; sourceTree = "<group>"; };
 		F5FB849823B4307A00900461 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
 		F5FB849C23B47CD200900461 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -114,6 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */,
+				F5E7556C23BE2E08009E32C6 /* homelock.json */,
 			);
 			path = HomeDisabled;
 			sourceTree = "<group>";
@@ -252,6 +263,10 @@
 		F5DEF28723B2211500C8E3D0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F56CEA7A23BE17B4005D9B4E /* APIManager.swift */,
+				F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */,
+				F56CEA7E23BE18C1005D9B4E /* AuthService.swift */,
+				F56CEA7C23BE189A005D9B4E /* Requestable.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -366,6 +381,7 @@
 				F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */,
 				0E50475323BB2B7200E8F92C /* CardDetail.storyboard in Resources */,
 				F5DEF28D23B222E300C8E3D0 /* HomeHelper.storyboard in Resources */,
+				F5E7556D23BE2E08009E32C6 /* homelock.json in Resources */,
 				0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */,
 				F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */,
 				F56CEA4223BB43A8005D9B4E /* wave.json in Resources */,
@@ -445,7 +461,11 @@
 				F5FB849D23B47CD200900461 /* UIView+Extensions.swift in Sources */,
 				F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */,
 				F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */,
+				F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */,
 				0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */,
+				F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */,
+				F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */,
+				F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */,
 				F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */,
 				F5FB84A223B483ED00900461 /* HomeModifyVC.swift in Sources */,
 			);

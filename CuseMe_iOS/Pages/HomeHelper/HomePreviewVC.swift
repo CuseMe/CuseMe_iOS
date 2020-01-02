@@ -42,8 +42,6 @@ class HomePreviewVC: UIViewController {
         super.viewDidLoad()
         waveAnimationView.animation = Animation.named("wave")
         
-        
-        
         setUI()
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self

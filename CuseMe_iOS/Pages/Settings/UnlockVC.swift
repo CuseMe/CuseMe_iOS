@@ -39,12 +39,23 @@ class UnlockVC: UIViewController {
     
     @IBAction func unlockButtonTouchDown(_ sender: Any) {
         if(passwordTextField.text != pass) {
-            alertLabel.isHidden = false
+            alertLabel.isHidden = false // 비밀번호 실패
         } else {
-            alertLabel.isHidden = true
+            // 비밀번호 성공
+            
+            weak var pvc = self.presentingViewController
+            self.dismiss(animated: true) {
+                let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "HomeHelperTC") as! HomeHelperTabBarController
+                dvc.modalPresentationStyle = .fullScreen
+                pvc?.present(dvc, animated: true)
+            }
         }
     }
 
+    @IBAction func exitButtonDidTap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
     }
