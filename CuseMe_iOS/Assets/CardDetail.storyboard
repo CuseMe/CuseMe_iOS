@@ -11,7 +11,7 @@
         <!--Card DetailVC-->
         <scene sceneID="vqU-L4-UsT">
             <objects>
-                <viewController id="ozP-n8-6sA" customClass="CardDetailVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ozP-n8-6sA" customClass="CardDetailVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FyI-nS-lwT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,7 +188,7 @@
         <!--Card DetailVC-->
         <scene sceneID="gbY-uT-JnH">
             <objects>
-                <viewController id="WdM-xW-fMG" customClass="CardDetailVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WdM-xW-fMG" customClass="CardDetailVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GPg-hx-O4i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +409,7 @@
         <!--Card EditVC-->
         <scene sceneID="HBH-eT-SDE">
             <objects>
-                <viewController id="erW-8F-6I1" customClass="CardEditVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardEditVC" id="erW-8F-6I1" customClass="CardEditVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ckx-Gn-bZg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

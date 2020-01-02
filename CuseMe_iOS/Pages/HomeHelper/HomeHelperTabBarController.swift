@@ -181,11 +181,9 @@ class HomeHelperTabBarController: UITabBarController {
             
             present(alert, animated: true)
         } else if sender.tag == 1 {
-            let alert = UIAlertController(title: "불러오기", message: "", preferredStyle: .alert)
-            let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(action)
-            
-            present(alert, animated: true)
+            let dvc = UIStoryboard(name: "CardDownload", bundle: nil).instantiateViewController(withIdentifier: "CardDownloadVC") as! CardDownloadVC
+            dvc.modalPresentationStyle = .fullScreen
+            present(dvc, animated: true)
         }
     }
 }

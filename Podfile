@@ -9,5 +9,5 @@ target 'CuseMe_iOS' do
   pod 'Kingfisher'
   pod 'Alamofire'
   pod 'lottie-ios'
-
+  pod 'SwiftKeychainWrapper'
 end

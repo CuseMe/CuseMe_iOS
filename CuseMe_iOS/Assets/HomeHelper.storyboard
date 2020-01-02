@@ -11,7 +11,7 @@
         <!--홈 미리보기-->
         <scene sceneID="lMO-Rg-b3r">
             <objects>
-                <viewController id="O4j-Zg-WUF" customClass="HomePreviewVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="O4j-Zg-WUF" customClass="HomePreviewVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EcB-0u-HnO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -161,7 +161,7 @@
         <!--Edit CardVC-->
         <scene sceneID="U18-ab-o9c">
             <objects>
-                <viewController id="NpI-aR-0TR" customClass="EditCardVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NpI-aR-0TR" customClass="EditCardVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WR6-5B-hsW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -245,7 +245,7 @@
         <!--Home Helper Tab Bar Controller-->
         <scene sceneID="WeX-tB-2JQ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="RS8-yn-wH2" customClass="HomeHelperTabBarController" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="HomeHelperTC" automaticallyAdjustsScrollViewInsets="NO" id="RS8-yn-wH2" customClass="HomeHelperTabBarController" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rV1-a3-GJA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -267,7 +267,7 @@
         <!--Card ManageVC-->
         <scene sceneID="SUW-gZ-EKl">
             <objects>
-                <viewController id="jQX-Tp-Xuk" customClass="CardManageVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jQX-Tp-Xuk" customClass="CardManageVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z0R-bz-WPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,6 +304,9 @@
                                         <state key="normal" title="완료">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="doneButtonDidTap:" destination="jQX-Tp-Xuk" eventType="touchUpInside" id="dwJ-6J-1aG"/>
+                                        </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="mOv-yU-Sn1">
                                         <rect key="frame" x="16" y="49" width="343" height="44"/>

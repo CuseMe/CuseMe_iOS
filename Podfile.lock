@@ -4,23 +4,27 @@ PODS:
     - Kingfisher/Core (= 5.8.3)
   - Kingfisher/Core (5.8.3)
   - lottie-ios (3.1.5)
+  - SwiftKeychainWrapper (3.4.0)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
   - lottie-ios
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
     - lottie-ios
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   Kingfisher: b7e4cb65ff24c264bd2a1284b75b974d907afd94
   lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
 
-PODFILE CHECKSUM: 2e076b3865ad70c89d59e4256b556927b9eecc52
+PODFILE CHECKSUM: 585ec14bb1de5b6f78b217bb1330f7c02c43ae6d
 
 COCOAPODS: 1.8.4

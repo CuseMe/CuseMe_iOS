@@ -14,24 +14,36 @@ class UnlockVC: UIViewController {
     @IBOutlet weak var alertLabel: UILabel!
     @IBOutlet weak var unlockButton: UIButton!
     @IBOutlet weak var underLine: UIView!
-    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
+    @IBOutlet weak var inputViewCenterYConstraint: NSLayoutConstraint!
     
-    let pass = "1234"  // check용 임시 비밀번호
+    let pass = "0000"  // check용 임시 비밀번호
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initGestureRecognizer()
-        passwordTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
-        underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
-        unlockButton.setCornerRadius(cornerRadius: nil)
-        unlockButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
-        alertLabel.isHidden = true
-        }
+        
+        setUI()
+    }
     
-    @objc func test() {
+    override func viewWillAppear(_ animated: Bool) {
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterForKeyboardNotifications()
+    }
+    
+    private func setUI() {
+        initGestureRecognizer()
+        
+        unlockButton.setCornerRadius(cornerRadius: nil)
+            unlockButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 3)
+        
+        passwordTextField.addTarget(self, action: #selector(checkPasswordLength), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func checkPasswordLength() {
         if(passwordTextField.text?.count != 0) {
-            underLine.backgroundColor = UIColor(red: 251/255, green: 109/255, blue: 106/255, alpha: 1)
+            underLine.backgroundColor = UIColor.mainpink
         } else {
             underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
         }
@@ -39,18 +51,20 @@ class UnlockVC: UIViewController {
     
     @IBAction func unlockButtonTouchDown(_ sender: Any) {
         if(passwordTextField.text != pass) {
-            alertLabel.isHidden = false
+            alertLabel.isHidden = false // 비밀번호 실패
         } else {
-            alertLabel.isHidden = true
+            // TODO: 잠금해제 API
+            weak var pvc = self.presentingViewController
+            self.dismiss(animated: true) {
+                let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "HomeHelperTC") as! HomeHelperTabBarController
+                dvc.modalPresentationStyle = .fullScreen
+                pvc?.present(dvc, animated: true)
+            }
         }
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        registerForKeyboardNotifications()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        unregisterForKeyboardNotifications()
+    @IBAction func exitButtonDidTap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -78,9 +92,10 @@ extension UnlockVC: UIGestureRecognizerDelegate {
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            if UIScreen.main.bounds.height < 667 {//원상복귀
-                self.centerYConstraint.constant = -70
-                self.titleConstraint.constant = 40
+            if UIScreen.main.bounds.height < 667 {
+                
+                // TODO: 작은 디바이스 대응
+                self.inputViewCenterYConstraint.constant = -70
             }
         })
         
@@ -93,8 +108,9 @@ extension UnlockVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -27  //다시 돌아오기
-                self.titleConstraint.constant = 70
+                
+                // TODO: 작은 디바이스 대응
+                self.inputViewCenterYConstraint.constant = -70
             }
         })
         

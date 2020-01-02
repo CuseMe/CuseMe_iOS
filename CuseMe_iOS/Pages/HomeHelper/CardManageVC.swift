@@ -159,7 +159,13 @@ class CardManageVC: UIViewController {
     }
     
     @IBAction func settingButtonDidTap(_ sender: Any) {
-        // TODO: present(settingVC)
+        let dvc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "SettingsTableVC") as! UITableViewController
+        dvc.modalPresentationStyle = .fullScreen
+        self.present(dvc, animated: true)
+    }
+    
+    @IBAction func doneButtonDidTap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
@@ -242,6 +248,10 @@ extension CardManageVC: UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBar.resignFirstResponder()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         self.searchBar.resignFirstResponder()
     }
     

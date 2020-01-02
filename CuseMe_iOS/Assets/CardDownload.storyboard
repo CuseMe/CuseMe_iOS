@@ -11,68 +11,69 @@
         <!--Card DownloadVC-->
         <scene sceneID="Jqf-MW-3zb">
             <objects>
-                <viewController id="5DZ-H2-I5a" customClass="CardDownloadVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardDownloadVC" id="5DZ-H2-I5a" customClass="CardDownloadVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yXE-gM-jrX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카드 내려받기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-mS-Xfm">
-                                <rect key="frame" x="132.66666666666666" y="204" width="110" height="24"/>
+                                <rect key="frame" x="132.66666666666666" y="205.66666666666666" width="110" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="Sds-SH-GHi"/>
-                                    <constraint firstAttribute="height" constant="24" id="wWE-OL-QZo"/>
+                                    <constraint firstAttribute="height" constant="24" id="lvm-9m-HdR"/>
+                                    <constraint firstAttribute="width" constant="110" id="t8j-mm-YFG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="78" translatesAutoresizingMaskIntoConstraints="NO" id="eeC-cD-2H3">
-                                <rect key="frame" x="16" y="298" width="343" height="170"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szV-aA-7NT">
+                                <rect key="frame" x="48" y="304.66666666666669" width="279" height="39"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szV-aA-7NT">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-wL-SMq">
-                                                <rect key="frame" x="0.0" y="43.666666666666664" width="279" height="1.6666666666666665"/>
-                                                <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1.6666666666666643" id="aoz-R3-GhL"/>
-                                                </constraints>
-                                            </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카드 일련번호를 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7W-8t-dvJ">
-                                                <rect key="frame" x="15" y="14" width="313" height="19"/>
-                                                <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHu-wL-SMq">
+                                        <rect key="frame" x="0.0" y="38" width="279" height="1"/>
+                                        <color key="backgroundColor" red="0.74509803919999995" green="0.74509803919999995" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="L7W-8t-dvJ" firstAttribute="leading" secondItem="szV-aA-7NT" secondAttribute="leading" constant="15" id="CSK-ji-Exb"/>
-                                            <constraint firstAttribute="trailing" secondItem="L7W-8t-dvJ" secondAttribute="trailing" constant="15" id="d7l-Wi-SvV"/>
-                                            <constraint firstItem="L7W-8t-dvJ" firstAttribute="top" secondItem="szV-aA-7NT" secondAttribute="top" constant="14" id="igU-72-cJt"/>
-                                            <constraint firstAttribute="bottom" secondItem="L7W-8t-dvJ" secondAttribute="bottom" constant="11" id="rYG-8X-yls"/>
-                                            <constraint firstAttribute="height" constant="44" id="uwI-PK-Bf0"/>
+                                            <constraint firstAttribute="height" constant="1" id="Ita-Mf-ovt"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-DX-kwg">
-                                        <rect key="frame" x="0.0" y="122" width="343" height="48"/>
-                                        <color key="backgroundColor" red="0.98431372549019602" green="0.42745098039215684" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="48" id="QLu-4R-iZT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <state key="normal" title="내려받기">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카드 일련번호를 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7W-8t-dvJ">
+                                        <rect key="frame" x="15" y="10" width="249" height="19"/>
+                                        <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="alphabet"/>
+                                    </textField>
                                 </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcG-Xm-v2k">
-                                <rect key="frame" x="17" y="49" width="30" height="30"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Hee-b6-MNb"/>
-                                    <constraint firstAttribute="height" constant="30" id="Iaq-z0-p2G"/>
+                                    <constraint firstAttribute="trailing" secondItem="L7W-8t-dvJ" secondAttribute="trailing" constant="15" id="DTt-yi-gRm"/>
+                                    <constraint firstAttribute="height" constant="39" id="GyG-y9-3VS"/>
+                                    <constraint firstAttribute="trailing" secondItem="kHu-wL-SMq" secondAttribute="trailing" id="M7w-RY-hs8"/>
+                                    <constraint firstItem="L7W-8t-dvJ" firstAttribute="leading" secondItem="szV-aA-7NT" secondAttribute="leading" constant="15" id="V2H-h5-amv"/>
+                                    <constraint firstItem="L7W-8t-dvJ" firstAttribute="top" secondItem="szV-aA-7NT" secondAttribute="top" constant="10" id="WrM-IZ-hUt"/>
+                                    <constraint firstAttribute="bottom" secondItem="L7W-8t-dvJ" secondAttribute="bottom" constant="10" id="mIZ-Ms-Q0y"/>
+                                    <constraint firstItem="kHu-wL-SMq" firstAttribute="leading" secondItem="szV-aA-7NT" secondAttribute="leading" id="r74-Pv-Z0B"/>
+                                    <constraint firstAttribute="bottom" secondItem="kHu-wL-SMq" secondAttribute="bottom" id="wnV-mH-5v1"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4pv-DX-kwg">
+                                <rect key="frame" x="42" y="421.66666666666669" width="291" height="48"/>
+                                <color key="backgroundColor" red="0.98431372549019602" green="0.42745098039215684" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="XiP-H7-wuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="내려받기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="downloadButtonDidTap:" destination="5DZ-H2-I5a" eventType="touchUpInside" id="uWr-gs-hhj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jcG-Xm-v2k">
+                                <rect key="frame" x="18" y="50" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="J9C-p3-uwW"/>
+                                    <constraint firstAttribute="width" constant="28" id="XWh-pQ-Pcy"/>
                                 </constraints>
                                 <state key="normal" title="exit" image="btnEditClose"/>
                                 <connections>
@@ -80,10 +81,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWR-M5-HIW">
-                                <rect key="frame" x="148" y="488" width="79" height="29"/>
+                                <rect key="frame" x="148" y="489.66666666666669" width="79" height="29.000000000000057"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="899-jX-hpf"/>
-                                    <constraint firstAttribute="width" constant="79" id="dqc-UQ-4I1"/>
+                                    <constraint firstAttribute="width" constant="79" id="7Ov-St-8Vd"/>
+                                    <constraint firstAttribute="height" constant="29" id="Qwq-HK-zGs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <state key="normal" title="직접 만들기">
@@ -96,22 +97,25 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="CTl-mS-Xfm" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="02g-2f-MNX"/>
-                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="17" id="37F-Vy-VNE"/>
-                            <constraint firstItem="IWR-M5-HIW" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="Axt-4C-pPf"/>
-                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="top" secondItem="s3N-oD-WBP" secondAttribute="top" constant="5" id="Djg-Ss-83V"/>
-                            <constraint firstItem="s3N-oD-WBP" firstAttribute="trailing" secondItem="eeC-cD-2H3" secondAttribute="trailing" constant="16" id="Hvh-38-azn"/>
-                            <constraint firstItem="eeC-cD-2H3" firstAttribute="top" secondItem="CTl-mS-Xfm" secondAttribute="bottom" constant="70" id="uzk-5F-bnE"/>
-                            <constraint firstItem="IWR-M5-HIW" firstAttribute="top" secondItem="eeC-cD-2H3" secondAttribute="bottom" constant="20" id="w4g-yI-aiT"/>
-                            <constraint firstItem="eeC-cD-2H3" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="16" id="xdZ-D2-fy8"/>
-                            <constraint firstItem="eeC-cD-2H3" firstAttribute="centerY" secondItem="s3N-oD-WBP" secondAttribute="centerY" constant="-28" id="yBT-sS-aBh"/>
+                            <constraint firstItem="IWR-M5-HIW" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="77h-8V-ctS"/>
+                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="top" secondItem="s3N-oD-WBP" secondAttribute="top" constant="6" id="8rv-Wz-3gR"/>
+                            <constraint firstItem="jcG-Xm-v2k" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="18" id="A0f-eo-iFg"/>
+                            <constraint firstItem="CTl-mS-Xfm" firstAttribute="centerX" secondItem="s3N-oD-WBP" secondAttribute="centerX" id="IwF-wZ-P7v"/>
+                            <constraint firstItem="IWR-M5-HIW" firstAttribute="top" secondItem="4pv-DX-kwg" secondAttribute="bottom" constant="20" id="JoG-Sm-BuS"/>
+                            <constraint firstItem="4pv-DX-kwg" firstAttribute="top" secondItem="szV-aA-7NT" secondAttribute="bottom" constant="78" id="QKX-Sb-g4N"/>
+                            <constraint firstItem="szV-aA-7NT" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="48" id="XGj-Lo-uJG"/>
+                            <constraint firstItem="s3N-oD-WBP" firstAttribute="trailing" secondItem="szV-aA-7NT" secondAttribute="trailing" constant="48" id="aNe-If-yd5"/>
+                            <constraint firstItem="szV-aA-7NT" firstAttribute="top" secondItem="CTl-mS-Xfm" secondAttribute="bottom" constant="74.999999999999943" id="bHA-QK-69d"/>
+                            <constraint firstItem="s3N-oD-WBP" firstAttribute="trailing" secondItem="4pv-DX-kwg" secondAttribute="trailing" constant="42" id="eg0-MI-q8f"/>
+                            <constraint firstItem="szV-aA-7NT" firstAttribute="centerY" secondItem="s3N-oD-WBP" secondAttribute="centerY" constant="-87" id="hYK-jZ-hmx"/>
+                            <constraint firstItem="4pv-DX-kwg" firstAttribute="leading" secondItem="s3N-oD-WBP" secondAttribute="leading" constant="42" id="wcw-5N-fpF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s3N-oD-WBP"/>
                     </view>
                     <connections>
-                        <outlet property="centerYConstraint" destination="yXE-gM-jrX" id="OKa-sD-hka"/>
                         <outlet property="downloadButton" destination="4pv-DX-kwg" id="K2b-Vy-Zpd"/>
                         <outlet property="inputTextField" destination="L7W-8t-dvJ" id="AxW-gz-9fO"/>
+                        <outlet property="inputViewCenterYConstraint" destination="hYK-jZ-hmx" id="iwe-FP-mGJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnC-VE-XPe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
