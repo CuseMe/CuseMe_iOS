@@ -15,6 +15,21 @@
 		0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */; };
 		0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */; };
 		0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76FD4E23BB051000C34114 /* UnlockVC.swift */; };
+		0E9575C923BE6E0B00D531F8 /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */; };
+		0E9575CB23BE6E2700D531F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */; };
+		0E9575CD23BE6E4B00D531F8 /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */; };
+		0E9575CF23BE6FC000D531F8 /* AuthSigninService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575CE23BE6FC000D531F8 /* AuthSigninService.swift */; };
+		0E9575D123BE71B200D531F8 /* AuthChangePasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575D023BE71B200D531F8 /* AuthChangePasswordService.swift */; };
+		0E9575D323BE71ED00D531F8 /* AuthChangePhoneNumService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575D223BE71EC00D531F8 /* AuthChangePhoneNumService.swift */; };
+		0E9575D523BE725E00D531F8 /* ShowAllCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575D423BE725E00D531F8 /* ShowAllCardService.swift */; };
+		0E9575D723BE72B900D531F8 /* ShowCardDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575D623BE72B900D531F8 /* ShowCardDetailService.swift */; };
+		0E9575D923BE734600D531F8 /* ShowDisabledCardAllService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575D823BE734600D531F8 /* ShowDisabledCardAllService.swift */; };
+		0E9575DB23BE737D00D531F8 /* AddCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575DA23BE737D00D531F8 /* AddCardService.swift */; };
+		0E9575DD23BE741F00D531F8 /* EditCardDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575DC23BE741F00D531F8 /* EditCardDetailService.swift */; };
+		0E9575DF23BE74AF00D531F8 /* ChangeCardIndexService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575DE23BE74AF00D531F8 /* ChangeCardIndexService.swift */; };
+		0E9575E123BE752000D531F8 /* DeleteCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575E023BE752000D531F8 /* DeleteCardService.swift */; };
+		0E9575E323BE756800D531F8 /* CardDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575E223BE756800D531F8 /* CardDownloadService.swift */; };
+		0E9575E523BE75DE00D531F8 /* CardAddCountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575E423BE75DE00D531F8 /* CardAddCountService.swift */; };
 		0EBAE0AE23BDC095009F956B /* CardEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAE0AD23BDC095009F956B /* CardEditVC.swift */; };
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
 		F56CEA4223BB43A8005D9B4E /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA4123BB43A8005D9B4E /* wave.json */; };
@@ -59,6 +74,21 @@
 		0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisabledVC.swift; sourceTree = "<group>"; };
 		0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberVC.swift; sourceTree = "<group>"; };
 		0E76FD4E23BB051000C34114 /* UnlockVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockVC.swift; sourceTree = "<group>"; };
+		0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
+		0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
+		0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
+		0E9575CE23BE6FC000D531F8 /* AuthSigninService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSigninService.swift; sourceTree = "<group>"; };
+		0E9575D023BE71B200D531F8 /* AuthChangePasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChangePasswordService.swift; sourceTree = "<group>"; };
+		0E9575D223BE71EC00D531F8 /* AuthChangePhoneNumService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthChangePhoneNumService.swift; sourceTree = "<group>"; };
+		0E9575D423BE725E00D531F8 /* ShowAllCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowAllCardService.swift; sourceTree = "<group>"; };
+		0E9575D623BE72B900D531F8 /* ShowCardDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCardDetailService.swift; sourceTree = "<group>"; };
+		0E9575D823BE734600D531F8 /* ShowDisabledCardAllService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDisabledCardAllService.swift; sourceTree = "<group>"; };
+		0E9575DA23BE737D00D531F8 /* AddCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardService.swift; sourceTree = "<group>"; };
+		0E9575DC23BE741F00D531F8 /* EditCardDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardDetailService.swift; sourceTree = "<group>"; };
+		0E9575DE23BE74AF00D531F8 /* ChangeCardIndexService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCardIndexService.swift; sourceTree = "<group>"; };
+		0E9575E023BE752000D531F8 /* DeleteCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteCardService.swift; sourceTree = "<group>"; };
+		0E9575E223BE756800D531F8 /* CardDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDownloadService.swift; sourceTree = "<group>"; };
+		0E9575E423BE75DE00D531F8 /* CardAddCountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardAddCountService.swift; sourceTree = "<group>"; };
 		0EBAE0AD23BDC095009F956B /* CardEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditVC.swift; sourceTree = "<group>"; };
 		A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuseMe_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -256,6 +286,9 @@
 			isa = PBXGroup;
 			children = (
 				F5FB849823B4307A00900461 /* Card.swift */,
+				0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */,
+				0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */,
+				0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,6 +300,18 @@
 				F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */,
 				F56CEA7E23BE18C1005D9B4E /* AuthService.swift */,
 				F56CEA7C23BE189A005D9B4E /* Requestable.swift */,
+				0E9575CE23BE6FC000D531F8 /* AuthSigninService.swift */,
+				0E9575D023BE71B200D531F8 /* AuthChangePasswordService.swift */,
+				0E9575D223BE71EC00D531F8 /* AuthChangePhoneNumService.swift */,
+				0E9575D423BE725E00D531F8 /* ShowAllCardService.swift */,
+				0E9575D623BE72B900D531F8 /* ShowCardDetailService.swift */,
+				0E9575D823BE734600D531F8 /* ShowDisabledCardAllService.swift */,
+				0E9575DA23BE737D00D531F8 /* AddCardService.swift */,
+				0E9575DC23BE741F00D531F8 /* EditCardDetailService.swift */,
+				0E9575DE23BE74AF00D531F8 /* ChangeCardIndexService.swift */,
+				0E9575E023BE752000D531F8 /* DeleteCardService.swift */,
+				0E9575E223BE756800D531F8 /* CardDownloadService.swift */,
+				0E9575E423BE75DE00D531F8 /* CardAddCountService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -441,13 +486,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */,
+				0E9575DB23BE737D00D531F8 /* AddCardService.swift in Sources */,
+				0E9575CB23BE6E2700D531F8 /* ResponseObject.swift in Sources */,
 				0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */,
 				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
+				0E9575DD23BE741F00D531F8 /* EditCardDetailService.swift in Sources */,
 				F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */,
 				F56CEA7823BE0DEC005D9B4E /* SplashVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
 				F56CEA5023BE001B005D9B4E /* UIViewController+Extensions.swift in Sources */,
+				0E9575CD23BE6E4B00D531F8 /* ResponseDefault.swift in Sources */,
+				0E9575E123BE752000D531F8 /* DeleteCardService.swift in Sources */,
 				F56CEA4423BB612A005D9B4E /* TTSService.swift in Sources */,
 				0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
@@ -455,18 +505,28 @@
 				F5FB849923B4307A00900461 /* Card.swift in Sources */,
 				0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */,
 				0EBAE0AE23BDC095009F956B /* CardEditVC.swift in Sources */,
+				0E9575C923BE6E0B00D531F8 /* ResponseArray.swift in Sources */,
 				F56CEA4623BC5154005D9B4E /* ContainerVC.swift in Sources */,
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,
 				F5FB84A923B487F400900461 /* CardCell.swift in Sources */,
 				F5FB849D23B47CD200900461 /* UIView+Extensions.swift in Sources */,
+				0E9575DF23BE74AF00D531F8 /* ChangeCardIndexService.swift in Sources */,
 				F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */,
+				0E9575D323BE71ED00D531F8 /* AuthChangePhoneNumService.swift in Sources */,
 				F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */,
 				F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */,
 				0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */,
+				0E9575E323BE756800D531F8 /* CardDownloadService.swift in Sources */,
+				0E9575D123BE71B200D531F8 /* AuthChangePasswordService.swift in Sources */,
 				F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */,
 				F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */,
 				F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */,
+				0E9575D523BE725E00D531F8 /* ShowAllCardService.swift in Sources */,
+				0E9575D923BE734600D531F8 /* ShowDisabledCardAllService.swift in Sources */,
+				0E9575CF23BE6FC000D531F8 /* AuthSigninService.swift in Sources */,
+				0E9575D723BE72B900D531F8 /* ShowCardDetailService.swift in Sources */,
 				F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */,
+				0E9575E523BE75DE00D531F8 /* CardAddCountService.swift in Sources */,
 				F5FB84A223B483ED00900461 /* HomeModifyVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
