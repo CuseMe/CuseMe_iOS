@@ -91,17 +91,37 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-kk-dnL">
+                                <rect key="frame" x="68" y="337" width="239.00000000000006" height="239.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="yRx-kk-dnL" secondAttribute="height" multiplier="1:1" id="DDR-wh-KYz"/>
+                                </constraints>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlD-st-7by">
+                                <rect key="frame" x="72" y="593" width="231" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="baZ-GB-zPa"/>
+                                    <constraint firstAttribute="width" constant="231" id="muB-4w-p43"/>
+                                </constraints>
+                                <string key="text">관리자 모드로 들어가려면
+왼쪽 상단의 자물쇠 버튼을 누르세요.</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <color key="textColor" red="0.69803921568627447" green="0.69803921568627447" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="ekP-G0-Wyu" secondAttribute="bottom" id="1yM-ea-ga3"/>
                             <constraint firstItem="BOn-7t-FqF" firstAttribute="height" secondItem="87X-KT-uos" secondAttribute="height" multiplier="0.75641" id="3Pt-oD-86k"/>
                             <constraint firstItem="ekP-G0-Wyu" firstAttribute="top" secondItem="BOn-7t-FqF" secondAttribute="bottom" id="3fE-XT-jCh"/>
+                            <constraint firstItem="UlD-st-7by" firstAttribute="top" secondItem="yRx-kk-dnL" secondAttribute="bottom" constant="17" id="7lO-lz-0aX"/>
                             <constraint firstItem="vRj-No-awd" firstAttribute="centerY" secondItem="Gst-v1-tDo" secondAttribute="centerY" id="8Xt-72-Kud"/>
                             <constraint firstItem="cA4-Jq-mks" firstAttribute="top" secondItem="bO3-IJ-oYc" secondAttribute="top" constant="8" id="CAW-yN-HKM"/>
                             <constraint firstItem="PDa-b0-ID9" firstAttribute="top" secondItem="bO3-IJ-oYc" secondAttribute="top" constant="8" id="Fsu-xu-2sZ"/>
                             <constraint firstItem="Gst-v1-tDo" firstAttribute="top" secondItem="bO3-IJ-oYc" secondAttribute="top" constant="46" id="I5G-8T-80y"/>
                             <constraint firstItem="vRj-No-awd" firstAttribute="leading" secondItem="Gst-v1-tDo" secondAttribute="trailing" constant="13" id="IH7-w7-dF7"/>
+                            <constraint firstItem="ekP-G0-Wyu" firstAttribute="top" secondItem="yRx-kk-dnL" secondAttribute="bottom" constant="-338" id="Jf7-RR-fce"/>
                             <constraint firstItem="bO3-IJ-oYc" firstAttribute="trailing" secondItem="BOn-7t-FqF" secondAttribute="trailing" constant="23" id="S9X-sm-g7u"/>
                             <constraint firstItem="Gst-v1-tDo" firstAttribute="leading" secondItem="XRf-Om-LFl" secondAttribute="trailing" constant="13" id="SHj-vA-Pet"/>
                             <constraint firstItem="bO3-IJ-oYc" firstAttribute="trailing" secondItem="ekP-G0-Wyu" secondAttribute="trailing" id="VvQ-aU-eu4"/>
@@ -111,11 +131,14 @@
                             <constraint firstItem="XRf-Om-LFl" firstAttribute="leading" secondItem="bO3-IJ-oYc" secondAttribute="leading" constant="24" id="aMa-h3-j58"/>
                             <constraint firstItem="bO3-IJ-oYc" firstAttribute="top" secondItem="k6G-mQ-7gd" secondAttribute="top" constant="26" id="azr-mA-7qM"/>
                             <constraint firstItem="ekP-G0-Wyu" firstAttribute="top" secondItem="Gst-v1-tDo" secondAttribute="bottom" constant="40" id="cH6-yB-baO"/>
+                            <constraint firstItem="yRx-kk-dnL" firstAttribute="leading" secondItem="bO3-IJ-oYc" secondAttribute="leading" constant="68" id="ehN-np-sK3"/>
                             <constraint firstItem="bO3-IJ-oYc" firstAttribute="trailing" secondItem="87X-KT-uos" secondAttribute="trailing" id="eyo-7H-MW4"/>
                             <constraint firstItem="87X-KT-uos" firstAttribute="leading" secondItem="bO3-IJ-oYc" secondAttribute="leading" id="hNl-mo-Bwk"/>
                             <constraint firstItem="bO3-IJ-oYc" firstAttribute="trailing" secondItem="vRj-No-awd" secondAttribute="trailing" constant="24" id="mNm-MD-nMU"/>
                             <constraint firstItem="ekP-G0-Wyu" firstAttribute="top" secondItem="87X-KT-uos" secondAttribute="bottom" constant="-25" id="pDc-mM-lAl"/>
                             <constraint firstItem="cA4-Jq-mks" firstAttribute="leading" secondItem="bO3-IJ-oYc" secondAttribute="leading" constant="19" id="sGk-5a-qjs"/>
+                            <constraint firstItem="UlD-st-7by" firstAttribute="centerX" secondItem="bO3-IJ-oYc" secondAttribute="centerX" id="uwh-ei-P5w"/>
+                            <constraint firstItem="bO3-IJ-oYc" firstAttribute="trailing" secondItem="yRx-kk-dnL" secondAttribute="trailing" constant="68" id="z6m-WF-3Bl"/>
                             <constraint firstItem="BOn-7t-FqF" firstAttribute="width" secondItem="87X-KT-uos" secondAttribute="width" multiplier="0.178667" id="zWH-qo-Uli"/>
                             <constraint firstItem="ekP-G0-Wyu" firstAttribute="leading" secondItem="bO3-IJ-oYc" secondAttribute="leading" id="zru-Tv-uMv"/>
                         </constraints>
@@ -125,6 +148,9 @@
                     <connections>
                         <outlet property="cardCollectionView" destination="ekP-G0-Wyu" id="XTb-hL-3NT"/>
                         <outlet property="contentsTextView" destination="Gst-v1-tDo" id="RZk-xa-Knn"/>
+                        <outlet property="emptyImageView" destination="yRx-kk-dnL" id="djz-Kv-8q4"/>
+                        <outlet property="emptyImageViewTopConstraint" destination="Jf7-RR-fce" id="o8g-F1-XeS"/>
+                        <outlet property="emptyLabel" destination="UlD-st-7by" id="m2o-z9-QwK"/>
                         <outlet property="homelockAnimationView" destination="k6G-mQ-7gd" id="jHb-hS-4ay"/>
                         <outlet property="leftQuoteImageView" destination="XRf-Om-LFl" id="Vjk-bE-3Hh"/>
                         <outlet property="lockButton" destination="cA4-Jq-mks" id="Itx-8y-5pO"/>
@@ -175,6 +201,7 @@
         <image name="btnHomeLock" width="33" height="33"/>
         <image name="btnHomeReload" width="33" height="33"/>
         <image name="imgHomeCumi" width="67" height="59"/>
+        <image name="imgHomeEmpty" width="239" height="239"/>
         <image name="imgHomeQuoteLeft" width="20" height="20"/>
         <image name="imgHomeQuoteRight" width="20" height="20"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>

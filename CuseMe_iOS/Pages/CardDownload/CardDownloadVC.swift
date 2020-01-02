@@ -13,8 +13,7 @@ class CardDownloadVC: UIViewController {
     // MARK: IBOulet
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var downloadButton: UIButton!
-    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
+    @IBOutlet weak var inputViewCenterYConstraint: NSLayoutConstraint!
     
     // MARK: Control Variable
     
@@ -22,10 +21,8 @@ class CardDownloadVC: UIViewController {
     // MARK: ViewController Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initGestureRecognizer()
-        downloadButton.setCornerRadius(cornerRadius: nil)
-        downloadButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
+        
+        setUI()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -36,15 +33,28 @@ class CardDownloadVC: UIViewController {
         unregisterForKeyboardNotifications()
     }
     
+    private func setUI() {
+        initGestureRecognizer()
+        downloadButton.setCornerRadius(cornerRadius: nil)
+        downloadButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 3)
+    }
+    
     // MARK: IBAction
+    @IBAction func downloadButtonDidTap(_ sender: Any) {
+        // TODO: 다운로드 통신 API
+    }
+    
     @IBAction func selfButtonDidTap(_ sender: Any) {
-        // TODO: 화면 이동 -> 카드 생성
+        weak var pvc = self.presentingViewController
+        self.dismiss(animated: true) {
+            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardEditVC") as! CardEditVC
+            dvc.modalPresentationStyle = .fullScreen
+            pvc?.present(dvc, animated: true)
+        }
     }
     @IBAction func exitButtonDidTap(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-    func test(id: String, _ pw: String) {}
 }
 
 extension CardDownloadVC: UIGestureRecognizerDelegate {
@@ -72,8 +82,8 @@ extension CardDownloadVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -70
-                self.titleConstraint.constant = 40
+                // TODO: 작은 디바이스 대응
+                self.inputViewCenterYConstraint.constant = -70
             }
         })
         
@@ -86,8 +96,8 @@ extension CardDownloadVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -27
-                self.titleConstraint.constant = 70
+                // TODO: 작은 디바이스 대응
+                self.inputViewCenterYConstraint.constant = -27
             }
         })
         

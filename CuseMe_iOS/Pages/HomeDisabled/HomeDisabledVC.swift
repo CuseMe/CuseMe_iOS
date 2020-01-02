@@ -35,6 +35,9 @@ class HomeDisabledVC: UIViewController {
     @IBOutlet weak var leftQuoteImageView: UIImageView!
     @IBOutlet weak var rightQuoteImageView: UIImageView!
     @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet weak var emptyImageView: UIImageView!
+    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet weak var emptyImageViewTopConstraint: NSLayoutConstraint!
     
     private let tts = TTSService()
     private let synthesizer = AVSpeechSynthesizer()
@@ -44,6 +47,7 @@ class HomeDisabledVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: homelockAnimation Did Tap
         homelockAnimationView.animation = Animation.named("homelock")
         waveAnimationView.animation = Animation.named("wave")
 
@@ -69,12 +73,14 @@ class HomeDisabledVC: UIViewController {
         if cards.count > 0 {
             reloadButton.isHidden = false
             lockButton.isHidden = false
-            homelockAnimationView.stop()
+            emptyImageView.isHidden = true
+            emptyLabel.isHidden = true
             homelockAnimationView.isHidden = true
         } else {
             reloadButton.isHidden = true
             lockButton.isHidden = true
-            homelockAnimationView.play()
+            emptyImageView.isHidden = false
+            emptyLabel.isHidden = false
             homelockAnimationView.isHidden = false
         }
         playAnimationView()
