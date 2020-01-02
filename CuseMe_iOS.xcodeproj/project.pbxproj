@@ -231,6 +231,7 @@
 		F5DEF28423B220C900C8E3D0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				0E50475423BB305200E8F92C /* CardDetail */,
 				F56CEA7623BE0DDB005D9B4E /* Splash */,
 				0E6D5C5423B6F9B1001C16F1 /* Settings */,
 				0E584E0D23B4A02300DEF5C3 /* HomeDisabled */,
@@ -245,7 +246,6 @@
 		F5DEF28523B220CE00C8E3D0 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
-				0E50475423BB305200E8F92C /* CardDetail */,
 				F5DEF28623B220D500C8E3D0 /* Models */,
 				F5DEF28723B2211500C8E3D0 /* Services */,
 			);

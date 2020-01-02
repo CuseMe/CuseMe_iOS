@@ -92,7 +92,7 @@
                                 <cells/>
                             </collectionView>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="yRx-kk-dnL">
-                                <rect key="frame" x="68" y="337" width="239.00000000000006" height="239.00000000000006"/>
+                                <rect key="frame" x="68" y="337" width="239" height="239"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yRx-kk-dnL" secondAttribute="height" multiplier="1:1" id="DDR-wh-KYz"/>
                                 </constraints>

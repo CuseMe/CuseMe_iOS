@@ -15,7 +15,7 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uuid = UUID().uuidString
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,7 +32,6 @@ class SplashVC: UIViewController {
         guard let uuid = KeychainWrapper.standard.string(forKey: "uuid") else {
             return // TODO: 앱 종료
         }
-        print(uuid)
         auth(uuid)
     }
     
