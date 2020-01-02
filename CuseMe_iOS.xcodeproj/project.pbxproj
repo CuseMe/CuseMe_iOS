@@ -20,6 +20,12 @@
 		F56CEA4223BB43A8005D9B4E /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA4123BB43A8005D9B4E /* wave.json */; };
 		F56CEA4423BB612A005D9B4E /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4323BB612A005D9B4E /* TTSService.swift */; };
 		F56CEA4623BC5154005D9B4E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4523BC5154005D9B4E /* ContainerVC.swift */; };
+		F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4723BDBD4C005D9B4E /* EditCardVC.swift */; };
+		F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4B23BDE703005D9B4E /* EmptyCell.swift */; };
+		F56CEA4E23BDE703005D9B4E /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA4C23BDE703005D9B4E /* EmptyCell.xib */; };
+		F56CEA5023BE001B005D9B4E /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4F23BE001B005D9B4E /* UIViewController+Extensions.swift */; };
+		F56CEA7523BE0DCD005D9B4E /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA7423BE0DCD005D9B4E /* Splash.storyboard */; };
+		F56CEA7823BE0DEC005D9B4E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7723BE0DEC005D9B4E /* SplashVC.swift */; };
 		F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */; };
 		F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */; };
 		F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */; };
@@ -55,6 +61,13 @@
 		F56CEA4123BB43A8005D9B4E /* wave.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		F56CEA4323BB612A005D9B4E /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
 		F56CEA4523BC5154005D9B4E /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		F56CEA4723BDBD4C005D9B4E /* EditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardVC.swift; sourceTree = "<group>"; };
+		F56CEA4B23BDE703005D9B4E /* EmptyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyCell.swift; sourceTree = "<group>"; };
+		F56CEA4C23BDE703005D9B4E /* EmptyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyCell.xib; sourceTree = "<group>"; };
+		F56CEA4F23BE001B005D9B4E /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		F56CEA7323BE0C7E005D9B4E /* CuseMe_iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CuseMe_iOS.entitlements; sourceTree = "<group>"; };
+		F56CEA7423BE0DCD005D9B4E /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		F56CEA7723BE0DEC005D9B4E /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDownload.storyboard; sourceTree = "<group>"; };
 		F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDownloadVC.swift; sourceTree = "<group>"; };
 		F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManageVC.swift; sourceTree = "<group>"; };
@@ -132,6 +145,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F56CEA7623BE0DDB005D9B4E /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F56CEA7723BE0DEC005D9B4E /* SplashVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
 		F5AEB4C023B5E89F002B65F0 /* CardDownload */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +169,7 @@
 				F56CEA4523BC5154005D9B4E /* ContainerVC.swift */,
 				F56CEA4123BB43A8005D9B4E /* wave.json */,
 				F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */,
+				F56CEA4723BDBD4C005D9B4E /* EditCardVC.swift */,
 			);
 			path = HomeHelper;
 			sourceTree = "<group>";
@@ -173,6 +195,7 @@
 		F5DEF26E23B21DB100C8E3D0 /* CuseMe_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				F56CEA7323BE0C7E005D9B4E /* CuseMe_iOS.entitlements */,
 				F5DEF28923B2213800C8E3D0 /* App */,
 				F5DEF28823B2213200C8E3D0 /* Assets */,
 				F5DEF28523B220CE00C8E3D0 /* Domains */,
@@ -188,6 +211,7 @@
 				F5FB849A23B4355700900461 /* UITabBarController+Extensions.swift */,
 				F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */,
 				F5FB849C23B47CD200900461 /* UIView+Extensions.swift */,
+				F56CEA4F23BE001B005D9B4E /* UIViewController+Extensions.swift */,
 				F56CEA4323BB612A005D9B4E /* TTSService.swift */,
 			);
 			path = Utils;
@@ -196,6 +220,7 @@
 		F5DEF28423B220C900C8E3D0 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				F56CEA7623BE0DDB005D9B4E /* Splash */,
 				0E6D5C5423B6F9B1001C16F1 /* Settings */,
 				0E584E0D23B4A02300DEF5C3 /* HomeDisabled */,
 				F5FB84A423B4870B00900461 /* Common */,
@@ -235,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */,
+				F56CEA7423BE0DCD005D9B4E /* Splash.storyboard */,
 				F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */,
 				F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */,
 				0E305F2D23B5FAD700D289DF /* Settings.storyboard */,
@@ -268,6 +294,8 @@
 			children = (
 				F5FB84A723B487F400900461 /* CardCell.swift */,
 				F5FB84A823B487F400900461 /* CardCell.xib */,
+				F56CEA4B23BDE703005D9B4E /* EmptyCell.swift */,
+				F56CEA4C23BDE703005D9B4E /* EmptyCell.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -342,6 +370,8 @@
 				F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */,
 				F56CEA4223BB43A8005D9B4E /* wave.json in Resources */,
 				F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */,
+				F56CEA4E23BDE703005D9B4E /* EmptyCell.xib in Resources */,
+				F56CEA7523BE0DCD005D9B4E /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +429,9 @@
 				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
 				F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */,
+				F56CEA7823BE0DEC005D9B4E /* SplashVC.swift in Sources */,
 				F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */,
+				F56CEA5023BE001B005D9B4E /* UIViewController+Extensions.swift in Sources */,
 				F56CEA4423BB612A005D9B4E /* TTSService.swift in Sources */,
 				0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
@@ -411,6 +443,8 @@
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,
 				F5FB84A923B487F400900461 /* CardCell.swift in Sources */,
 				F5FB849D23B47CD200900461 /* UIView+Extensions.swift in Sources */,
+				F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */,
+				F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */,
 				0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */,
 				F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */,
 				F5FB84A223B483ED00900461 /* HomeModifyVC.swift in Sources */,
@@ -550,7 +584,9 @@
 			baseConfigurationReference = A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = "CuseMe_iOS/큐즈미.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JT57WV788F;
 				INFOPLIST_FILE = "$(SRCROOT)/CuseMe_iOS/App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

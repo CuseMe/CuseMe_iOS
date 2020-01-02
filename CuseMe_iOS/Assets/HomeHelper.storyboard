@@ -19,9 +19,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s1-Sb-9dK" customClass="AnimationView" customModule="Lottie">
                                 <rect key="frame" x="0.0" y="185" width="375" height="78"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="5F9-cy-Nku"/>
                                     <constraint firstAttribute="width" secondItem="6s1-Sb-9dK" secondAttribute="height" multiplier="125:26" id="FH1-T4-Pip"/>
-                                    <constraint firstAttribute="height" constant="78" id="mCV-fi-M60"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="42n-vX-t2g">
@@ -31,7 +29,7 @@
                                     <size key="itemSize" width="157" height="181"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="24" minY="24" maxX="24" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="24" minY="24" maxX="24" maxY="24"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -65,6 +63,7 @@
                                 </state>
                                 <connections>
                                     <action selector="editButtonDidTap:" destination="O4j-Zg-WUF" eventType="touchUpInside" id="Iul-dn-kqg"/>
+                                    <segue destination="NpI-aR-0TR" kind="show" id="SqY-Q9-y5H"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeQuoteLeft" translatesAutoresizingMaskIntoConstraints="NO" id="ooQ-tR-Nl6">
@@ -159,6 +158,90 @@
             </objects>
             <point key="canvasLocation" x="1080.8" y="-429.31034482758622"/>
         </scene>
+        <!--Edit CardVC-->
+        <scene sceneID="U18-ab-o9c">
+            <objects>
+                <viewController id="NpI-aR-0TR" customClass="EditCardVC" customModule="CuseMe_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WR6-5B-hsW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2R-xt-sah">
+                                <rect key="frame" x="23" y="11" width="54" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="K9L-Tv-LCz"/>
+                                    <constraint firstAttribute="width" constant="54" id="xMo-XA-mHP"/>
+                                </constraints>
+                                <state key="normal" image="btnEditAllcheckUnselected"/>
+                                <connections>
+                                    <action selector="allButtonDidTap:" destination="NpI-aR-0TR" eventType="touchUpInside" id="ezv-4Y-m3s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYY-i3-D3S">
+                                <rect key="frame" x="329" y="6" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="28" id="IsI-cf-Gtw"/>
+                                    <constraint firstAttribute="height" constant="28" id="stK-n8-BS5"/>
+                                </constraints>
+                                <state key="normal" image="btnEditClose"/>
+                                <connections>
+                                    <action selector="exitButtonDidTap:" destination="NpI-aR-0TR" eventType="touchUpInside" id="N83-gJ-9sP"/>
+                                </connections>
+                            </button>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Lah-2u-Ti4">
+                                <rect key="frame" x="0.0" y="45" width="375" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lJ1-tP-Q8g">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-UM-mv7">
+                                <rect key="frame" x="44" y="662" width="287" height="56"/>
+                                <color key="backgroundColor" red="0.98431372549999996" green="0.42745098040000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="1aD-Yt-Mch"/>
+                                    <constraint firstAttribute="width" constant="287" id="OCE-Y3-Qj7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="선택 카드 숨기기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="hideButtonDidTap:" destination="NpI-aR-0TR" eventType="touchUpInside" id="PSr-Tv-pqU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="p2R-xt-sah" firstAttribute="leading" secondItem="e0P-cz-mmv" secondAttribute="leading" constant="23" id="7Yi-Iz-g4D"/>
+                            <constraint firstItem="Lah-2u-Ti4" firstAttribute="leading" secondItem="e0P-cz-mmv" secondAttribute="leading" id="9uv-eg-wvm"/>
+                            <constraint firstItem="e0P-cz-mmv" firstAttribute="trailing" secondItem="bYY-i3-D3S" secondAttribute="trailing" constant="18" id="Gr3-MV-dI9"/>
+                            <constraint firstItem="bYY-i3-D3S" firstAttribute="top" secondItem="e0P-cz-mmv" secondAttribute="top" constant="6" id="S8O-mj-Qff"/>
+                            <constraint firstAttribute="bottom" secondItem="Lah-2u-Ti4" secondAttribute="bottom" id="Zom-1Z-SOj"/>
+                            <constraint firstItem="Lah-2u-Ti4" firstAttribute="trailing" secondItem="e0P-cz-mmv" secondAttribute="trailing" id="bUy-ui-W7h"/>
+                            <constraint firstItem="e0P-cz-mmv" firstAttribute="bottom" secondItem="N0l-UM-mv7" secondAttribute="bottom" constant="6" id="f0d-6w-Rpm"/>
+                            <constraint firstItem="Lah-2u-Ti4" firstAttribute="top" secondItem="p2R-xt-sah" secondAttribute="bottom" constant="10" id="hPJ-Of-w1c"/>
+                            <constraint firstItem="p2R-xt-sah" firstAttribute="top" secondItem="e0P-cz-mmv" secondAttribute="top" constant="11" id="k8N-EZ-gdO"/>
+                            <constraint firstItem="N0l-UM-mv7" firstAttribute="centerX" secondItem="e0P-cz-mmv" secondAttribute="centerX" id="uke-y8-z9v"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e0P-cz-mmv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nCU-GE-ZKW"/>
+                    <connections>
+                        <outlet property="allButton" destination="p2R-xt-sah" id="1FX-hy-5Jq"/>
+                        <outlet property="cardCollectionView" destination="Lah-2u-Ti4" id="qqv-1Z-GQV"/>
+                        <outlet property="hideButton" destination="N0l-UM-mv7" id="Ur1-uP-S5e"/>
+                        <outlet property="hideButtonBottomConstraint" destination="f0d-6w-Rpm" id="wrb-NJ-fmF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cV2-JG-65w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1858" y="-447"/>
+        </scene>
         <!--Home Helper Tab Bar Controller-->
         <scene sceneID="WeX-tB-2JQ">
             <objects>
@@ -192,11 +275,11 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jqf-Ms-W17">
                                 <rect key="frame" x="0.0" y="196" width="375" height="616"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lCT-u7-jiI">
-                                    <size key="itemSize" width="50" height="50"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="19" minimumInteritemSpacing="13" sectionInsetReference="safeArea" id="lCT-u7-jiI">
+                                    <size key="itemSize" width="157" height="181"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="24" minY="24" maxX="24" maxY="24"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
@@ -387,6 +470,7 @@
                         <outlet property="orderByFrequencyButton" destination="UJk-h3-5Jj" id="6MQ-qp-htj"/>
                         <outlet property="orderByNameButton" destination="cbK-0d-KS1" id="7dW-1w-18Z"/>
                         <outlet property="orderByStackView" destination="hQK-LH-gA1" id="jhB-RF-x2s"/>
+                        <outlet property="searchBar" destination="mOv-yU-Sn1" id="1bX-6G-yot"/>
                         <outlet property="shadowView" destination="fBl-gh-MEl" id="9e4-gg-WCX"/>
                         <outlet property="topView" destination="L1b-ez-8h9" id="B8E-rP-KO9"/>
                     </connections>
@@ -416,6 +500,8 @@
     </scenes>
     <resources>
         <image name="btnCardmanagentSetting" width="21" height="22"/>
+        <image name="btnEditAllcheckUnselected" width="54" height="24"/>
+        <image name="btnEditClose" width="28" height="28"/>
         <image name="btnTabbarSelectedCardmanagement" width="28" height="30"/>
         <image name="btnTabbarSelectedHome" width="30" height="28"/>
         <image name="btnTabbarUnselectedCardmanagement" width="28" height="30"/>

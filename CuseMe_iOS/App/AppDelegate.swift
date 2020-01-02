@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TAKUUID
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
