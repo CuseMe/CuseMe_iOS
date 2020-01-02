@@ -22,6 +22,10 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e26-QL-qyf">
                                 <rect key="frame" x="0.0" y="0.0" width="157" height="142"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="750" constant="157" id="D74-mI-NJ6"/>
+                                    <constraint firstAttribute="height" priority="750" constant="142" id="tUW-EB-1yY"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-NS-SyP">
                                 <rect key="frame" x="12" y="153" width="133" height="19"/>
@@ -29,34 +33,38 @@
                                 <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-uf-HJd">
-                                <rect key="frame" x="127" y="0.0" width="30" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVO-uf-HJd">
+                                <rect key="frame" x="109" y="8" width="40" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fVO-uf-HJd" secondAttribute="height" multiplier="10:7" id="jy1-4d-Naf"/>
+                                </constraints>
+                                <state key="normal" image="btnCarddetailOff"/>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icUnchecked" translatesAutoresizingMaskIntoConstraints="NO" id="ojn-13-4P0">
-                                <rect key="frame" x="125" y="8" width="24" height="24"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-12-Jnx">
+                                <rect key="frame" x="121" y="8" width="28" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="w9E-12-Jnx" secondAttribute="height" multiplier="1:1" id="stn-Ww-kOJ"/>
+                                </constraints>
+                                <state key="normal" image="btnEditSelectcardUnselected"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="w9E-12-Jnx" firstAttribute="width" secondItem="e26-QL-qyf" secondAttribute="width" multiplier="0.178344" id="5CZ-m2-zVH"/>
                             <constraint firstItem="KNy-NS-SyP" firstAttribute="top" secondItem="e26-QL-qyf" secondAttribute="bottom" constant="11" id="9Hl-7D-7X5"/>
                             <constraint firstItem="e26-QL-qyf" firstAttribute="top" secondItem="GkB-NL-O4t" secondAttribute="top" id="AGP-bJ-w51"/>
                             <constraint firstAttribute="bottom" secondItem="KNy-NS-SyP" secondAttribute="bottom" constant="9" id="AgS-Nl-qRj"/>
-                            <constraint firstItem="fVO-uf-HJd" firstAttribute="top" secondItem="GkB-NL-O4t" secondAttribute="top" id="QTW-Sy-cCc"/>
-                            <constraint firstAttribute="trailing" secondItem="ojn-13-4P0" secondAttribute="trailing" constant="8" id="RCN-IE-CJt"/>
-                            <constraint firstItem="ojn-13-4P0" firstAttribute="top" secondItem="GkB-NL-O4t" secondAttribute="top" constant="8" id="V2a-NZ-VSE"/>
-                            <constraint firstItem="fVO-uf-HJd" firstAttribute="width" secondItem="GkB-NL-O4t" secondAttribute="width" multiplier="0.191083" id="W5s-yG-dht"/>
-                            <constraint firstAttribute="trailing" secondItem="fVO-uf-HJd" secondAttribute="trailing" id="WmK-qq-9J2"/>
-                            <constraint firstItem="ojn-13-4P0" firstAttribute="width" secondItem="GkB-NL-O4t" secondAttribute="width" multiplier="0.152866" id="bK8-HI-Pys"/>
+                            <constraint firstItem="fVO-uf-HJd" firstAttribute="top" secondItem="GkB-NL-O4t" secondAttribute="top" constant="8" id="QTW-Sy-cCc"/>
+                            <constraint firstItem="fVO-uf-HJd" firstAttribute="width" secondItem="e26-QL-qyf" secondAttribute="width" multiplier="0.254777" id="TEa-4I-Hyh"/>
+                            <constraint firstAttribute="trailing" secondItem="fVO-uf-HJd" secondAttribute="trailing" constant="8" id="WmK-qq-9J2"/>
                             <constraint firstItem="e26-QL-qyf" firstAttribute="leading" secondItem="GkB-NL-O4t" secondAttribute="leading" id="c6v-ln-rXY"/>
+                            <constraint firstItem="fVO-uf-HJd" firstAttribute="height" secondItem="e26-QL-qyf" secondAttribute="height" multiplier="0.197183" id="cMp-3u-BO4"/>
                             <constraint firstAttribute="trailing" secondItem="e26-QL-qyf" secondAttribute="trailing" id="dLH-MU-feg"/>
+                            <constraint firstItem="w9E-12-Jnx" firstAttribute="top" secondItem="GkB-NL-O4t" secondAttribute="top" constant="8" id="djq-e6-ZCF"/>
                             <constraint firstAttribute="trailing" secondItem="KNy-NS-SyP" secondAttribute="trailing" constant="12" id="fAz-xd-uaM"/>
                             <constraint firstItem="KNy-NS-SyP" firstAttribute="leading" secondItem="GkB-NL-O4t" secondAttribute="leading" constant="12" id="iiU-29-kDH"/>
-                            <constraint firstItem="fVO-uf-HJd" firstAttribute="height" secondItem="GkB-NL-O4t" secondAttribute="height" multiplier="0.165746" id="l2t-c7-ueW"/>
-                            <constraint firstItem="ojn-13-4P0" firstAttribute="height" secondItem="GkB-NL-O4t" secondAttribute="height" multiplier="0.132597" id="uUf-wE-KgB"/>
+                            <constraint firstAttribute="trailing" secondItem="w9E-12-Jnx" secondAttribute="trailing" constant="8" id="nAG-jC-zlO"/>
+                            <constraint firstItem="w9E-12-Jnx" firstAttribute="height" secondItem="e26-QL-qyf" secondAttribute="height" multiplier="0.197183" id="zYd-Tz-lpP"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -71,7 +79,7 @@
             <size key="customSize" width="133" height="159"/>
             <connections>
                 <outlet property="cardImageView" destination="e26-QL-qyf" id="mEz-EM-hkN"/>
-                <outlet property="selectImageView" destination="ojn-13-4P0" id="sIP-9U-uKK"/>
+                <outlet property="selectButton" destination="w9E-12-Jnx" id="Kzw-3h-xOB"/>
                 <outlet property="titleLabel" destination="KNy-NS-SyP" id="9o2-Ot-PWq"/>
                 <outlet property="view" destination="GkB-NL-O4t" id="x0g-a9-iEA"/>
                 <outlet property="visibleButton" destination="fVO-uf-HJd" id="PsG-69-F5h"/>
@@ -80,6 +88,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="icUnchecked" width="24" height="24"/>
+        <image name="btnCarddetailOff" width="40" height="28"/>
+        <image name="btnEditSelectcardUnselected" width="28" height="28"/>
     </resources>
 </document>

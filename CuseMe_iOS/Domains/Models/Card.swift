@@ -13,7 +13,8 @@ struct Card: Decodable {
     let title: String
     let contents: String
     let record: String?
-    let visible: Bool
+    var visible: Bool
     let useCount: Int
     let serialNum: String
+    var selected = false
 }

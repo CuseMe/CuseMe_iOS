@@ -7,8 +7,7 @@ target 'CuseMe_iOS' do
 
   # Pods for CuseMe_iOS
   pod 'Kingfisher'
-  pod 'RxSwift'
-  pod 'RxCocoa'
   pod 'Alamofire'
   pod 'lottie-ios'
+
 end

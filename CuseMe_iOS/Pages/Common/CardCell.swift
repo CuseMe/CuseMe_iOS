@@ -13,17 +13,24 @@ class CardCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
     @IBOutlet weak var cardImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var selectImageView: UIImageView!
+    @IBOutlet weak var selectButton: UIButton!
     @IBOutlet weak var visibleButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.setCornerRadius(cornerRadius: 10)
-        self.view.setCornerRadius(cornerRadius: 10)
+        view.setCornerRadius(cornerRadius: 10)
         cardImageView.setSpatialCornerRadius(rect: UIRectCorner([.topLeft, .topRight]), radius: 10)
         self.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.15, radius: 3)
-        selectImageView.isHidden = true
+        
+        selectButton.setImage(UIImage(named: "btnEditSelectcardUnselected"), for: .normal)
+        selectButton.setImage(UIImage(named: "btnEditSelectcardSelected"), for: .selected)
+        
+        visibleButton.setImage(UIImage(named: "btnCarddetailOff"), for: .normal)
+        visibleButton.setImage(UIImage(named: "btnCarddetailOn"), for: .selected)
+        
+        selectButton.isHidden = true
         visibleButton.isHidden = true
     }
 }

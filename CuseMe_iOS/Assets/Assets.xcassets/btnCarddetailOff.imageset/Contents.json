@@ -1,19 +1,19 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "filename" : "btnCardOff.png",
-      "scale" : "1x"
+      "filename" : "btnCarddetailOff.png",
+      "scale" : "1x",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "filename" : "btnCardOff@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "btnCarddetailOff@2x.png",
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "filename" : "btnCardOff@3x.png",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "btnCarddetailOff@3x.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

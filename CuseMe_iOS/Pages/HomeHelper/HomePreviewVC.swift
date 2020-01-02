@@ -13,14 +13,15 @@ import AVFoundation
 
 class HomePreviewVC: UIViewController {
     
-    let cellId = "CardCell"
-    var prevCell: CardCell?
+    private let cellId = "CardCell"
+    private let emptyCellId = "EmptyCell"
+    private var prevCell: CardCell?
     
     let cards: [Card] = [
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "자현이의 사랑도 넣어줘", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민아 집가면 안돼", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "너와 결혼까지 생각했어", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "한순간 물거품이 된 꿈", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "두 손을 귀에 가져다 대며 수민이는 말했다. 내꺼야?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민아 오늘 왜 이렇게 꾸미고 왔어?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민이는 미세 먼지가 싫어요", record: "test", visible: true, useCount: 0, serialNum: "1234"),
+        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민이는 바닐라 라떼가 먹고싶어", record: "test", visible: true, useCount: 0, serialNum: "1234"),
     ]
 
     @IBOutlet private weak var doneButton: UIButton!
@@ -29,23 +30,28 @@ class HomePreviewVC: UIViewController {
     @IBOutlet private weak var waveAnimationView: AnimationView!
     @IBOutlet private weak var contentsTextView: UITextView!
     @IBOutlet private weak var emptyImageView: UIImageView!
-    @IBOutlet weak var emptyLabel: UILabel!
+    @IBOutlet private weak var emptyLabel: UILabel!
     
     @IBOutlet private weak var emptyImageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var emptyLabelTopConstraint: NSLayoutConstraint!
     
-    let tts = TTSService()
-    let synthesizer = AVSpeechSynthesizer()
+    private let tts = TTSService()
+    private let synthesizer = AVSpeechSynthesizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         waveAnimationView.animation = Animation.named("wave")
+        
+        
         
         setUI()
         cardCollectionView.delegate = self
         cardCollectionView.dataSource = self
         
         constraintForSmallDevice()
+        
+        let emptyNibName = UINib(nibName: emptyCellId, bundle: nil)
+        cardCollectionView.register(emptyNibName, forCellWithReuseIdentifier: emptyCellId)
         
         let nibName = UINib(nibName: cellId, bundle: nil)
         cardCollectionView.register(nibName, forCellWithReuseIdentifier: cellId)
@@ -148,10 +154,18 @@ extension HomePreviewVC: UICollectionViewDelegateFlowLayout {
 extension HomePreviewVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return cards.count
+        if cards.count % 2 != 0 {
+            return cards.count+1
+        } else {
+            return cards.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if cards.count % 2 != 0 && indexPath.row == cards.count {
+            let emptyCell = collectionView.dequeueReusableCell(withReuseIdentifier: emptyCellId, for: indexPath) as! EmptyCell
+            return emptyCell
+        }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardCell
         
