@@ -12,7 +12,6 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         let uuid = UUID().uuidString
         print(uuid)
     }
