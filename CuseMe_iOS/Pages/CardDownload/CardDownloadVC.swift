@@ -14,6 +14,7 @@ class CardDownloadVC: UIViewController {
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
     
     // MARK: Control Variable
     
@@ -23,6 +24,8 @@ class CardDownloadVC: UIViewController {
         super.viewDidLoad()
 
         initGestureRecognizer()
+        downloadButton.setCornerRadius(cornerRadius: nil)
+        downloadButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -69,7 +72,8 @@ extension CardDownloadVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -120
+                self.centerYConstraint.constant = -70
+                self.titleConstraint.constant = 40
             }
         })
         
@@ -82,7 +86,8 @@ extension CardDownloadVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -82
+                self.centerYConstraint.constant = -27
+                self.titleConstraint.constant = 70
             }
         })
         

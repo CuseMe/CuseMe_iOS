@@ -1,50 +1,34 @@
 //
-//  UnlockVC.swift
+//  CardEditVC.swift
 //  CuseMe_iOS
 //
-//  Created by Yujin Shin on 2019/12/31.
-//  Copyright © 2019 cuseme. All rights reserved.
+//  Created by Yujin Shin on 2020/01/02.
+//  Copyright © 2020 cuseme. All rights reserved.
 //
 
 import UIKit
 
-class UnlockVC: UIViewController {
-    
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var alertLabel: UILabel!
-    @IBOutlet weak var unlockButton: UIButton!
-    @IBOutlet weak var underLine: UIView!
-    @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
-    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
-    
-    let pass = "1234"  // check용 임시 비밀번호
+class CardEditVC: UIViewController {
+
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var imageView: UIView!
+    @IBOutlet weak var confirmButton: UIButton!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet weak var recordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initGestureRecognizer()
-        passwordTextField.addTarget(self, action: #selector(test), for: UIControl.Event.editingChanged)
-        underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
-        unlockButton.setCornerRadius(cornerRadius: nil)
-        unlockButton.setShadow(color: UIColor.mainpink, offSet: CGSize(width: 2, height: 3), opacity: 0.53, radius: 4)
-        alertLabel.isHidden = true
-        }
+        addButton.setCornerRadius(cornerRadius: nil)
+        imageView.setCornerRadius(cornerRadius: 5)
+        imageView.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.16, radius: 3)
+        confirmButton.setCornerRadius(cornerRadius: nil)
+        recordButton.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.2, radius: 3)
+        placeholderSetting()
     
-    @objc func test() {
-        if(passwordTextField.text?.count != 0) {
-            underLine.backgroundColor = UIColor(red: 251/255, green: 109/255, blue: 106/255, alpha: 1)
-        } else {
-            underLine.backgroundColor = UIColor(red: 190/255, green: 190/255, blue: 190/255, alpha: 0.25)
-        }
     }
-    
-    @IBAction func unlockButtonTouchDown(_ sender: Any) {
-        if(passwordTextField.text != pass) {
-            alertLabel.isHidden = false
-        } else {
-            alertLabel.isHidden = true
-        }
-    }
-
+  
     override func viewWillAppear(_ animated: Bool) {
         registerForKeyboardNotifications()
     }
@@ -52,10 +36,12 @@ class UnlockVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         unregisterForKeyboardNotifications()
     }
+
 }
 
-extension UnlockVC: UIGestureRecognizerDelegate {
-    
+
+extension CardEditVC: UIGestureRecognizerDelegate {
+   
     func initGestureRecognizer() {
         let textFieldTap = UITapGestureRecognizer(target: self, action: #selector(handleTapTextField(_:)))
         textFieldTap.delegate = self
@@ -63,11 +49,12 @@ extension UnlockVC: UIGestureRecognizerDelegate {
     }
     
     @objc func handleTapTextField(_ sender: UITapGestureRecognizer) {
-        self.passwordTextField.resignFirstResponder()
+        self.titleTextField.resignFirstResponder()
+        self.contentsTextView.resignFirstResponder()
     }
     
     func gestureRecognizer(_ gestrueRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
-        guard let _ = touch.view?.isDescendant(of: passwordTextField) else { return false }
+        guard let _ = touch.view?.isDescendant(of: titleTextField) else { return false }
         
         return true
     }
@@ -75,12 +62,16 @@ extension UnlockVC: UIGestureRecognizerDelegate {
     @objc func keyboardWillShow(_ notification: NSNotification) {
         
         guard let duration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        // keyboard up duration
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
+        //speed
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            if UIScreen.main.bounds.height < 667 {//원상복귀
-                self.centerYConstraint.constant = -70
-                self.titleConstraint.constant = 40
+            if UIScreen.main.bounds.height < 667 {
+               // self.centerYConstraint.constant = -120 // Up
+            }
+            else if UIScreen.main.bounds.height>667{
+                //self.centerYConstraint.constant = -130
             }
         })
         
@@ -93,8 +84,10 @@ extension UnlockVC: UIGestureRecognizerDelegate {
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
-                self.centerYConstraint.constant = -27  //다시 돌아오기
-                self.titleConstraint.constant = 70
+           //     self.centerYConstraint.constant = -50 // Down
+            }
+            else if UIScreen.main.bounds.height>667{
+           // self.centerYConstraint.constant = -89
             }
         })
         
@@ -110,4 +103,25 @@ extension UnlockVC: UIGestureRecognizerDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+}
+extension CardEditVC: UITextViewDelegate {
+        func placeholderSetting() {
+            contentsTextView.delegate = self
+            contentsTextView.text = "카드 내용을 입력해주세요"
+            contentsTextView.textColor = UIColor.lightGray
+        }
+
+        func textViewDidBeginEditing(_ textView: UITextView) {
+            if textView.textColor == UIColor.lightGray {
+                textView.text = nil
+                textView.textColor = UIColor.black
+            }
+        }
+    
+        func textViewDidEndEditing(_ textView: UITextView) {
+            if textView.text.isEmpty {
+                textView.text = "카드 내용을 입력해주세요"
+                textView.textColor = UIColor.lightGray
+            }
+        }
 }

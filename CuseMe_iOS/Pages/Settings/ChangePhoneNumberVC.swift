@@ -15,7 +15,7 @@ class ChangePhoneNumberVC: UIViewController {
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
     @IBOutlet weak var underLine: UIView!
     
-    @IBOutlet weak var yyy: NSLayoutConstraint!
+    @IBOutlet weak var titleConstraint: NSLayoutConstraint!
     
     
     override func viewDidLoad() {
@@ -76,9 +76,9 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         guard let curve = notification.userInfo?[UIResponder.keyboardAnimationCurveUserInfoKey] as? UInt else { return }
         
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
-            if UIScreen.main.bounds.height < 667 {//원상복귀
+            if UIScreen.main.bounds.height < 667 {
                 self.centerYConstraint.constant = -70
-                self.yyy.constant = 40
+                self.titleConstraint.constant = 40
             }
         })
         
@@ -92,7 +92,7 @@ extension ChangePhoneNumberVC: UIGestureRecognizerDelegate {
         UIView.animate(withDuration: duration, delay: 0.0, options: .init(rawValue: curve), animations: {
             if UIScreen.main.bounds.height < 667 {
                 self.centerYConstraint.constant = -27  //다시 돌아오기
-                self.yyy.constant = 70
+                self.titleConstraint.constant = 70
             }
         })
         

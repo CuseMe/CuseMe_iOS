@@ -28,7 +28,6 @@ class HomeDisabledVC: UIViewController {
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var contentLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -37,41 +36,17 @@ class HomeDisabledVC: UIViewController {
         
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-        // Do any additional setup after loading the view.
-        
-        //pinch zoom
-        let pinch = UIPinchGestureRecognizer(target: self, action: #selector(HomeDisabledVC.doPinch(_:)))
-        self.view.addGestureRecognizer(pinch)
-        
-       //let str = "HI"
-        //contentLabel.text = str
-        
-        
+        }
     }
-    //pinch
-    @objc func doPinch(_ pinch: UIPinchGestureRecognizer){
-        
-        cardCollectionView.transform = cardCollectionView.transform.scaledBy(x: pinch.scale, y: pinch.scale)
-        pinch.scale = 1 
-    }
-    
-    
-}
 
     extension HomeDisabledVC: UICollectionViewDelegate {
         func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardCell
-           //  let card = cards[indexPath.row]
             cell.view.setBorder(borderColor: UIColor(red: 112/255, green: 112/255, blue: 112/255, alpha: 1.0), borderWidth: 1)
-            //contentsTextView.text = card.contents
-            
-            let card = cards[indexPath.row]  //card
+            let card = cards[indexPath.row]
             contentLabel.text = card.contents
-            
-            
         }
-        
     }
 
     extension HomeDisabledVC: UICollectionViewDelegateFlowLayout {
