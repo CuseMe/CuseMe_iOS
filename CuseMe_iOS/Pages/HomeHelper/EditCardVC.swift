@@ -8,6 +8,7 @@
 
 import UIKit
 
+// TODO: 클래스 이름 변경
 class EditCardVC: UIViewController {
     
     private let cellId = "CardCell"

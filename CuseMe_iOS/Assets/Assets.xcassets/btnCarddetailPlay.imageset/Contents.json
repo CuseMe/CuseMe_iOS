@@ -11,9 +11,9 @@
       "filename" : "btnCarddetailPlay@2x.png"
     },
     {
-      "filename" : "btnCarddetailPlay@3x.png",
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal"
+      "filename" : "btnCarddetailPlay@3x.png"
     }
   ],
   "info" : {

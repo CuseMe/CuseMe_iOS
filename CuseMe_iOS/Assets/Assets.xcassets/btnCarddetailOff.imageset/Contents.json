@@ -1,18 +1,18 @@
 {
   "images" : [
     {
+      "idiom" : "universal",
       "filename" : "btnCarddetailOff.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "scale" : "1x"
     },
     {
       "scale" : "2x",
-      "filename" : "btnCarddetailOff@2x.png",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "filename" : "btnCarddetailOff@2x.png"
     },
     {
-      "scale" : "3x",
       "filename" : "btnCarddetailOff@3x.png",
+      "scale" : "3x",
       "idiom" : "universal"
     }
   ],

@@ -171,14 +171,23 @@ class CardManageVC: UIViewController {
 
 extension CardManageVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CardCell
+        // TODO: 불필요한 코드 정리, On, Off 버튼에 따른 액션 정의
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CardCell
+        let card = cards[indexPath.row]
         
-        cell.visibleButton.isSelected = !cell.visibleButton.isSelected
+        let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardDetailVC") as! CardDetailVC
+        dvc.card = card
+        dvc.modalPresentationStyle = .fullScreen
+        // TODO: VC 호출 방식 변경
+        present(dvc, animated: true)
+        
+        /*
         cards[indexPath.row].visible  = cell.visibleButton.isSelected
         
         if let button = prevOrderByButton {
             if button.tag == 0 { orderByTag(tag: 0) }
         }
+         */
     }
 }
 

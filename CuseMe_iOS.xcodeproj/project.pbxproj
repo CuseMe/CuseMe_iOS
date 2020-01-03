@@ -10,7 +10,6 @@
 		0E305F2E23B5FAD700D289DF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E305F2D23B5FAD700D289DF /* Settings.storyboard */; };
 		0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */; };
 		0E50475323BB2B7200E8F92C /* CardDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E50475223BB2B7200E8F92C /* CardDetail.storyboard */; };
-		0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E50475523BB306200E8F92C /* CardDetailVC.swift */; };
 		0E584E1323B4A48F00DEF5C3 /* HomeDisabled.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */; };
 		0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */; };
 		0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */; };
@@ -36,6 +35,7 @@
 		F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */; };
 		F5AEB4CE23B9C612002B65F0 /* HomeHelperTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */; };
 		F5AEB4FD23B9F09A002B65F0 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */; };
+		F5B7F50323BE75F100920938 /* CardDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F50223BE75F100920938 /* CardDetailVC.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
@@ -54,7 +54,6 @@
 		0E305F2D23B5FAD700D289DF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		0E305F3023B60ABF00D289DF /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
 		0E50475223BB2B7200E8F92C /* CardDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDetail.storyboard; sourceTree = "<group>"; };
-		0E50475523BB306200E8F92C /* CardDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailVC.swift; sourceTree = "<group>"; };
 		0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeDisabled.storyboard; sourceTree = "<group>"; };
 		0E584E1423B4A57400DEF5C3 /* HomeDisabledVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDisabledVC.swift; sourceTree = "<group>"; };
 		0E6D5C5523B6F9D3001C16F1 /* ChangePhoneNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePhoneNumberVC.swift; sourceTree = "<group>"; };
@@ -83,6 +82,7 @@
 		F5AEB4C723B8C238002B65F0 /* HomePreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePreviewVC.swift; sourceTree = "<group>"; };
 		F5AEB4CD23B9C612002B65F0 /* HomeHelperTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHelperTabBarController.swift; sourceTree = "<group>"; };
 		F5AEB4FC23B9F09A002B65F0 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		F5B7F50223BE75F100920938 /* CardDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailVC.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* 큐즈미.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "큐즈미.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		0E50475423BB305200E8F92C /* CardDetail */ = {
 			isa = PBXGroup;
 			children = (
-				0E50475523BB306200E8F92C /* CardDetailVC.swift */,
+				F5B7F50223BE75F100920938 /* CardDetailVC.swift */,
 				0EBAE0AD23BDC095009F956B /* CardEditVC.swift */,
 			);
 			path = CardDetail;
@@ -440,6 +440,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B7F50323BE75F100920938 /* CardDetailVC.swift in Sources */,
 				F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */,
 				0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */,
 				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
@@ -462,7 +463,6 @@
 				F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */,
 				F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */,
 				F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */,
-				0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */,
 				F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */,
 				F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */,
 				F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */,
