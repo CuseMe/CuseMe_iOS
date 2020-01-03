@@ -175,11 +175,10 @@ class HomeHelperTabBarController: UITabBarController {
     @objc func subMenuButtonDidTap(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            let alert = UIAlertController(title: "새로 만들기", message: "", preferredStyle: .alert)
-            let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-            alert.addAction(action)
-            
-            present(alert, animated: true)
+            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardEditVC") as! CardEditVC
+            dvc.addButtonString = "추가"
+            dvc.modalPresentationStyle = .fullScreen
+            present(dvc, animated: true)
         } else if sender.tag == 1 {
             let dvc = UIStoryboard(name: "CardDownload", bundle: nil).instantiateViewController(withIdentifier: "CardDownloadVC") as! CardDownloadVC
             dvc.modalPresentationStyle = .fullScreen

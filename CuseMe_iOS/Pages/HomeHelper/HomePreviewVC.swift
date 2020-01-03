@@ -94,7 +94,10 @@ class HomePreviewVC: UIViewController {
     }
     
     @IBAction private func editButtonDidTap(_ sender: Any) {
-        // TODO: 편집 화면 연결, present
+        let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "EditCardVC") as! EditCardVC
+        dvc.modalPresentationStyle = .fullScreen
+        // TODO: 데이터 전달, 카드 리스트 편집 결과 받기
+        present(dvc, animated: true)
     }
     
     @IBAction private func doneButtonDidTap(_ sender: Any) {

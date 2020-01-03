@@ -6,14 +6,14 @@
       "scale" : "1x"
     },
     {
+      "idiom" : "universal",
       "filename" : "btnCarddeatilOn@2x.png",
-      "scale" : "2x",
-      "idiom" : "universal"
+      "scale" : "2x"
     },
     {
-      "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "btnCarddeatilOn@3x.png"
+      "filename" : "btnCarddeatilOn@3x.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

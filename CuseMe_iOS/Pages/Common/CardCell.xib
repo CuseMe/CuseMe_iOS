@@ -10,7 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="gTV-IL-0wX" customClass="CardCell" customModule="CuseMe_iOS" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="gTV-IL-0wX" customClass="CardCell" customModule="큐즈미" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="157" height="181"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -39,6 +39,9 @@
                                     <constraint firstAttribute="width" secondItem="fVO-uf-HJd" secondAttribute="height" multiplier="10:7" id="jy1-4d-Naf"/>
                                 </constraints>
                                 <state key="normal" image="btnCarddetailOff"/>
+                                <connections>
+                                    <action selector="visibleButtonDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JRL-gi-wLS"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-12-Jnx">
                                 <rect key="frame" x="121" y="8" width="28" height="28"/>

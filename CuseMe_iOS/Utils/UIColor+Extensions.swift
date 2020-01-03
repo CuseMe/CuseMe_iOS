@@ -21,6 +21,14 @@ extension UIColor {
   @nonobjc class var seafoamBlue: UIColor {
     return UIColor(red: 129.0 / 255.0, green: 214.0 / 255.0, blue: 212.0 / 255.0, alpha: 1.0)
   }
+    
+    @nonobjc class var soundShadow: UIColor {
+        return UIColor(red: 69/255, green: 69/255, blue: 69/255, alpha: 1.0)
+    }
+    
+    @nonobjc class var textBrownBlack: UIColor {
+      return UIColor(white: 52.0 / 255.0, alpha: 1.0)
+    }
 
   @nonobjc class var greyishBrown: UIColor {
     return UIColor(white: 74.0 / 255.0, alpha: 1.0)

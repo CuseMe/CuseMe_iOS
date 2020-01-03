@@ -2,90 +2,87 @@
 //  CardDetailVC.swift
 //  CuseMe_iOS
 //
-//  Created by Yujin Shin on 2019/12/31.
-//  Copyright © 2019 cuseme. All rights reserved.
+//  Created by wookeon on 2020/01/03.
+//  Copyright © 2020 cuseme. All rights reserved.
 //
 
 import UIKit
 
 class CardDetailVC: UIViewController {
 
-
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var serialNum: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var contentTextView: UITextView!
-    @IBOutlet weak var offButton: UIButton!
-    @IBOutlet weak var offImageView: UIImageView!
-    @IBOutlet weak var alertImageView: UIImageView!
+    @IBOutlet private weak var cardImageView: UIImageView!
+    @IBOutlet private weak var visibleButton: UIButton!
+    @IBOutlet private weak var serialNumberView: UIView!
+    @IBOutlet private weak var serialNumberLabel: UILabel!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var pushButton: UIButton!
+    @IBOutlet weak var contentsTextView: UITextView!
+    @IBOutlet private weak var playButton: UIButton!
     
-    var off: Bool = false
-    var alert: Bool = false
-    
-    @IBAction func offButtonDidTap(_ sender: Any) {
-        if(off == false){
-        let alert = UIAlertController(title: "보이는 카드 목록에\n바로 추가하시겠습니까?", message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "추가", style: .default) { (action) in
-            if !self.off{
-                    self.offImageView.image = UIImage(named: "btnCarddetailOn")
-                self.off = !self.off
-                }else{
-                    self.offImageView.image = UIImage(named: "btnCarddetailOff")
-                self.off = !self.off
-                }
-            }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { (action) in
-            }
-        alert.addAction(cancel)
-        alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)}
-        else if (off == true){
-            self.offImageView.image = UIImage(named: "btnCarddetailOff")
-            self.off = !self.off
-            }
-        }
-    
-    @IBAction func alertButtonDidTap(_ sender: Any) {
-        if(alert == false){
-        let alert = UIAlertController(title: "이 카드를 사용하면\n아래의 번호로 알림이 갑니다.\n01012341234", message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default) { (action) in
-            if !self.alert{
-                    self.alertImageView.image = UIImage(named: "btnCarddetailNoticeSelected")
-                self.alert = !self.alert
-                }else{
-                    self.alertImageView.image = UIImage(named: "btnCarddetailNoticeUnSelected")
-                self.alert = !self.alert
-                }
-            }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { (action) in
-            }
-        alert.addAction(cancel)
-        alert.addAction(okAction)
-            present(alert, animated: true, completion: nil)}
-        else if (alert == true){
-                   self.alertImageView.image = UIImage(named: "btnCarddetailNoticeUnselected")
-                   self.alert = !self.alert
-               }
-    }
-    
-    @IBAction func deleteButtonDidTap(_ sender: Any) {
-        let alert = UIAlertController(title: "카드를 완전히\n삭제하시겠습니까?", message: "", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "삭제", style: .default) { (action) in
-                /// 삭제 버튼
-            }
-        let cancel = UIAlertAction(title: "취소", style: .cancel) { (action) in
-            }
-        alert.addAction(cancel)
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
-    }
+    var card: Card?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        playButton.setShadow(color: UIColor.black, offSet: CGSize(width: 0, height: 0), opacity: 0.16, radius: 3)
+
+        setUI()
     }
-
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reciveData()
+    }
     
-
+    private func setUI() {
+        serialNumberView.setCornerRadius(cornerRadius: 3)
+        playButton.setShadow(color: UIColor.soundShadow, offSet: CGSize(width: 0, height: 0), opacity: 0.2, radius: 3)
+        pushButton.setImage(UIImage(named: "btnCarddetailNoticeUnselected"), for: .normal)
+        pushButton.setImage(UIImage(named: "btnCarddetailNoticeSelected"), for: .selected)
+        visibleButton.setImage(UIImage(named: "btnCarddetailOff"), for: .normal)
+        visibleButton.setImage(UIImage(named: "btnCarddeatilOn"), for: .selected)
+        // TODO: 녹음한 데이터가 없을 때 이미지 디자이너 요청
+        playButton.setImage(UIImage(named: "btnCarddetailPlay"), for: .normal)
+        playButton.setImage(UIImage(named: "btnCarddetailPlay"), for: .selected)
+    }
+    
+    private func reciveData() {
+        guard let card = card else { return }
+        cardImageView.kf.setImage(with: URL(string: card.imageURL))
+        titleLabel.text = card.title
+        contentsTextView.text = card.contents
+        visibleButton.isSelected = card.visible
+        serialNumberLabel.text = card.serialNum
+        // TODO: 녹음 데이터
+    }
+    
+    @IBAction func pushButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    @IBAction func backButtonDidTap(_ sender: Any) {
+        // TODO: 네비게이션 컨트롤러 연결 후 작업
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func editButtonDidTap(_ sender: UIButton) {
+        // TODO: 카드 편집으로 이동
+        let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardEditVC") as! CardEditVC
+        dvc.card = card
+        dvc.addButtonString = "수정"
+        dvc.modalPresentationStyle = .fullScreen
+        present(dvc, animated: true)
+    }
+    @IBAction func deleteButtonDidTap(_ sender: UIButton) {
+        // TODO: 카드 삭제 로직
+        let alert = UIAlertController(title: "카드 삭제", message: "카드를 완전히 삭제하시겠습니까?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "삭제", style: .destructive, handler: nil)
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
+        
+        present(alert, animated: true)
+    }
+    @IBAction func visibleButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
+    @IBAction func playButtonDidTap(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+    }
 }
