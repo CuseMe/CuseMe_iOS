@@ -31,11 +31,37 @@
 
 
 
-### 📄 서비스 워크 플로우
-
+### 📄 Service Work Flow
+![큐즈미_워크플로우-1](https://user-images.githubusercontent.com/43192041/71722846-ccc50b80-2e6d-11ea-9385-5c8e0f581dba.png)
 
 
 ### 📱 실행 화면
+- **발달장애인 홈 (카드 클릭 전)**
+![KakaoTalk_Photo_2020-01-03-23-23-07-9](https://user-images.githubusercontent.com/43192041/71728341-3221f800-2e80-11ea-8ac3-ca2b4246c435.jpeg)
+
+- **발달 장애인 홈 (카드 클릭)**
+![KakaoTalk_Photo_2020-01-03-23-23-07-8](https://user-images.githubusercontent.com/43192041/71728390-4c5bd600-2e80-11ea-9257-541e0838e78a.jpeg)
+
+- **관리자 모드**
+![KakaoTalk_Photo_2020-01-03-23-23-07-7](https://user-images.githubusercontent.com/43192041/71728453-71e8df80-2e80-11ea-9707-12a898b254d9.jpeg)
+
+- **사용자 홈 (카드 데이터 존재)**
+![KakaoTalk_Photo_2020-01-03-23-23-07-6](https://user-images.githubusercontent.com/43192041/71728475-875e0980-2e80-11ea-855a-3bc6e1e5a91a.jpeg)
+
+- **사용자 홈 (카드 데이터 없음)**
+![KakaoTalk_Photo_2020-01-03-23-23-07-2](https://user-images.githubusercontent.com/43192041/71728578-d2781c80-2e80-11ea-9151-49e6ea8f566b.jpeg)
+
+
+-  **사용자 홈 Custom Tabbar**![KakaoTalk_Photo_2020-01-03-23-23-07-5](https://user-images.githubusercontent.com/43192041/71728490-9349cb80-2e80-11ea-9b00-178e1d4ddf6f.jpeg)
+
+- **카드 내려받기**
+![KakaoTalk_Photo_2020-01-03-23-23-07-4](https://user-images.githubusercontent.com/43192041/71728547-b4aab780-2e80-11ea-8c58-5f9c40fa11f5.jpeg)
+
+- **카드 추가**
+![KakaoTalk_Photo_2020-01-03-23-23-07-3](https://user-images.githubusercontent.com/43192041/71728607-ea4fa080-2e80-11ea-959f-e1fcc15b1bc6.jpeg)
+
+- **설정**
+![KakaoTalk_Photo_2020-01-03-23-23-07-1](https://user-images.githubusercontent.com/43192041/71728284-04d54a00-2e80-11ea-9bc3-c88d11e0e868.jpeg)
 
 
 
@@ -88,31 +114,78 @@
         }
 	  }
 	```
+* lottie-ios : 벡터 기반의 애니메이션을 JSON으로 랜더링하고 실시간으로 동작하게하는 라이브러리
+
+
+### 📋 기능 소개
+ 기능     | 개발 여부     | 기타사항  | 담당
+:-----:|:-------:|------- |:---:
+Lottie |○|  Home 화면 배경 |이승언
+카드 정렬 |○| 사용자 설정, 빈도, 이름 |이승언,신유진
+음성 재생 |○| 음성 데이터가 있을 경우 | 이승언
+TTS |○|  음성 데이터가 없을 경우 텍스트를 바탕으로 생성|이승언
+Pinch |△|  카드 크기 확대 및 축소|이승언
+카드 관리 |○| 삭제, 숨김  (다중 선택 가능) / 수정 |이승언
+카드 순서 변경 |○| 카드 Drag & Drop|이승언
+카드 검색 |○| 카드 제목 및 내용 검색|  이승언,신유진
+카드 다운로드 |△| 일련번호를 이용하여 다운로드 |이승언, 뷰:신유진
+새 카드 생성 |○| |이승언,뷰:신유진
+이미지 추가 |○| 새 카드 생성시 카메라롤에서 사진 추가|이승언
+카드 수정 |△| |이승언
+음성 녹음 |○| 서버에 파일 저장 |이승언
+음성 스트리밍 |○| |이승언
+설정 정보 변경 |○| 연락처, 비밀번호 업데이트|이승언, 뷰:신유진
+UUID generator keychain |○|  |이승언
+
+### 🔎문제점과 해결방안
+* **사용자 홈의 가운데 floating menu 문제**
+Tabbar Controller를 Customize시켜 해결 
+[HomeHelperTabBarController.swift](https://github.com/CuseMe/CuseMe_iOS/blob/master/CuseMe_iOS/Pages/HomeHelper/HomeHelperTabBarController.swift)
 
 
 
-### 📋 기능
+* **collectionview delegate 에서 tts나 음성 메모가 출력 중일 때 중복으로 셀이 터치되는 문제**  
+~~~
+guard !synthesizer.isSpeaking && !streamingPlayer.isPlaying else { return }
 
-1. 발달 장애인이 사용하는 홈 (homeDisabled)
 
-2. 홈 미리보기 (preview)
-
-3. 카드 관리 (management)
-
-4. 카드 생성 (createCard)
-
-5. 카드 다운로드 (downloadCard)
-
-6. 카드 상세보기 (detailCard)
-
-7. 카드 수정 (editCard)
-
-8. 설정 (settings)
-
-   
+extension AVPlayer {
+    var isPlaying: Bool {
+        return rate != 0 && error == nil
+    }
+}
+~~~
+* **녹음 중 시간 Progress bar Customize 하기**
+~~~
+override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //init path
+        let circularPath = UIBezierPath(arcCenter: .zero, radius: 43, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        
+        //Draw the Circle
+        timeLayer.path = circularPath.cgPath
+        timeLayer.strokeColor = UIColor(red:251/255, green:109/255, blue:106/255, alpha:1.0).cgColor
+        timeLayer.lineWidth = 2
+        timeLayer.strokeEnd = 0
+        timeLayer.lineCap = CAShapeLayerLineCap.round
+        timeLayer.fillColor = UIColor.clear.cgColor
+        timeLayer.position = CGPoint(x: 188, y: 723)
+        timeLayer.transform = CATransform3DMakeRotation(-CGFloat.pi / 2, 0, 0, 1)
+        
+        backgroundLayer.position = CGPoint(x: 188, y: 723)
+        backgroundLayer.path = circularPath.cgPath
+        backgroundLayer.lineWidth = 2
+        backgroundLayer.fillColor = UIColor.clear.cgColor
+        backgroundLayer.strokeColor = UIColor(red:229/255, green:229/255, blue:229/255, alpha:1.0).cgColor
+        
+        //add layers to view
+        view.layer.addSublayer(backgroundLayer)
+        view.layer.addSublayer(timeLayer)}
+~~~
 
 ### 😁 개발
-
 👩🏻‍💻 [신유진](https://github.com/jellyb3ar)
 
 👨🏻‍💻 [이승언](https://github.com/wookeon)
+
