@@ -8,24 +8,19 @@
 
 import UIKit
 import Lottie
+import SwiftKeychainWrapper
 import AVFoundation
 
 class HomeDisabledVC: UIViewController {
 
-    let cellId = "CardCell"
-    let emptyCellId = "EmptyCell"
+    private var streamingPlayer = AVPlayer()
+    private var playerItem: AVPlayerItem?
+    
+    private let cellId = "CardCell"
+    private let emptyCellId = "EmptyCell"
     private var prevCell: CardCell?
     
-    var cards: [Card] = [
-        Card(imageURL: "test1", title: "test1", contents: "test1", record: "test", visible: true, useCount: 1, serialNum: "1234"),
-        Card(imageURL: "test2", title: "test2", contents: "test2", record: "test", visible: true, useCount: 2, serialNum: "1234"),
-        Card(imageURL: "test3", title: "test3", contents: "test3", record: "test", visible: true, useCount: 3, serialNum: "1234"),
-        Card(imageURL: "test4", title: "test4", contents: "test4", record: "test", visible: true, useCount: 4, serialNum: "1234"),
-        Card(imageURL: "test5", title: "test5", contents: "test5", record: "test", visible: true, useCount: 5, serialNum: "1234"),
-        Card(imageURL: "test6", title: "test6", contents: "test6", record: "test", visible: true, useCount: 6, serialNum: "1234"),
-        Card(imageURL: "test7", title: "test7", contents: "test7", record: "test", visible: true, useCount: 7, serialNum: "1234"),
-        Card(imageURL: "test8", title: "test8", contents: "test8", record: "test", visible: true, useCount: 8, serialNum: "1234"),
-    ]
+    var cards = [Card]()
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
     @IBOutlet weak var waveAnimationView: AnimationView!
@@ -40,6 +35,7 @@ class HomeDisabledVC: UIViewController {
     @IBOutlet weak var emptyImageViewTopConstraint: NSLayoutConstraint!
     
     private let tts = TTSService()
+    private let cardService = CardService()
     private let synthesizer = AVSpeechSynthesizer()
     private var nextOrderCount = 0
     private var temp = [Card]()
@@ -60,16 +56,15 @@ class HomeDisabledVC: UIViewController {
         setUI()
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
-        
-        temp = cards
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        orderByCount()
-        
-        cards = cards.filter { $0.visible == true }
-        
+        playAnimationView()
+        visibleCards()
+    }
+    
+    private func checkCardsCount() {
         if cards.count > 0 {
             reloadButton.isHidden = false
             lockButton.isHidden = false
@@ -83,7 +78,30 @@ class HomeDisabledVC: UIViewController {
             emptyLabel.isHidden = false
             homelockAnimationView.isHidden = false
         }
-        playAnimationView()
+    }
+    
+    private func visibleCards() {
+        cardService.visibleCards() { [weak self] response, error in
+            
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            print(response)
+            
+            if response.success {
+                // TODO: 세이프 옵셔널 바인딩
+                self.cards = response.data!
+                self.temp = self.cards
+                
+                self.cardCollectionView.reloadData()
+            } else {
+                let alert = UIAlertController(title: "에러 발생", message: "잠시 후 다시 시도해주세요.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+            self.checkCardsCount()
+        }
     }
     
     func setUI() {
@@ -97,16 +115,18 @@ class HomeDisabledVC: UIViewController {
         waveAnimationView.loopMode = .loop
     }
     
+    // TODO: 정렬 시 하이라이트 카드 버그 수정
     private func orderByCount() {
-        if nextOrderCount == 1 {
+        nextOrderCount += 1
+        nextOrderCount %= 3
+        
+        if nextOrderCount == 0 {
+            cards = temp
+        } else if nextOrderCount == 1 {
             cards = cards.sorted { $0.useCount > $1.useCount }
         } else if nextOrderCount == 2 {
             cards = cards.sorted { $0.title < $1.title }
-            nextOrderCount = -1
-        } else if nextOrderCount == 0 {
-            cards = temp
         }
-        nextOrderCount += 1
         
         cardCollectionView.reloadData()
     }
@@ -123,7 +143,8 @@ class HomeDisabledVC: UIViewController {
 
 extension HomeDisabledVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard !synthesizer.isSpeaking else { return }
+        // TODO: 카드 카운팅 증가
+        guard !synthesizer.isSpeaking && !streamingPlayer.isPlaying else { return }
         
         if prevCell != nil { prevCell?.setBorder(borderColor: UIColor.clear, borderWidth: 0) }
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
@@ -133,8 +154,17 @@ extension HomeDisabledVC: UICollectionViewDelegate {
         rightQuoteImageView.isHidden = false
         contentsTextView.text = card.contents
 
-        tts.call(card.contents) { [weak self] utterance in
-            self?.synthesizer.speak(utterance)
+        if let recordURL = card.recordURL {
+            let streamingURL = URL(string: recordURL)
+            playerItem = AVPlayerItem(url: streamingURL!)
+            
+            streamingPlayer = AVPlayer(playerItem: playerItem)
+            streamingPlayer.rate = 1.0
+            streamingPlayer.play()
+        } else {
+            tts.call(card.contents) { [weak self] utterance in
+                self?.synthesizer.speak(utterance)
+            }
         }
         
         prevCell = collectionView.cellForItem(at: indexPath) as? CardCell
@@ -170,7 +200,7 @@ extension HomeDisabledVC: UICollectionViewDelegateFlowLayout {
 extension HomeDisabledVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-                if cards.count % 2 != 0 {
+        if cards.count % 2 != 0 {
             return cards.count+1
         } else {
             return cards.count
@@ -187,9 +217,9 @@ extension HomeDisabledVC: UICollectionViewDataSource {
         
         let card = cards[indexPath.row]
         
-        //let imageURL = URL(string: card.imageURL)
+        let imageURL = URL(string: card.imageURL)
         cell.view.backgroundColor = UIColor.white
-        //cell.cardImageView.kf.setImage(with: imageURL)
+        cell.cardImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = card.title
         
         return cell

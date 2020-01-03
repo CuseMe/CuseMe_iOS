@@ -7,19 +7,15 @@
 //
 
 import UIKit
-
+// TODO: 서버 로직에 맞춰서 새로운 로직 작성
 // TODO: 클래스 이름 변경
 class EditCardVC: UIViewController {
     
     private let cellId = "CardCell"
     private let emptyCellId = "EmptyCell"
+    private var cardService = CardService()
     
-    var cards: [Card] = [
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "A", contents: "두 손을 귀에 가져다 대며 수민이는 말했다. 내꺼야?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "B", contents: "수민아 오늘 왜 이렇게 꾸미고 왔어?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "C", contents: "수민아 커피 좀 사와 돈은 줄게", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "D", contents: "수민이는 바닐라 라떼가 먹고싶어", record: "test", visible: false, useCount: 0, serialNum: "1234"),
-    ]
+    var cards: [Card] = []
     
     @IBOutlet private weak var cardCollectionView: UICollectionView!
     @IBOutlet private weak var hideButton: UIButton!
@@ -27,6 +23,9 @@ class EditCardVC: UIViewController {
     @IBOutlet private weak var allButton: UIButton!
     
     private var selectedCards = [Int]()
+    private var updateCards = [Card]()
+    private var sendData = [UpdateCards]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +44,6 @@ class EditCardVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        cards = cards.filter { $0.visible == true }
     }
     
     private func constraintForSmallDevice() {
@@ -67,31 +64,71 @@ class EditCardVC: UIViewController {
         if sender.isSelected {
             for index in 0..<cards.count {
                 cards[index].selected = true
-                hideButton.isHidden = false
                 selectedCards.append(index)
             }
+            hideButton.isHidden = false
         } else {
             for index in 0..<cards.count {
                 cards[index].selected = false
-                hideButton.isHidden = true
-                selectedCards.removeAll()
             }
+            selectedCards.removeAll()
+            hideButton.isHidden = true
         }
         
         cardCollectionView.reloadData()
     }
     
+    private func update() {
+        cardService.updateCards(cards: sendData) { [weak self] response, error in
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            print(response)
+            
+            if response.success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "에러", message: "잠시 후 다시 시도해주세요.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+        }
+    }
+    
     @IBAction func exitButtonDidTap(_ sender: Any) {
         // TODO: uialertcontroller -> 서버랑 통신 메소드 호출
-        self.dismiss(animated: true, completion: nil)
+        for index in selectedCards {
+            updateCards.append(cards[index])
+        }
+        
+        print(updateCards)
+        
+        for card in updateCards {
+            let data = UpdateCards(cardIdx: card.cardIdx, visiblity: card.visiblity, sequence: card.sequence)
+            sendData.append(data)
+        }
+        
+        print(sendData)
+        
+        let alert = UIAlertController(title: "", message: "변경 내용을 저장하시겠습니까?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "저장", style: .destructive) { [weak self] action in
+            guard let self = self else { return }
+            self.update()
+        }
+        let cancel = UIAlertAction(title: "저장 안함", style: .cancel) { [weak self] action in
+            guard let self = self else { return }
+            self.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        self.present(alert, animated: true)
     }
     
     @IBAction func hideButtonDidTap(_ sender: UIButton) {
         // TODO: hide
-        selectedCards.sort()
-        
-        for index in selectedCards { cards[index].visible = false }
-        cards = cards.filter { $0.visible == true }
+        for index in selectedCards { cards[index].visiblity = false }
+        cards = cards.filter { $0.visiblity == true }
         selectedCards.removeAll()
         cardCollectionView.reloadData()
         sender.isHidden = true
@@ -166,10 +203,10 @@ extension EditCardVC: UICollectionViewDataSource {
         
         let card = cards[indexPath.row]
         
-        //let imageURL = URL(string: card.imageURL)
+        let imageURL = URL(string: card.imageURL)
         cell.setBorder(borderColor: UIColor.mainpink, borderWidth: 0)
         cell.view.backgroundColor = UIColor.white
-        //cell.cardImageView.kf.setImage(with: imageURL)
+        cell.cardImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = card.title
         cell.selectButton.isSelected = card.selected
         cell.selectButton.isHidden = false

@@ -15,6 +15,8 @@ class CardDownloadVC: UIViewController {
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var inputViewCenterYConstraint: NSLayoutConstraint!
     
+    private var cardService = CardService()
+    
     // MARK: Control Variable
     
     
@@ -41,7 +43,24 @@ class CardDownloadVC: UIViewController {
     
     // MARK: IBAction
     @IBAction func downloadButtonDidTap(_ sender: Any) {
-        // TODO: 다운로드 통신 API
+        // TODO: 다운로드 이후 카드 상세
+        guard let serialNumber = inputTextField.text else { return }
+        
+        cardService.download(serialNumber: serialNumber) { [weak self] response, error in
+            
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            if response.success {
+                self.dismiss(animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "실패", message: response.message, preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(action)
+                
+                self.present(alert, animated: true)
+            }
+        }
     }
     
     @IBAction func selfButtonDidTap(_ sender: Any) {

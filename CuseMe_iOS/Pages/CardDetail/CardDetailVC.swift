@@ -49,7 +49,7 @@ class CardDetailVC: UIViewController {
         cardImageView.kf.setImage(with: URL(string: card.imageURL))
         titleLabel.text = card.title
         contentsTextView.text = card.contents
-        visibleButton.isSelected = card.visible
+        visibleButton.isSelected = card.visiblity
         serialNumberLabel.text = card.serialNum
         // TODO: 녹음 데이터
     }

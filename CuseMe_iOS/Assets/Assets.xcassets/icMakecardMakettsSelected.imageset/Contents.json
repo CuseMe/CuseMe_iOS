@@ -2,17 +2,17 @@
   "images" : [
     {
       "filename" : "icMakecardMakettsSelected.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icMakecardMakettsSelected@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "icMakecardMakettsSelected@2x.png"
     },
     {
+      "idiom" : "universal",
       "scale" : "3x",
-      "idiom" : "universal",
       "filename" : "icMakecardMakettsSelected@3x.png"
     }
   ],

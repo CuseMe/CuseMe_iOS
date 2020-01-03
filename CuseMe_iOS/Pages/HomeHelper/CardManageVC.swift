@@ -10,20 +10,8 @@ import UIKit
 
 class CardManageVC: UIViewController {
     
-    var cards = [
-        Card(imageURL: "test", title: "C", contents: "C", record: nil, visible: true, useCount: 2, serialNum: "3"),
-        Card(imageURL: "test", title: "B", contents: "B", record: nil, visible: false, useCount: 4, serialNum: "2"),
-        Card(imageURL: "test", title: "A", contents: "A", record: nil, visible: true, useCount: 2, serialNum: "1"),
-        Card(imageURL: "test", title: "D", contents: "D", record: nil, visible: false, useCount: 7, serialNum: "4"),
-        Card(imageURL: "test", title: "Hello", contents: "hihi", record: nil, visible: false, useCount: 6, serialNum: "5"),
-        Card(imageURL: "test", title: "화장실", contents: "화장실 가고싶어요.", record: nil, visible: false, useCount: 6, serialNum: "6"),
-        Card(imageURL: "test", title: "bed", contents: "I'm so sleepy.", record: nil, visible: false, useCount: 6, serialNum: "7"),
-        Card(imageURL: "test", title: "bread", contents: "I'm hungry.", record: nil, visible: false, useCount: 6, serialNum: "8"),
-        Card(imageURL: "test", title: "toilet", contents: "I want to go toilet.", record: nil, visible: false, useCount: 6, serialNum: "9"),
-        Card(imageURL: "test", title: "bathroom", contents: "I want to go toILet.", record: nil, visible: false, useCount: 6, serialNum: "10"),
-        Card(imageURL: "test", title: "화장품", contents: "가나다라.", record: nil, visible: false, useCount: 6, serialNum: "6")
-    ]
-    
+    var cards: [Card] = []
+    var cardService = CardService()
     var temp: [Card] = []
 
     @IBOutlet private weak var doneButton: UIButton!
@@ -74,8 +62,20 @@ class CardManageVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        cards = cards.filter { $0.visible == true } + cards.filter { $0.visible == false }
-        cardsEmptyCheck()
+        cardService.allCards() { [weak self] response, error in
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            if response.success {
+                self.cards = response.data!
+                
+                self.cards = self.cards.filter { $0.visiblity == true } + self.cards.filter { $0.visiblity == false }
+                self.cardsEmptyCheck()
+                self.cardCollectionView.reloadData()
+            } else {
+                // TODO: 조회 실패, 에러 핸들링
+            }
+        }
     }
     
     private func cardsEmptyCheck() {
@@ -123,7 +123,7 @@ class CardManageVC: UIViewController {
     
     private func orderByTag(tag: Int) {
         if tag == 0 { // 보이는 순
-            cards = cards.filter { $0.visible == true } + cards.filter { $0.visible == false }
+            cards = cards.filter { $0.visiblity == true } + cards.filter { $0.visiblity == false }
         } else if tag == 1 { // 빈도 순
             cards = cards.sorted { $0.useCount > $1.useCount }
         } else if tag == 2 { // 이름 순
@@ -239,11 +239,11 @@ extension CardManageVC: UICollectionViewDataSource {
         
         let card = cards[indexPath.row]
         
-        //let imageURL = URL(string: card.imageURL)
+        let imageURL = URL(string: card.imageURL)
         cell.view.backgroundColor = UIColor.white
-        //cell.cardImageView.kf.setImage(with: imageURL)
+        cell.cardImageView.kf.setImage(with: imageURL)
         cell.titleLabel.text = card.title
-        cell.visibleButton.isSelected = card.visible
+        cell.visibleButton.isSelected = card.visiblity
         cell.visibleButton.isHidden = false
         
         return cell

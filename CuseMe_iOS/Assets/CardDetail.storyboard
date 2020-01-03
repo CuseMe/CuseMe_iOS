@@ -212,7 +212,6 @@
         <!--Card EditVC-->
         <scene sceneID="HBH-eT-SDE">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XOd-6r-BId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CardEditVC" id="erW-8F-6I1" customClass="CardEditVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ckx-Gn-bZg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -274,18 +273,21 @@
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="카드 제목을 입력해주세요" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="adc-dt-INc">
                                 <rect key="frame" x="22" y="434" width="331" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="WV2-2d-4Ld"/>
+                                </constraints>
                                 <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-E9-R3U">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Zg-E9-R3U">
                                 <rect key="frame" x="22" y="482" width="331" height="121"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" red="0.20392156862745098" green="0.20392156862745098" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의사 카드 음성 녹음" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-ig-26F">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="의사 카드 음성 녹음" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRu-ig-26F">
                                 <rect key="frame" x="22" y="627" width="131" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="131" id="Iwk-uU-EVZ"/>
@@ -295,30 +297,30 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.20392156859999999" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-Sd-1Ru">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Vg-Sd-1Ru">
                                 <rect key="frame" x="233" y="624" width="124" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="124" id="Fx0-r4-17a"/>
                                     <constraint firstAttribute="height" constant="26" id="fkJ-0h-ckb"/>
                                 </constraints>
-                                <state key="normal" image="btnCarddetailNoticeUnselected"/>
+                                <state key="normal" image="icMakecardMakettsUnselected"/>
                                 <connections>
                                     <action selector="ttsButtonDidTap:" destination="erW-8F-6I1" eventType="touchUpInside" id="oXQ-8U-2H0"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KN4-wX-Ojq">
-                                <rect key="frame" x="22" y="675" width="331" height="103"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="KN4-wX-Ojq">
+                                <rect key="frame" x="0.0" y="675" width="375" height="103"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7M-Lb-ffQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="110.33333333333333" height="103"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="103"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bW-z3-Y9D">
-                                                <rect key="frame" x="12.666666666666664" y="9" width="85" height="85"/>
+                                            <button opaque="NO" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bW-z3-Y9D">
+                                                <rect key="frame" x="20" y="9" width="85" height="85"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="cCC-wE-DJ8"/>
-                                                    <constraint firstAttribute="width" constant="85" id="lsY-o0-JAw"/>
+                                                    <constraint firstAttribute="width" constant="85" id="cvZ-de-Dvv"/>
+                                                    <constraint firstAttribute="height" constant="85" id="kyn-KN-dEj"/>
                                                 </constraints>
-                                                <state key="normal" image="btnMakecardPlaySelected"/>
+                                                <state key="normal" image="btnMakecardPlayUnselected"/>
                                                 <connections>
                                                     <action selector="playButtonDidTap:" destination="erW-8F-6I1" eventType="touchUpInside" id="Bh6-YT-2Vh"/>
                                                 </connections>
@@ -331,34 +333,37 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTS-vt-h4k">
-                                        <rect key="frame" x="110.33333333333334" y="0.0" width="110.33333333333334" height="103"/>
+                                        <rect key="frame" x="125" y="0.0" width="125" height="103"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQA-9r-RFZ">
-                                                <rect key="frame" x="12.666666666666657" y="9" width="85" height="85"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4We-yL-qZ2">
+                                                <rect key="frame" x="20" y="9" width="85" height="85"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="85" id="Orz-D4-scI"/>
-                                                    <constraint firstAttribute="width" constant="85" id="U4M-WS-fZa"/>
+                                                    <constraint firstAttribute="height" constant="85" id="OZl-yw-shk"/>
+                                                    <constraint firstAttribute="width" constant="85" id="zRp-fC-tKD"/>
                                                 </constraints>
-                                                <state key="normal" image="btnmakecardrecord"/>
+                                                <state key="normal" image="recordButton">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="recordButtonDidTap:" destination="erW-8F-6I1" eventType="touchUpInside" id="tXS-W9-8bs"/>
+                                                    <action selector="recordDidTap:" destination="erW-8F-6I1" eventType="touchUpInside" id="kVl-Oz-aoB"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstItem="BQA-9r-RFZ" firstAttribute="centerX" secondItem="CTS-vt-h4k" secondAttribute="centerX" id="bFQ-JY-BgD"/>
-                                            <constraint firstItem="BQA-9r-RFZ" firstAttribute="centerY" secondItem="CTS-vt-h4k" secondAttribute="centerY" id="qnj-Lf-1Qf"/>
+                                            <constraint firstItem="4We-yL-qZ2" firstAttribute="centerX" secondItem="CTS-vt-h4k" secondAttribute="centerX" id="WwE-oD-cw8"/>
+                                            <constraint firstItem="4We-yL-qZ2" firstAttribute="centerY" secondItem="CTS-vt-h4k" secondAttribute="centerY" id="dbq-nL-OUx"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8b-Nr-JtJ">
-                                        <rect key="frame" x="220.66666666666666" y="0.0" width="110.33333333333334" height="103"/>
+                                        <rect key="frame" x="250" y="0.0" width="125" height="103"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IkU-Es-DiG">
-                                                <rect key="frame" x="14.666666666666657" y="34.666666666666629" width="81" height="34"/>
-                                                <color key="backgroundColor" red="0.98431372549999996" green="0.42745098040000001" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <rect key="frame" x="22" y="34.666666666666629" width="81" height="34"/>
+                                                <color key="backgroundColor" red="0.99607843137254903" green="0.85098039215686272" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="81" id="WJo-Py-h9N"/>
+                                                    <constraint firstAttribute="width" constant="81" id="rX2-Mh-5CZ"/>
                                                     <constraint firstAttribute="height" constant="34" id="zRi-ne-Egl"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -378,7 +383,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="103" id="pZi-zD-0oX"/>
+                                    <constraint firstAttribute="width" constant="375" id="ade-oS-GlJ"/>
+                                    <constraint firstAttribute="height" constant="103" id="oWd-jL-OC8"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -399,12 +405,11 @@
                             <constraint firstItem="Ul5-xu-kFB" firstAttribute="top" secondItem="Z19-Lz-mlE" secondAttribute="top" constant="57" id="kNo-tL-9tA"/>
                             <constraint firstItem="APg-bT-VWr" firstAttribute="centerY" secondItem="kkg-RK-tka" secondAttribute="centerY" id="lXt-dQ-W5R"/>
                             <constraint firstItem="Ul5-xu-kFB" firstAttribute="leading" secondItem="Z19-Lz-mlE" secondAttribute="leading" constant="18" id="otu-fO-kmZ"/>
-                            <constraint firstItem="Z19-Lz-mlE" firstAttribute="trailing" secondItem="KN4-wX-Ojq" secondAttribute="trailing" constant="22" id="p3l-Yp-css"/>
+                            <constraint firstItem="Z19-Lz-mlE" firstAttribute="trailing" secondItem="KN4-wX-Ojq" secondAttribute="trailing" id="p3l-Yp-css"/>
                             <constraint firstItem="8Zg-E9-R3U" firstAttribute="leading" secondItem="Z19-Lz-mlE" secondAttribute="leading" constant="22" id="tGK-oP-DUE"/>
-                            <constraint firstItem="KN4-wX-Ojq" firstAttribute="leading" secondItem="Z19-Lz-mlE" secondAttribute="leading" constant="22" id="vgv-OZ-eQA"/>
+                            <constraint firstItem="KN4-wX-Ojq" firstAttribute="leading" secondItem="Z19-Lz-mlE" secondAttribute="leading" id="vgv-OZ-eQA"/>
                             <constraint firstItem="adc-dt-INc" firstAttribute="top" secondItem="Ul5-xu-kFB" secondAttribute="bottom" constant="26" id="wXt-72-5RT"/>
                             <constraint firstItem="4Vg-Sd-1Ru" firstAttribute="centerY" secondItem="XRu-ig-26F" secondAttribute="centerY" id="yk0-Vr-ZRp"/>
-                            <constraint firstItem="KN4-wX-Ojq" firstAttribute="top" secondItem="XRu-ig-26F" secondAttribute="bottom" constant="28" id="zAm-l1-gwm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z19-Lz-mlE"/>
                     </view>
@@ -416,13 +421,98 @@
                         <outlet property="contentsTextView" destination="8Zg-E9-R3U" id="sb0-2e-9X6"/>
                         <outlet property="emptyLabel" destination="IUg-JQ-F7I" id="fuX-yl-2kA"/>
                         <outlet property="playButton" destination="4bW-z3-Y9D" id="OTr-cH-Tld"/>
-                        <outlet property="recordButton" destination="BQA-9r-RFZ" id="bvZ-pp-doS"/>
+                        <outlet property="recordButton" destination="4We-yL-qZ2" id="JPC-Eu-PhC"/>
                         <outlet property="titleTextField" destination="adc-dt-INc" id="jHs-RY-1VE"/>
                         <outlet property="ttsButton" destination="4Vg-Sd-1Ru" id="FMj-rw-lTV"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOd-6r-BId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2488.8000000000002" y="-146.30541871921181"/>
+        </scene>
+        <!--Create CardVC-->
+        <scene sceneID="3gE-FX-cja">
+            <objects>
+                <viewController id="xLv-Lt-bBk" customClass="CreateCardVC" customModule="큐즈미" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0ur-Gn-zGD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kXN-Ke-5ah">
+                                <rect key="frame" x="42" y="44" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="exit"/>
+                                <connections>
+                                    <action selector="exitButtonDidTap:" destination="xLv-Lt-bBk" eventType="touchUpInside" id="g9g-BJ-RUP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kcG-cE-0D1">
+                                <rect key="frame" x="313" y="43" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="add"/>
+                                <connections>
+                                    <action selector="addButtonDidTap:" destination="xLv-Lt-bBk" eventType="touchUpInside" id="Ha7-5c-6c5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgX-rt-cN8">
+                                <rect key="frame" x="67" y="123" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9P4-FG-omZ">
+                                <rect key="frame" x="42" y="322" width="265" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tlf-MR-WYT">
+                                <rect key="frame" x="42" y="387" width="265" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ywk-fH-FpH">
+                                <rect key="frame" x="78" y="704" width="25" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="btnMakecardPlaySelected"/>
+                                <connections>
+                                    <action selector="playButtonDidTap:" destination="xLv-Lt-bBk" eventType="touchUpInside" id="PO0-DR-QYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5qZ-6W-xyM">
+                                <rect key="frame" x="145" y="675" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="recordButton"/>
+                                <connections>
+                                    <action selector="recordButtonDidTap:" destination="xLv-Lt-bBk" eventType="touchUpInside" id="KlN-j1-tcY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="44c-qX-CgH">
+                                <rect key="frame" x="270" y="702" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="확인"/>
+                                <connections>
+                                    <action selector="confirmButtonDidTap:" destination="xLv-Lt-bBk" eventType="touchUpInside" id="oaa-Mf-r0W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="HJB-c3-9IQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="cardImageView" destination="hgX-rt-cN8" id="zfb-ru-Pru"/>
+                        <outlet property="confirmButton" destination="44c-qX-CgH" id="JSb-s5-rUj"/>
+                        <outlet property="contentTextView" destination="tlf-MR-WYT" id="8c9-fJ-Cd6"/>
+                        <outlet property="playButton" destination="Ywk-fH-FpH" id="3PJ-in-nQe"/>
+                        <outlet property="recordButton" destination="5qZ-6W-xyM" id="0RV-bZ-sSy"/>
+                        <outlet property="titleTextField" destination="9P4-FG-omZ" id="dUU-zx-liv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VP6-eO-YVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3296.8000000000002" y="-146.30541871921181"/>
         </scene>
     </scenes>
     <resources>
@@ -434,7 +524,9 @@
         <image name="btnCarddetailPlay" width="70" height="70"/>
         <image name="btnEditClose" width="28" height="28"/>
         <image name="btnMakecardPlaySelected" width="25" height="28"/>
-        <image name="btnmakecardrecord" width="86" height="86"/>
+        <image name="btnMakecardPlayUnselected" width="25" height="28"/>
+        <image name="icMakecardMakettsUnselected" width="124" height="26"/>
         <image name="icMakecardPhoto" width="124" height="124"/>
+        <image name="recordButton" width="86" height="86"/>
     </resources>
 </document>

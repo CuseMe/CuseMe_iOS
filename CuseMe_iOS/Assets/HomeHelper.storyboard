@@ -65,14 +65,14 @@
                                     <action selector="editButtonDidTap:" destination="O4j-Zg-WUF" eventType="touchUpInside" id="Iul-dn-kqg"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeQuoteLeft" translatesAutoresizingMaskIntoConstraints="NO" id="ooQ-tR-Nl6">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeQuoteLeft" translatesAutoresizingMaskIntoConstraints="NO" id="ooQ-tR-Nl6">
                                 <rect key="frame" x="24" y="123" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ARf-Dh-siH"/>
                                     <constraint firstAttribute="width" constant="20" id="FCa-d3-gq4"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeQuoteRight" translatesAutoresizingMaskIntoConstraints="NO" id="LgR-ep-fDy">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgHomeQuoteRight" translatesAutoresizingMaskIntoConstraints="NO" id="LgR-ep-fDy">
                                 <rect key="frame" x="331" y="123" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="6WH-Zh-XO5"/>
@@ -150,6 +150,8 @@
                         <outlet property="emptyImageViewTopConstraint" destination="12C-d5-Ueq" id="AC6-pO-wS4"/>
                         <outlet property="emptyLabel" destination="V51-SL-ect" id="fUd-YE-Iex"/>
                         <outlet property="emptyLabelTopConstraint" destination="4lh-4k-t69" id="1Qy-HR-wCr"/>
+                        <outlet property="leftQuoteImageView" destination="ooQ-tR-Nl6" id="clG-Ws-2ll"/>
+                        <outlet property="rightQuoteImageView" destination="LgR-ep-fDy" id="UcB-rh-7Le"/>
                         <outlet property="waveAnimationView" destination="6s1-Sb-9dK" id="ryd-da-Qz1"/>
                     </connections>
                 </viewController>
@@ -484,7 +486,6 @@
         <!--카드 관리-->
         <scene sceneID="j8u-w8-I7x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nbW-JV-qT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="OQH-76-Wd9" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="카드 관리" image="btnTabbarUnselectedCardmanagement" selectedImage="btnTabbarSelectedCardmanagement" id="ovB-5k-64N"/>
                     <toolbarItems/>
@@ -496,6 +497,7 @@
                         <segue destination="jQX-Tp-Xuk" kind="relationship" relationship="rootViewController" id="mvL-Wd-cSj"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbW-JV-qT8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="292"/>
         </scene>

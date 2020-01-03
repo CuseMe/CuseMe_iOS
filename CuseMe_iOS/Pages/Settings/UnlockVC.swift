@@ -16,7 +16,7 @@ class UnlockVC: UIViewController {
     @IBOutlet weak var underLine: UIView!
     @IBOutlet weak var inputViewCenterYConstraint: NSLayoutConstraint!
     
-    let pass = "0000"  // check용 임시 비밀번호
+    private var authService = AuthService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,15 +50,27 @@ class UnlockVC: UIViewController {
     }
     
     @IBAction func unlockButtonTouchDown(_ sender: Any) {
-        if(passwordTextField.text != pass) {
-            alertLabel.isHidden = false // 비밀번호 실패
-        } else {
-            // TODO: 잠금해제 API
-            weak var pvc = self.presentingViewController
-            self.dismiss(animated: true) {
-                let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "HomeHelperTC") as! HomeHelperTabBarController
-                dvc.modalPresentationStyle = .fullScreen
-                pvc?.present(dvc, animated: true)
+        guard let password = passwordTextField.text else { return }
+        
+        authService.admin(password: password) { [weak self] response, error in
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            print(response)
+            
+            if response.success {
+                let token = response.data?.token
+                UserDefaults.standard.set(token, forKey: "token")
+                
+                weak var pvc = self.presentingViewController
+                
+                self.dismiss(animated: true) {
+                    let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "HomeHelperTC") as! HomeHelperTabBarController
+                    dvc.modalPresentationStyle = .fullScreen
+                    pvc?.present(dvc, animated: true)
+                }
+            } else {
+                self.alertLabel.isHidden = false
             }
         }
     }
