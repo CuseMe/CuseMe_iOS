@@ -43,7 +43,6 @@
 		F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7A23BE17B4005D9B4E /* APIManager.swift */; };
 		F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7C23BE189A005D9B4E /* Requestable.swift */; };
 		F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA7E23BE18C1005D9B4E /* AuthService.swift */; };
-		F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */; };
 		F5AEB4BF23B5E2FB002B65F0 /* CardDownload.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */; };
 		F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */; };
 		F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */; };
@@ -105,7 +104,6 @@
 		F56CEA7A23BE17B4005D9B4E /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		F56CEA7C23BE189A005D9B4E /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		F56CEA7E23BE18C1005D9B4E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
 		F5AEB4BE23B5E2FB002B65F0 /* CardDownload.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CardDownload.storyboard; sourceTree = "<group>"; };
 		F5AEB4C123B5E8B9002B65F0 /* CardDownloadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDownloadVC.swift; sourceTree = "<group>"; };
 		F5AEB4C323B5FCAA002B65F0 /* CardManageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManageVC.swift; sourceTree = "<group>"; };
@@ -202,6 +200,15 @@
 			path = CardDownload;
 			sourceTree = "<group>";
 		};
+		F5B7F52423BF4C4C00920938 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F56CEA7A23BE17B4005D9B4E /* APIManager.swift */,
+				F56CEA7C23BE189A005D9B4E /* Requestable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F5D7FE7123B262710079AE60 /* HomeHelper */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +283,7 @@
 		F5DEF28523B220CE00C8E3D0 /* Domains */ = {
 			isa = PBXGroup;
 			children = (
+				F5B7F52423BF4C4C00920938 /* Protocols */,
 				F5DEF28623B220D500C8E3D0 /* Models */,
 				F5DEF28723B2211500C8E3D0 /* Services */,
 			);
@@ -296,10 +304,7 @@
 		F5DEF28723B2211500C8E3D0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F56CEA7A23BE17B4005D9B4E /* APIManager.swift */,
-				F56CEA8023BE1957005D9B4E /* ResponseDefault.swift */,
 				F56CEA7E23BE18C1005D9B4E /* AuthService.swift */,
-				F56CEA7C23BE189A005D9B4E /* Requestable.swift */,
 				0E9575CE23BE6FC000D531F8 /* AuthSigninService.swift */,
 				0E9575D023BE71B200D531F8 /* AuthChangePasswordService.swift */,
 				0E9575D223BE71EC00D531F8 /* AuthChangePhoneNumService.swift */,
@@ -516,11 +521,9 @@
 				0E9575D323BE71ED00D531F8 /* AuthChangePhoneNumService.swift in Sources */,
 				F56CEA4D23BDE703005D9B4E /* EmptyCell.swift in Sources */,
 				F56CEA7F23BE18C1005D9B4E /* AuthService.swift in Sources */,
-				0E50475623BB306200E8F92C /* CardDetailVC.swift in Sources */,
 				0E9575E323BE756800D531F8 /* CardDownloadService.swift in Sources */,
 				0E9575D123BE71B200D531F8 /* AuthChangePasswordService.swift in Sources */,
 				F56CEA7B23BE17B4005D9B4E /* APIManager.swift in Sources */,
-				F56CEA8123BE1957005D9B4E /* ResponseDefault.swift in Sources */,
 				F56CEA7D23BE189A005D9B4E /* Requestable.swift in Sources */,
 				0E9575D523BE725E00D531F8 /* ShowAllCardService.swift in Sources */,
 				0E9575D923BE734600D531F8 /* ShowDisabledCardAllService.swift in Sources */,

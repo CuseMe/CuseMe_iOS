@@ -6,8 +6,6 @@
 //  Copyright © 2020 cuseme. All rights reserved.
 //
 
-import Foundation
-
 struct ResponseDefault: Codable {
     let status: Int
     let success: Bool
