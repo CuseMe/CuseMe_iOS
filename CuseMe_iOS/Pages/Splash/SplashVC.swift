@@ -20,7 +20,11 @@ class SplashVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
+        auth()
+    }
+    
+    func auth() {
         if let retrievedString = KeychainWrapper.standard.string(forKey: "uuid") {
             print("Retrieved : \(retrievedString)")
         } else {
@@ -29,14 +33,7 @@ class SplashVC: UIViewController {
             print("Save was successful: \(saveSuccessful)")
         }
         
-        guard let uuid = KeychainWrapper.standard.string(forKey: "uuid") else {
-            return // TODO: 앱 종료
-        }
-        auth(uuid)
-    }
-    
-    func auth(_ uuid: String) {
-        authService.auth(uuid: uuid) { [weak self] response, Error in
+        authService.auth() { [weak self] response, Error in
             
             guard let self = self else { return }
             guard let response = response else { return }

@@ -39,9 +39,6 @@
                                     <constraint firstAttribute="width" secondItem="fVO-uf-HJd" secondAttribute="height" multiplier="10:7" id="jy1-4d-Naf"/>
                                 </constraints>
                                 <state key="normal" image="btnCarddetailOff"/>
-                                <connections>
-                                    <action selector="visibleButtonDidTap:" destination="gTV-IL-0wX" eventType="touchUpInside" id="JRL-gi-wLS"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9E-12-Jnx">
                                 <rect key="frame" x="121" y="8" width="28" height="28"/>

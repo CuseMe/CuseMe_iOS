@@ -13,16 +13,15 @@ import AVFoundation
 
 class HomePreviewVC: UIViewController {
     
+    private var streamingPlayer = AVPlayer()
+    private var playerItem: AVPlayerItem?
+    
     private let cellId = "CardCell"
     private let emptyCellId = "EmptyCell"
     private var prevCell: CardCell?
+    private var cardService = CardService()
     
-    let cards: [Card] = [
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "두 손을 귀에 가져다 대며 수민이는 말했다. 내꺼야?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민아 오늘 왜 이렇게 꾸미고 왔어?", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민이는 미세 먼지가 싫어요", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-        Card(imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Wheesung_International_Film_Festival_2018_2.jpg/500px-Wheesung_International_Film_Festival_2018_2.jpg", title: "test", contents: "수민이는 바닐라 라떼가 먹고싶어", record: "test", visible: true, useCount: 0, serialNum: "1234"),
-    ]
+    var cards = [Card]()
 
     @IBOutlet private weak var doneButton: UIButton!
     @IBOutlet private weak var editButton: UIButton!
@@ -32,6 +31,8 @@ class HomePreviewVC: UIViewController {
     @IBOutlet private weak var emptyImageView: UIImageView!
     @IBOutlet private weak var emptyLabel: UILabel!
     
+    @IBOutlet weak var rightQuoteImageView: UIImageView!
+    @IBOutlet weak var leftQuoteImageView: UIImageView!
     @IBOutlet private weak var emptyImageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet private weak var emptyLabelTopConstraint: NSLayoutConstraint!
     
@@ -40,6 +41,9 @@ class HomePreviewVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TODO: EditCardVC 문제 해결되면 정리
+        editButton.isHidden = true
+        
         waveAnimationView.animation = Animation.named("wave")
         
         setUI()
@@ -57,8 +61,30 @@ class HomePreviewVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        cardService.visibleCards() { [weak self] response, error in
+            
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            print("##### 구분선 #####")
+            print(response)
+            
+            if response.success {
+                // TODO: 세이프 옵셔널 바인딩
+                self.cards = response.data!
+                
+                self.cardCollectionView.reloadData()
+            } else {
+                let alert = UIAlertController(title: "에러 발생", message: "잠시 후 다시 시도해주세요.", preferredStyle: .alert)
+                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alert.addAction(action)
+                self.present(alert, animated: true)
+            }
+            self.cardsEmptyCheck()
+        }
+        
         playWaveAnimation()
-        cardsEmptyCheck()
     }
     
     private func constraintForSmallDevice() {
@@ -96,6 +122,7 @@ class HomePreviewVC: UIViewController {
     @IBAction private func editButtonDidTap(_ sender: Any) {
         let dvc = UIStoryboard(name: "HomeHelper", bundle: nil).instantiateViewController(withIdentifier: "EditCardVC") as! EditCardVC
         dvc.modalPresentationStyle = .fullScreen
+        dvc.cards = cards
         // TODO: 데이터 전달, 카드 리스트 편집 결과 받기
         present(dvc, animated: true)
     }
@@ -107,19 +134,30 @@ class HomePreviewVC: UIViewController {
 
 extension HomePreviewVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard !synthesizer.isSpeaking else { return }
+        guard !synthesizer.isSpeaking && !streamingPlayer.isPlaying else { return }
         
         if prevCell != nil { prevCell?.setBorder(borderColor: UIColor.clear, borderWidth: 0) }
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         cell.setBorder(borderColor: UIColor.mainpink, borderWidth: 1)
         let card = cards[indexPath.row]
+        leftQuoteImageView.isHidden = false
+        rightQuoteImageView.isHidden = false
         contentsTextView.text = card.contents
 
-        tts.call(card.contents) { [weak self] utterance in
-            self?.synthesizer.speak(utterance)
+        if let recordURL = card.recordURL {
+            let streamingURL = URL(string: recordURL)
+            playerItem = AVPlayerItem(url: streamingURL!)
+            
+            streamingPlayer = AVPlayer(playerItem: playerItem)
+            streamingPlayer.rate = 1.0
+            streamingPlayer.play()
+        } else {
+            tts.call(card.contents) { [weak self] utterance in
+                self?.synthesizer.speak(utterance)
+            }
         }
         
-        prevCell = collectionView.cellForItem(at: indexPath) as? CardCell
+        prevCell = cell
     }
 }
 

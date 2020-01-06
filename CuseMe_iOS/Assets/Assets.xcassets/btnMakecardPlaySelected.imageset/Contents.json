@@ -2,18 +2,18 @@
   "images" : [
     {
       "filename" : "btnMakecardPlaySelected.png",
-      "scale" : "1x",
-      "idiom" : "universal"
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "btnMakecardPlaySelected@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "btnMakecardPlaySelected@2x.png"
-    },
-    {
-      "scale" : "3x",
       "filename" : "btnMakecardPlaySelected@3x.png",
-      "idiom" : "universal"
+      "scale" : "3x"
     }
   ],
   "info" : {

@@ -175,8 +175,8 @@ class HomeHelperTabBarController: UITabBarController {
     @objc func subMenuButtonDidTap(_ sender: UIButton) {
         
         if sender.tag == 0 {
-            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardEditVC") as! CardEditVC
-            dvc.addButtonString = "추가"
+            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CreateCardVC") as! CreateCardVC
+            //TODO: 다음 VC 에 수정인지 추가인지 전달
             dvc.modalPresentationStyle = .fullScreen
             present(dvc, animated: true)
         } else if sender.tag == 1 {

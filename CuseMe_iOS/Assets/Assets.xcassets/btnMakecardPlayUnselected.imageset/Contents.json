@@ -1,14 +1,14 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
+      "filename" : "btnMakecardPlayUnselected.png",
       "scale" : "1x",
-      "filename" : "btnMakecardPlayUnselected.png"
+      "idiom" : "universal"
     },
     {
+      "idiom" : "universal",
       "filename" : "btnMakecardPlayUnselected@2x.png",
-      "scale" : "2x",
-      "idiom" : "universal"
+      "scale" : "2x"
     },
     {
       "scale" : "3x",
