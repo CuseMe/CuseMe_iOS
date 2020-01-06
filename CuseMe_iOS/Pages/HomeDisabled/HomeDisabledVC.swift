@@ -20,6 +20,10 @@ class HomeDisabledVC: UIViewController {
     private let emptyCellId = "EmptyCell"
     private var prevCell: CardCell?
     
+    private var ratio: CGFloat = 1.152866242038217
+    private var width: CGFloat = (UIScreen.main.bounds.width-61)/2
+    private var height: CGFloat = ((UIScreen.main.bounds.width-61)/2)*1.152866242038217
+    
     var cards = [Card]()
     
     @IBOutlet weak var cardCollectionView: UICollectionView!
@@ -56,6 +60,15 @@ class HomeDisabledVC: UIViewController {
         setUI()
         cardCollectionView.dataSource = self
         cardCollectionView.delegate = self
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(homelockViewDidTap))
+        homelockAnimationView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func homelockViewDidTap(_ sender: UITapGestureRecognizer) {
+        let dvc = UIStoryboard(name: "Settings", bundle: nil).instantiateViewController(withIdentifier: "UnlockVC") as! UnlockVC
+        dvc.modalPresentationStyle = .fullScreen
+        self.present(dvc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -117,6 +130,7 @@ class HomeDisabledVC: UIViewController {
     
     // TODO: 정렬 시 하이라이트 카드 버그 수정
     private func orderByCount() {
+        if prevCell != nil { prevCell?.setBorder(borderColor: UIColor.mainpink, borderWidth: 0) }
         nextOrderCount += 1
         nextOrderCount %= 3
         
@@ -128,6 +142,7 @@ class HomeDisabledVC: UIViewController {
             cards = cards.sorted { $0.title < $1.title }
         }
         
+        prevCell = nil
         cardCollectionView.reloadData()
     }
     
@@ -136,6 +151,7 @@ class HomeDisabledVC: UIViewController {
         dvc.modalPresentationStyle = .fullScreen
         self.present(dvc, animated: true)
     }
+    
     @IBAction func reloadButtonDidTap(_ sender: UIButton) {
         orderByCount()
     }
@@ -143,7 +159,6 @@ class HomeDisabledVC: UIViewController {
 
 extension HomeDisabledVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: 카드 카운팅 증가
         guard !synthesizer.isSpeaking && !streamingPlayer.isPlaying else { return }
         
         if prevCell != nil { prevCell?.setBorder(borderColor: UIColor.clear, borderWidth: 0) }
@@ -153,6 +168,17 @@ extension HomeDisabledVC: UICollectionViewDelegate {
         leftQuoteImageView.isHidden = false
         rightQuoteImageView.isHidden = false
         contentsTextView.text = card.contents
+        
+        cardService.increaseUseCount(cardIdx: card.cardIdx) { [weak self] response, error in
+            guard let self = self else { return }
+            guard let response = response else { return }
+            
+            if response.success {
+                self.cards[indexPath.row].useCount += 1
+            } else {
+                // TODO: 카운트 증가 실패 시 로직
+            }
+        }
 
         if let recordURL = card.recordURL {
             let streamingURL = URL(string: recordURL)
@@ -167,16 +193,13 @@ extension HomeDisabledVC: UICollectionViewDelegate {
             }
         }
         
-        prevCell = collectionView.cellForItem(at: indexPath) as? CardCell
+        prevCell = cell
     }
 }
 
 extension HomeDisabledVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let width: CGFloat = (UIScreen.main.bounds.width-61)/2
-        let height: CGFloat = width*1.152866242038217
         
         return CGSize(width: width, height: height)
     }

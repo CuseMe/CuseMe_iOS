@@ -17,6 +17,8 @@ class EditCardVC: UIViewController {
     
     var cards: [Card] = []
     
+    @IBOutlet var longPressGestureRecognizer: UILongPressGestureRecognizer!
+    
     @IBOutlet private weak var cardCollectionView: UICollectionView!
     @IBOutlet private weak var hideButton: UIButton!
     @IBOutlet private weak var hideButtonBottomConstraint: NSLayoutConstraint!
@@ -24,7 +26,7 @@ class EditCardVC: UIViewController {
     
     private var selectedCards = [Int]()
     private var updateCards = [Card]()
-    private var sendData = [UpdateCards]()
+    private var sendData = [Card]()
     
     
     override func viewDidLoad() {
@@ -78,35 +80,10 @@ class EditCardVC: UIViewController {
         cardCollectionView.reloadData()
     }
     
-    private func update() {
-        cardService.updateCards(cards: sendData) { [weak self] response, error in
-            guard let self = self else { return }
-            guard let response = response else { return }
-            
-            print(response)
-            
-            if response.success {
-                self.dismiss(animated: true, completion: nil)
-            } else {
-                let alert = UIAlertController(title: "에러", message: "잠시 후 다시 시도해주세요.", preferredStyle: .alert)
-                let action = UIAlertAction(title: "확인", style: .default, handler: nil)
-                alert.addAction(action)
-                self.present(alert, animated: true)
-            }
-        }
-    }
-    
     @IBAction func exitButtonDidTap(_ sender: Any) {
         // TODO: uialertcontroller -> 서버랑 통신 메소드 호출
         for index in selectedCards {
             updateCards.append(cards[index])
-        }
-        
-        print(updateCards)
-        
-        for card in updateCards {
-            let data = UpdateCards(cardIdx: card.cardIdx, visiblity: card.visiblity, sequence: card.sequence)
-            sendData.append(data)
         }
         
         print(sendData)
@@ -114,7 +91,6 @@ class EditCardVC: UIViewController {
         let alert = UIAlertController(title: "", message: "변경 내용을 저장하시겠습니까?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "저장", style: .destructive) { [weak self] action in
             guard let self = self else { return }
-            self.update()
         }
         let cancel = UIAlertAction(title: "저장 안함", style: .cancel) { [weak self] action in
             guard let self = self else { return }
@@ -136,9 +112,36 @@ class EditCardVC: UIViewController {
         
         print(cards)
     }
+    @IBAction func longPressGesture(_ sender: UIGestureRecognizer) {
+        switch (sender.state) {
+        case .began:
+            guard let selectedIndexPath = cardCollectionView.indexPathForItem(at: sender.location(in: cardCollectionView)) else { return }
+            cardCollectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+        case .changed:
+            cardCollectionView.updateInteractiveMovementTargetPosition(sender.location(in: sender.view!))
+        case .ended:
+            cardCollectionView.endInteractiveMovement()
+            cardCollectionView.reloadData()
+        default:
+            cardCollectionView.cancelInteractiveMovement()
+        }
+    }
 }
 
 extension EditCardVC: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, canMoveItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        
+        let source = cards[sourceIndexPath.item]
+        cards.remove(at: sourceIndexPath.item)
+        cards.insert(source, at: destinationIndexPath.item)
+        
+        collectionView.reloadData()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CardCell
         

@@ -157,7 +157,7 @@ extension HomePreviewVC: UICollectionViewDelegate {
             }
         }
         
-        prevCell = collectionView.cellForItem(at: indexPath) as? CardCell
+        prevCell = cell
     }
 }
 

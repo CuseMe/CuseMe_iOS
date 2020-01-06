@@ -66,7 +66,7 @@ class CardDownloadVC: UIViewController {
     @IBAction func selfButtonDidTap(_ sender: Any) {
         weak var pvc = self.presentingViewController
         self.dismiss(animated: true) {
-            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CardEditVC") as! CardEditVC
+            let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CreateCardVC") as! CreateCardVC
             dvc.modalPresentationStyle = .fullScreen
             pvc?.present(dvc, animated: true)
         }

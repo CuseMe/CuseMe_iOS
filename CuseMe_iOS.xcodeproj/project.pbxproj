@@ -17,9 +17,9 @@
 		0E9575C923BE6E0B00D531F8 /* ResponseArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */; };
 		0E9575CB23BE6E2700D531F8 /* ResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */; };
 		0E9575CD23BE6E4B00D531F8 /* ResponseDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */; };
-		0EBAE0AE23BDC095009F956B /* CardEditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EBAE0AD23BDC095009F956B /* CardEditVC.swift */; };
 		53A67120A5DFBC49BFA53905 /* Pods_CuseMe_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */; };
-		F55A4D6B23BFCA3100DDDFCA /* CreateCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55A4D6A23BFCA3100DDDFCA /* CreateCardVC.swift */; };
+		F55A4D6F23BFD05F00DDDFCA /* CreateCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55A4D6E23BFD05F00DDDFCA /* CreateCardVC.swift */; };
+		F55A4D7323C00A2700DDDFCA /* EditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55A4D7223C00A2700DDDFCA /* EditCard.swift */; };
 		F56CEA4223BB43A8005D9B4E /* wave.json in Resources */ = {isa = PBXBuildFile; fileRef = F56CEA4123BB43A8005D9B4E /* wave.json */; };
 		F56CEA4623BC5154005D9B4E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4523BC5154005D9B4E /* ContainerVC.swift */; };
 		F56CEA4823BDBD4C005D9B4E /* EditCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56CEA4723BDBD4C005D9B4E /* EditCardVC.swift */; };
@@ -43,7 +43,7 @@
 		F5B7F52F23BF79C200920938 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F52E23BF79C200920938 /* Token.swift */; };
 		F5B7F53123BF7F2800920938 /* TTSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F53023BF7F2800920938 /* TTSService.swift */; };
 		F5B7F53323BF816900920938 /* AVPlayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F53223BF816900920938 /* AVPlayer+Extensions.swift */; };
-		F5B7F53523BF88A900920938 /* UpdateCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F53423BF88A900920938 /* UpdateCards.swift */; };
+		F5B7F53523BF88A900920938 /* UpdateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B7F53423BF88A900920938 /* UpdateCard.swift */; };
 		F5DEF27023B21DB100C8E3D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */; };
 		F5DEF27923B21DB200C8E3D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */; };
 		F5DEF27C23B21DB200C8E3D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5DEF27A23B21DB200C8E3D0 /* LaunchScreen.storyboard */; };
@@ -68,11 +68,11 @@
 		0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseArray.swift; sourceTree = "<group>"; };
 		0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseObject.swift; sourceTree = "<group>"; };
 		0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseDefault.swift; sourceTree = "<group>"; };
-		0EBAE0AD23BDC095009F956B /* CardEditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardEditVC.swift; sourceTree = "<group>"; };
 		A683C3A9F6EC8122B5BD3E32 /* Pods-CuseMe_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.debug.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		CFACD19D48A3C31923BD3C7B /* Pods_CuseMe_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CuseMe_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F9873A1BAB4E4210551423 /* Pods-CuseMe_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CuseMe_iOS.release.xcconfig"; path = "Target Support Files/Pods-CuseMe_iOS/Pods-CuseMe_iOS.release.xcconfig"; sourceTree = "<group>"; };
-		F55A4D6A23BFCA3100DDDFCA /* CreateCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateCardVC.swift; path = CuseMe_iOS/Pages/CardDetail/CreateCardVC.swift; sourceTree = SOURCE_ROOT; };
+		F55A4D6E23BFD05F00DDDFCA /* CreateCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardVC.swift; sourceTree = "<group>"; };
+		F55A4D7223C00A2700DDDFCA /* EditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCard.swift; sourceTree = "<group>"; };
 		F56CEA4123BB43A8005D9B4E /* wave.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = wave.json; sourceTree = "<group>"; };
 		F56CEA4523BC5154005D9B4E /* ContainerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 		F56CEA4723BDBD4C005D9B4E /* EditCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCardVC.swift; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 		F5B7F52E23BF79C200920938 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		F5B7F53023BF7F2800920938 /* TTSService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TTSService.swift; sourceTree = "<group>"; };
 		F5B7F53223BF816900920938 /* AVPlayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Extensions.swift"; sourceTree = "<group>"; };
-		F5B7F53423BF88A900920938 /* UpdateCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCards.swift; sourceTree = "<group>"; };
+		F5B7F53423BF88A900920938 /* UpdateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCard.swift; sourceTree = "<group>"; };
 		F5DEF26C23B21DB100C8E3D0 /* 큐즈미.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "큐즈미.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5DEF26F23B21DB100C8E3D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5DEF27823B21DB200C8E3D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				F5B7F50223BE75F100920938 /* CardDetailVC.swift */,
-				0EBAE0AD23BDC095009F956B /* CardEditVC.swift */,
+				F55A4D6E23BFD05F00DDDFCA /* CreateCardVC.swift */,
 			);
 			path = CardDetail;
 			sourceTree = "<group>";
@@ -280,8 +280,9 @@
 			isa = PBXGroup;
 			children = (
 				F5B7F52A23BF6E2500920938 /* Card.swift */,
+				F55A4D7223C00A2700DDDFCA /* EditCard.swift */,
 				0E9575C823BE6E0B00D531F8 /* ResponseArray.swift */,
-				F5B7F53423BF88A900920938 /* UpdateCards.swift */,
+				F5B7F53423BF88A900920938 /* UpdateCard.swift */,
 				F5B7F52E23BF79C200920938 /* Token.swift */,
 				0E9575CA23BE6E2700D531F8 /* ResponseObject.swift */,
 				0E9575CC23BE6E4B00D531F8 /* ResponseDefault.swift */,
@@ -311,7 +312,6 @@
 				F5FB849E23B4836D00900461 /* HomeModify.storyboard */,
 				0E584E1223B4A48F00DEF5C3 /* HomeDisabled.storyboard */,
 				0E50475223BB2B7200E8F92C /* CardDetail.storyboard */,
-				F55A4D6A23BFCA3100DDDFCA /* CreateCardVC.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -470,9 +470,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5B7F50323BE75F100920938 /* CardDetailVC.swift in Sources */,
-				F55A4D6B23BFCA3100DDDFCA /* CreateCardVC.swift in Sources */,
+				F55A4D6F23BFD05F00DDDFCA /* CreateCardVC.swift in Sources */,
 				F5AEB4C223B5E8B9002B65F0 /* CardDownloadVC.swift in Sources */,
-				F5B7F53523BF88A900920938 /* UpdateCards.swift in Sources */,
+				F5B7F53523BF88A900920938 /* UpdateCard.swift in Sources */,
 				0E9575CB23BE6E2700D531F8 /* ResponseObject.swift in Sources */,
 				0E305F3123B60ABF00D289DF /* ChangePasswordVC.swift in Sources */,
 				F5AEB4C423B5FCAA002B65F0 /* CardManageVC.swift in Sources */,
@@ -486,9 +486,9 @@
 				0E9575CD23BE6E4B00D531F8 /* ResponseDefault.swift in Sources */,
 				0E76FD4F23BB051000C34114 /* UnlockVC.swift in Sources */,
 				0E6D5C5623B6F9D3001C16F1 /* ChangePhoneNumberVC.swift in Sources */,
+				F55A4D7323C00A2700DDDFCA /* EditCard.swift in Sources */,
 				F5AEB4C823B8C238002B65F0 /* HomePreviewVC.swift in Sources */,
 				0E584E1523B4A57400DEF5C3 /* HomeDisabledVC.swift in Sources */,
-				0EBAE0AE23BDC095009F956B /* CardEditVC.swift in Sources */,
 				0E9575C923BE6E0B00D531F8 /* ResponseArray.swift in Sources */,
 				F56CEA4623BC5154005D9B4E /* ContainerVC.swift in Sources */,
 				F5FB849B23B4355700900461 /* UITabBarController+Extensions.swift in Sources */,

@@ -33,8 +33,4 @@ class CardCell: UICollectionViewCell {
         selectButton.isHidden = true
         visibleButton.isHidden = true
     }
-    
-    @IBAction func visibleButtonDidTap(_ sender: UIButton) {
-        sender.isSelected = !sender.isSelected
-    }
 }
