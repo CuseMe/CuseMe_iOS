@@ -176,7 +176,7 @@ class HomeHelperTabBarController: UITabBarController {
         
         if sender.tag == 0 {
             let dvc = UIStoryboard(name: "CardDetail", bundle: nil).instantiateViewController(withIdentifier: "CreateCardVC") as! CreateCardVC
-            //TODO: 다음 VC 에 수정인지 추가인지 전달
+            //TODO: 다음 VC 에 수정인지 추가인지 전달 
             dvc.modalPresentationStyle = .fullScreen
             present(dvc, animated: true)
         } else if sender.tag == 1 {
